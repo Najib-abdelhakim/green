@@ -2746,6 +2746,107 @@ var projets = [
         icone: "img/station navettes/SN.jpg",
         campus: "Ben Guerir"
     },
+    //VILLAS MARGUERITTE
+    ,{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.2088247294528, -7.928449453959793],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.208068095434705, -7.928529936035864],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.20749304937134, -7.928986001133612],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.20702393015331, -7.929799764347239],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.207213091419426, -7.930622470013761],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },
+    ,{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.20776544006508, -7.93083708888329],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.208506943931866, -7.930121692651531],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.20908198358512, -7.9294599511371535],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "Ben Guerir"
+    },{
+        id: "BG-199",
+        nom: "Station Navettes",
+        coordinates: [32.209157011136654, -7.9288623708617525],
+        description: "",
+        type: "Ecomobility",
+        sousType: "Station Navettes",
+        image: "img/station navettes/station_navettes.png",
+        icone: "img/station navettes/SN.jpg",
+        campus: "Ben Guerir"
+    },
 ];
 
 //           GOLF CART STOPS
