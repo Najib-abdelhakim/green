@@ -2623,7 +2623,7 @@ var projets = [
     {
         id: "BG-048",
         nom: "",
-        coordinates: [32.21328362294508, -7.936647410521105],
+        coordinates: [32.21310284515262, -7.936748204001818],
         description: "",
         type: "Energy",
         Informations_complémentaires: "",
@@ -2631,40 +2631,8 @@ var projets = [
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
-    },{
-        id: "BG-048",
-        nom: "",
-        coordinates: [32.21294330226683, -7.936568540631947],
-        description: "",
-        type: "Energy",
-        Informations_complémentaires: "",
-        sousType: "Photovoltaic / Solar Thermal",
-        image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
-        campus: "VILLAS DES CHERCHERUS"
-    },{
-        id: "BG-048",
-        nom: "",
-        coordinates: [32.21294196767344, -7.9367751797466335],
-        description: "",
-        type: "Energy",
-        Informations_complémentaires: "",
-        sousType: "Photovoltaic / Solar Thermal",
-        image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
-        campus: "VILLAS DES CHERCHERUS"
-    },{
-        id: "BG-048",
-        nom: "",
-        coordinates: [32.21316484449734, -7.93690452636804],
-        description: "",
-        type: "Energy",
-        Informations_complémentaires: "",
-        sousType: "Photovoltaic / Solar Thermal",
-        image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
-        campus: "VILLAS DES CHERCHERUS"
-    },{
+    },
+    {
         id: "BG-048",
         nom: "",
         coordinates: [32.212549596360574, -7.93615526237821],
