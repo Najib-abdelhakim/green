@@ -128,7 +128,7 @@ function initMap() {
     map = L.map('map').setView([31.862835361667987, -6.849775828544829], 5);
     
     L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-        attribution: '&copy; <a href="https://maps.google.com">Google Maps</a> | UM6P Green Map',
+        attribution: '&copy; <a href="https://www.google.com/maps/place/Mohammed+VI+Polytechnic+University/@32.220055,-7.9367607,151m/data=!3m1!1e3!4m10!1m2!2m1!1sum6p+benguerir!3m6!1s0xdaf7a3feab1f407:0xbd50c8e7902ffbf9!8m2!3d32.220055!4d-7.9359024!15sCg51bTZwIGJlbmd1ZXJpcpIBCnVuaXZlcnNpdHngAQA!16s%2Fg%2F11hzw2px2n?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D">Google Maps</a> | <a href="https://sd.um6p.ma/">Sustainable Development</a>',
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(map);
@@ -152,24 +152,37 @@ function initMap() {
     afficherListeSousTypes();
     afficherTrajetsSection();
     mettreAJourStats();
-    
-    // Campus controls avec les 6 boutons
+     
+
+    // Campus controls avec tous les boutons
     let campusDiv = document.getElementById('campusControls');
     if(campusDiv) {
         campusDiv.innerHTML = `
-            <button class="campus-btn" id="btnBG" style="background: linear-gradient(135deg, #bc4d29, #d74a2b); color: white;">Ben Guerir</button>
-            <button class="campus-btn" id="btnRabat" style="background: linear-gradient(135deg, #808080, #696969); color: white;">Rabat</button>
-            <button class="campus-btn" id="btnGEP" style="background: linear-gradient(135deg, #a4c840, #61873d); color: white;">GEP</button>
-            <button class="campus-btn" id="btnAITTC" style="background: linear-gradient(135deg, #17a2b8, #00bcd4); color: white;">AITTC</button>
-            <button class="campus-btn" id="btnASARI" style="background: linear-gradient(135deg, #bc9d75, #e6cfaf); color: #4a3728;">ASARI Laayoune</button>
-        `;
-        
-        document.getElementById('btnBG').onclick = () => recentrerBenGuerir();
-        document.getElementById('btnRabat').onclick = () => recentrerRabat();
-        document.getElementById('btnGEP').onclick = () => recentrerGEP();
-        document.getElementById('btnAITTC').onclick = () => recentrerAITTC();
-        document.getElementById('btnASARI').onclick = () => recentrerASARI();
-    }
+        <button class="campus-btn" id="btnBG" style="background: linear-gradient(135deg, #bc4d29, #d74a2b); color: white;">Ben Guerir</button>
+        <button class="campus-btn" id="btnRabat" style="background: linear-gradient(135deg, #808080, #696969); color: white;">Rabat</button>
+        <button class="campus-btn" id="btnGEP" style="background: linear-gradient(135deg, #a4c840, #61873d); color: white;">GEP</button>
+        <button class="campus-btn" id="btnAITTC" style="background: linear-gradient(135deg, #17a2b8, #00bcd4); color: white;">AITTC</button>
+        <button class="campus-btn" id="btnASARI" style="background: linear-gradient(135deg, #bc9d75, #e6cfaf); color: white;">ASARI Laayoune</button>
+        <button class="campus-btn" id="btnLycee" style="background: linear-gradient(135deg, #2ecc71, #27ae60); color: white;">LYCÉE D'EXCELLENCE</button>
+        <button class="campus-btn" id="btnDataCenter" style="background: linear-gradient(135deg, #3498db, #2980b9); color: white;">DATA CENTER</button>
+        <button class="campus-btn" id="btnClubTir" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white;">CLUB DE TIR</button>
+        <button class="campus-btn" id="btnVillasChercheurs" style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white;">VILLAS CHERCHEURS</button>
+        <button class="campus-btn" id="btnVillasMargueritte" style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white;">VILLAS MARGUERITTE</button>
+        <button class="campus-btn" id="btnSmartPark" style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white;">SMART BUILDING PARK</button>
+    `;
+    
+    document.getElementById('btnBG').onclick = () => recentrerBenGuerir();
+    document.getElementById('btnRabat').onclick = () => recentrerRabat();
+    document.getElementById('btnGEP').onclick = () => recentrerGEP();
+    document.getElementById('btnAITTC').onclick = () => recentrerAITTC();
+    document.getElementById('btnASARI').onclick = () => recentrerASARI();
+    document.getElementById('btnLycee').onclick = () => recentrerLycee();
+    document.getElementById('btnDataCenter').onclick = () => recentrerDataCenter();
+    document.getElementById('btnClubTir').onclick = () => recentrerClubTir();
+    document.getElementById('btnVillasChercheurs').onclick = () => recentrerVillasChercheurs();
+    document.getElementById('btnVillasMargueritte').onclick = () => recentrerVillasMargueritte();
+    document.getElementById('btnSmartPark').onclick = () => recentrerSmartPark();
+}
     
     // Reset button
     document.getElementById('resetFilters')?.addEventListener('click', () => {
@@ -536,6 +549,114 @@ function recentrerASARI() {
     }
     filtrerParCampus('ASARI Laayoune');
 }
+// ==================== NOUVEAUX CAMPUS ACTIONS ====================
+function recentrerLycee() {
+    let lyceeProject = projets.find(p => p.campus === 'LYCÉE D\'EXCELLENCE' && p.coordinates);
+    if(lyceeProject && lyceeProject.coordinates) {
+        map.setView(lyceeProject.coordinates, 17);
+    } else {
+        map.setView([32.206609350487135, -7.938522820743328], 17);
+    }
+    filtrerParCampus('LYCÉE D\'EXCELLENCE');
+}
+
+function recentrerDataCenter() {
+    let dataCenterProject = projets.find(p => p.campus === 'DATA CENTER' && p.coordinates);
+    if(dataCenterProject && dataCenterProject.coordinates) {
+        map.setView(dataCenterProject.coordinates, 17);
+    } else {
+        map.setView([32.22288070306334, -7.929580400582258], 17);
+    }
+    filtrerParCampus('DATA CENTER');
+}
+
+function recentrerClubTir() {
+    let clubTirProject = projets.find(p => p.campus === 'CLUB DE TIR' && p.coordinates);
+    if(clubTirProject && clubTirProject.coordinates) {
+        map.setView(clubTirProject.coordinates, 17);
+    } else {
+        map.setView([32.21493971337093, -7.896320153472852], 17);
+    }
+    filtrerParCampus('CLUB DE TIR');
+}
+
+function recentrerVillasChercheurs() {
+    let villasChercheursProject = projets.find(p => p.campus === 'VILLAS DES CHERCHERUS' && p.coordinates);
+    if(villasChercheursProject && villasChercheursProject.coordinates) {
+        map.setView(villasChercheursProject.coordinates, 17);
+    } else {
+        map.setView([32.21288950247401, -7.937175152870229], 17);
+    }
+    filtrerParCampus('VILLAS DES CHERCHERUS');
+}
+
+function recentrerVillasMargueritte() {
+    console.log("=== CLIC SUR VILLAS MARGUERITTE ===");
+    // Compter les projets de ce campus pour vérifier
+    let count = projets.filter(p => p.campus === 'VILLAS MARGUERITTE').length;
+    console.log("Nombre de projets pour VILLAS MARGUERITTE:", count);
+    
+    let villasMargueritteProject = projets.find(p => p.campus === 'VILLAS MARGUERITTE' && p.coordinates);
+    if(villasMargueritteProject && villasMargueritteProject.coordinates) {
+        console.log("Coordonnées trouvées:", villasMargueritteProject.coordinates);
+        map.setView(villasMargueritteProject.coordinates, 18);
+    } else {
+        console.log("Coordonnées par défaut");
+        map.setView([32.2088247294528, -7.928449453959793], 18);
+    }
+    filtrerParCampus('VILLAS MARGUERITTE');
+}
+
+function recentrerSmartPark() {
+    console.log("=== CLIC SUR SMART BUILDING PARK ===");
+    
+    // Trouver TOUS les projets de ce campus
+    let allSmartPark = projets.filter(p => p && p.campus === 'SMART BUILDING PARK');
+    console.log("Nombre de projets pour SMART BUILDING PARK:", allSmartPark.length);
+    
+    // Prendre le premier projet avec des coordonnées valides
+    let smartParkProject = allSmartPark.find(p => p && p.coordinates && p.coordinates.length === 2);
+    console.log("Projet trouvé avec coordonnées:", smartParkProject);
+    
+    if(smartParkProject && smartParkProject.coordinates) {
+        console.log("Coordonnées utilisées:", smartParkProject.coordinates);
+        map.setView(smartParkProject.coordinates, 18);
+    } else {
+        console.log("AUCUN PROJET TROUVÉ - Utilisation coordonnées par défaut");
+        map.setView([32.2183320720733, -7.931593127042979], 18);
+    }
+    
+    // FORCER l'application du filtre
+    currentCampus = 'SMART BUILDING PARK';
+    console.log("Filtrage par campus:", currentCampus);
+    
+    // Afficher les marqueurs de ce campus
+    markersList.forEach(item => {
+        if (item && item.projet && item.projet.campus === 'SMART BUILDING PARK') {
+            console.log("Ajout du marqueur pour:", item.projet.campus, item.projet.nom);
+            if (!map.hasLayer(item.marker)) {
+                item.marker.addTo(map);
+            }
+        } else if (item && item.projet) {
+            if (map.hasLayer(item.marker)) {
+                map.removeLayer(item.marker);
+            }
+        }
+    });
+    
+    // Mettre à jour le filtre type
+    if (currentTypeFilter !== 'all') {
+        currentTypeFilter = 'all';
+        document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.type-filter-btn[data-type="all"]')?.classList.add('active');
+    }
+    
+    afficherFiltresTypes();
+    afficherTrajetsSection();
+    afficherListeSousTypes();
+    effacerTousLesTrajets();
+    mettreAJourStats();
+}
 
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
@@ -568,3 +689,9 @@ window.toggleSidebar = toggleSidebar;
 window.recentrerGEP = recentrerGEP;
 window.recentrerAITTC = recentrerAITTC;
 window.recentrerASARI = recentrerASARI;
+window.recentrerLycee = recentrerLycee;
+window.recentrerDataCenter = recentrerDataCenter;
+window.recentrerClubTir = recentrerClubTir;
+window.recentrerVillasChercheurs = recentrerVillasChercheurs;
+window.recentrerVillasMargueritte = recentrerVillasMargueritte;
+window.recentrerSmartPark = recentrerSmartPark;

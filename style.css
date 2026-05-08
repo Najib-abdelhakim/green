@@ -30,7 +30,7 @@ body {
 
 /* ==================== SIDEBAR ==================== */
 .sidebar {
-    width: 360px;
+    width: 310px;
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
     border-left: 1px solid rgba(1, 86, 139, 0.25);
@@ -418,33 +418,55 @@ body {
 /* ==================== CONTROLES CAMPUS ==================== */
 .campus-controls {
     position: absolute;
-    bottom: 25px;
-    left: 20px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 900;
-    display: flex;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 10px 16px;
     border-radius: 50px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    gap: 8px;
+    max-width: 90%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid rgba(1, 86, 139, 0.2);
+    scrollbar-width: thin;
+}
+
+.campus-controls::-webkit-scrollbar {
+    height: 4px;
+}
+
+.campus-controls::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.campus-controls::-webkit-scrollbar-thumb {
+    background: #01568b;
+    border-radius: 10px;
 }
 
 .campus-btn {
     background: #01568b;
     border: none;
     color: white;
-    padding: 8px 18px;
+    padding: 6px 14px;
     border-radius: 40px;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .campus-btn:hover {
-    background: #013a5c;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 /* ==================== ANIMATIONS ==================== */

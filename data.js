@@ -2099,6 +2099,17 @@ var projets = [
     },{
         id: "BG-048",
         nom: "",
+        coordinates: [32.22209634988251, -7.92674872398529],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "GEP"
+    },{
+        id: "BG-048",
+        nom: "",
         coordinates: [32.220632785955964, -7.927686914560544],
         description: "",
         type: "Energy",
@@ -2117,6 +2128,16 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
+        campus: "GEP"
+    },{
+        id: "BG-199",
+        nom: "Station Navettes",
+        coordinates: [32.22113590064786, -7.9289996536701715],
+        description: "",
+        type: "Ecomobility",
+        sousType: "Station Navettes",
+        image: "img/station navettes/station_navettes.png",
+        icone: "img/station navettes/SN.jpg",
         campus: "GEP"
     },    {
         id: "BG-003",
@@ -2184,7 +2205,7 @@ var projets = [
     },    {
         id: "BG-011",
         nom: "Botanic Garden",
-        coordinates: [32.22121206989761, -7.928642783027061],
+        coordinates: [32.221936084816186, -7.927591754624167],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
         type: "Biodiversity",
         sousType: "Botanic Garden",
@@ -2195,24 +2216,14 @@ var projets = [
         {
         id: "BG-182",
         nom: "Electric Vehicle Charging Station",
-        coordinates: [32.22020240406086, -7.927585223924778],
+        coordinates: [32.22112198787083, -7.928601973324162],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station1.jpg",
         icone: "img/vehicles charge station/VCS.jpg",
         campus: "GEP"
-    },    {
-        id: "BG-182",
-        nom: "Electric Vehicle Charging Station",
-        coordinates: [32.22063005956378, -7.929177931091439],
-        description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
-        type: "Ecomobility",
-        sousType: "Electric Vehicle Charging Station",
-        image: "img/vehicles charge station/charge_station1.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
-        campus: "GEP"
-    },
+    }, 
     // AITTC
         {
         id: "BG-075",
@@ -2227,13 +2238,13 @@ var projets = [
     },
         {
         id: "BG-199",
-        nom: "Plant it for the world",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.22026391003761, -7.892632338892701],
         description: "",
         type: "Engagement In Action",
-        sousType: "Plant it for the world",
-        image: "img/Plant it for the world/1.jpg",
-        icone: "img/Plant it for the world/icon.jpg",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     },
             {
@@ -2291,33 +2302,33 @@ var projets = [
         campus: "AITTC"    
     },{
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.21928258160126, -7.894693882740697],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     }, {
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.21838584963906, -7.891307709940032],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     }, {
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.219169525483615, -7.889606849415454],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     }, 
     {
@@ -2367,7 +2378,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    },{
         id: "BG-048",
         nom: "",
         coordinates: [32.20592254390433, -7.936795802215979],
@@ -2377,7 +2389,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.204775419194675, -7.937288002496672],
@@ -2387,7 +2400,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.206331705895316, -7.93708939536594],
@@ -2397,7 +2411,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.20684315579582, -7.937365718330607],
@@ -2407,7 +2422,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.20780029004998, -7.938021985370389],
@@ -2417,7 +2433,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.20882317046001, -7.938764603337934],
@@ -2427,7 +2444,8 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"    }, {
+        campus: "LYCÉE D'EXCELLENCE"   
+    }, {
         id: "BG-048",
         nom: "",
         coordinates: [32.20750803637008, -7.940353460383966],
@@ -2437,9 +2455,9 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "LYCÉE D'EXCELLENCE"   
     }, 
-        {
+    {
         id: "BG-199",
         nom: "Station Navettes",
         coordinates: [32.20600291513461, -7.941044267794287],
@@ -2448,38 +2466,38 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "Ben Guerir"
+        campus: "LYCÉE D'EXCELLENCE"   
     },
         {
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.218068, -7.936605],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/AI.jpg",
-        campus: "Ben Guerir"
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
+        campus: "LYCÉE D'EXCELLENCE"   
     },        {
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.206609350487135, -7.938522820743328],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
-        campus: "Ben Guerir"
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
+        campus: "LYCÉE D'EXCELLENCE"   
     },{
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.20780759635854, -7.939196357969706],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
-        campus: "Ben Guerir"
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
+        campus: "LYCÉE D'EXCELLENCE"   
     },
     // data center
     {
@@ -2492,7 +2510,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "GEP"
+        campus: "DATA CENTER"
     },{
         id: "BG-048",
         nom: "",
@@ -2503,7 +2521,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "GEP"
+        campus: "DATA CENTER"
     },{
         id: "BG-048",
         nom: "",
@@ -2514,27 +2532,27 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "GEP"
+        campus: "DATA CENTER"
     },{
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.22156935678318, -7.929679898937966],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
-        campus: "GEP"
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
+        campus: "DATA CENTER"
     },{
         id: "BG-001",
-        nom: "Plantation d'Oliviers",
+        nom: "PLANT IT FORWARD",
         coordinates: [32.22282754074464, -7.931177611024986],
         description: "",
-        type: "Biodiversity",
-        sousType: "Plantation d'Oliviers",
-        image: "img/Plantation Oliviers/1.jpeg",
-        icone: "img/Plantation Oliviers/icon.jpg",
-        campus: "GEP"
+        type: "Engagement In Action",
+        sousType: "PLANT IT FORWARD",
+        image: "img/PLANT IT FORWARD/1.jpg",
+        icone: "img/PLANT IT FORWARD/icon.jpg",
+        campus: "DATA CENTER"
     },{
         id: "BG-199",
         nom: "Station Navettes",
@@ -2544,7 +2562,7 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "GEP"
+        campus: "DATA CENTER"
     },{
         id: "BG-199",
         nom: "Station Navettes",
@@ -2554,7 +2572,7 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "GEP"
+        campus: "DATA CENTER"
     },
     //CLUB DE TIR
     {
@@ -2567,7 +2585,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "AITTC"    
+        campus: "CLUB DE TIR"    
     },{
         id: "BG-048",
         nom: "",
@@ -2578,7 +2596,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "AITTC"    
+        campus: "CLUB DE TIR"    
     }, {
         id: "BG-048",
         nom: "",
@@ -2589,7 +2607,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "AITTC"    
+        campus: "CLUB DE TIR"    
     },   {
         id: "BG-199",
         nom: "Station Navettes",
@@ -2599,7 +2617,7 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "AITTC"
+        campus: "CLUB DE TIR"    
     },
     //VILLAS DES CHERCHERUS
     {
@@ -2612,7 +2630,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2623,7 +2641,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2634,7 +2652,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2645,7 +2663,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2656,7 +2674,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2667,7 +2685,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },
     {
         id: "BG-048",
@@ -2679,7 +2697,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2690,7 +2708,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2701,7 +2719,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2712,7 +2730,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2723,7 +2741,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-048",
         nom: "",
@@ -2734,7 +2752,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },{
         id: "BG-199",
         nom: "Station Navettes",
@@ -2744,10 +2762,10 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS DES CHERCHERUS"
     },
     //VILLAS MARGUERITTE
-    ,{
+    {
         id: "BG-048",
         nom: "",
         coordinates: [32.2088247294528, -7.928449453959793],
@@ -2757,7 +2775,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2768,7 +2786,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2779,7 +2797,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2790,7 +2808,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2801,7 +2819,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },
     ,{
         id: "BG-048",
@@ -2813,7 +2831,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2824,7 +2842,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-048",
         nom: "",
@@ -2835,7 +2853,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
         icone: "img/Photovoltaique/IPT.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
     },{
         id: "BG-199",
         nom: "Station Navettes",
@@ -2845,7 +2863,96 @@ var projets = [
         sousType: "Station Navettes",
         image: "img/station navettes/station_navettes.png",
         icone: "img/station navettes/SN.jpg",
-        campus: "Ben Guerir"
+        campus: "VILLAS MARGUERITTE"
+    },
+    //GREEN & SMART BUILDING PARK
+    {
+        id: "BG-199",
+        nom: "Station Navettes",
+        coordinates: [32.2183320720733, -7.931593127042979],
+        description: "",
+        type: "Ecomobility",
+        sousType: "Station Navettes",
+        image: "img/station navettes/station_navettes.png",
+        icone: "img/station navettes/SN.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.22047731012961, -7.930560735369827],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.220119678184425, -7.931263848583266],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.219360617955914, -7.931156009130783],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.21922194280819, -7.931768537206294],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.21932777386111, -7.932337929501842],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.218878903368235, -7.932247344362461],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
+    },{
+        id: "BG-048",
+        nom: "",
+        coordinates: [32.21975109684083, -7.931656384178384],
+        description: "",
+        type: "Energy",
+        Informations_complémentaires: "",
+        sousType: "Photovoltaic / Solar Thermal",
+        image: "img/Photovoltaique/",
+        icone: "img/Photovoltaique/IPT.jpg",
+        campus: "SMART BUILDING PARK"
     },
 ];
 
