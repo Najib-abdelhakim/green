@@ -1,4 +1,4 @@
-// ==================== VARIABLES GLOBALES ====================
+//  VARIABLES GLOBALES
 let map;
 let markersList = [];
 let currentCampus = 'all';
@@ -6,7 +6,7 @@ let currentTypeFilter = 'all';
 let trajetActuel = null;
 let trajetBusActuel = null;
 
-// ==================== COULEURS ====================
+// COULEURS 
 const glowColors = {
     'Water': 'rgb(0, 149, 255)',
     'Engagement In Action': 'rgb(255, 102, 0)',
@@ -33,7 +33,7 @@ function getGlowColor(type) {
     return 'rgba(255, 255, 0, 0.5)';
 }
 
-// ==================== FONCTION POPUP AVEC RAYONNEMENT ====================
+// FONCTION POPUP AVEC RAYONNEMENT 
 function creerMarqueurAvecInfos(projet) {
     let iconUrl = projet.icone && projet.icone !== "" ? projet.icone : '';
     let glowColor = getGlowColor(projet.type);
@@ -91,7 +91,7 @@ function creerMarqueurAvecInfos(projet) {
     
     return marker;
 }
-// ==================== FONCTION POUR AMÉLIORER LA VISIBILITÉ ====================
+// FONCTION POUR AMÉLIORER LA VISIBILITÉ 
 function ameliorerVisibiliteMarqueurs() {
     markersList.forEach(item => {
         if (item.marker._icon) {
@@ -115,14 +115,14 @@ function ameliorerVisibiliteMarqueurs() {
 
 
 
-// ==================== INITIALISATION ====================
+// INITIALISATION 
 function initMap() {
     if (typeof projets === 'undefined') {
         console.error("ERROR: Project data not loaded!");
         return;
     }
     
-    console.log("=== INIT MAP - GOOGLE HYBRID WITH GLOW EFFECTS ===");
+    console.log("INIT MAP - GOOGLE HYBRID ");
     console.log("Total projects:", projets.length);
     
     map = L.map('map').setView([31.862835361667987, -6.849775828544829], 5);
@@ -257,7 +257,7 @@ function mettreAJourStats() {
     if(campusSpan) campusSpan.textContent = currentCampus === 'all' ? 'All' : currentCampus;
 }
 
-// ==================== TYPE FILTERS ====================
+// TYPE FILTERS
 function afficherFiltresTypes() {
     let container = document.getElementById('typesFilters');
     if(!container) return;
@@ -372,7 +372,7 @@ function afficherListeSousTypes() {
     }
 }
 
-// ==================== ROUTES SECTION ====================
+// ROUTES SECTION 
 function afficherTrajetsSection() {
     let container = document.getElementById('trajetsSection');
     if(!container) return;
@@ -405,7 +405,7 @@ function afficherTrajetsSection() {
         card.innerHTML = `
             <div class="type-header" style="background:#01568b">
                 <span class="type-nom">GOLF CART Pathway</span>
-                <span class="toggle-icon">▼</span>
+                <span class="toggle-icon">↧</span>
             </div>
             <div class="type-content" id="golfetteContent"></div>
         `;
@@ -434,7 +434,7 @@ function afficherTrajetsSection() {
         card.innerHTML = `
             <div class="type-header" style="background:#01568b">
                 <span class="type-nom">BUS Pathway</span>
-                <span class="toggle-icon">▼</span>
+                <span class="toggle-icon">↧</span>
             </div>
             <div class="type-content" id="busContent"></div>
         `;
@@ -457,7 +457,7 @@ function afficherTrajetsSection() {
     }
 }
 
-// ==================== DISPLAY ROUTES ====================
+// DISPLAY ROUTES
 function afficherTrajetGolfette(trajetId) {
     if(typeof trajetsGolfette === 'undefined' || typeof arretsGolfette === 'undefined') return;
     if(trajetActuel) map.removeLayer(trajetActuel);
@@ -509,165 +509,72 @@ function effacerTousLesTrajets() {
     if(trajetBusActuel) { map.removeLayer(trajetBusActuel); trajetBusActuel = null; }
 }
 
-// ==================== CAMPUS ACTIONS ====================
+// CAMPUS ACTIONS
 function recentrerBenGuerir() {
-    map.setView([32.2162514740, -7.9394896113], 16);
+    map.setView([32.21581806243076, -7.93940766677296], 16);
     filtrerParCampus('Ben Guerir');
 }
 
 function recentrerRabat() {
-    map.setView([33.98077935537, -6.72924130237], 17);
+    map.setView([33.98077935537, -6.72924130237], 16);
     filtrerParCampus('Rabat');
 }
 
 function recentrerGEP() {
-    let gepProject = projets.find(p => p.campus === 'GEP' && p.coordinates);
-    if(gepProject && gepProject.coordinates) {
-        map.setView(gepProject.coordinates, 17);
-    } else {
-        map.setView([32.221600083, -7.92746093660], 17);
-    }
+    map.setView([32.221600083, -7.92746093660], 17);
     filtrerParCampus('GEP');
 }
 
 function recentrerAITTC() {
-    let aittcProject = projets.find(p => p.campus === 'AITTC' && p.coordinates);
-    if(aittcProject && aittcProject.coordinates) {
-        map.setView(aittcProject.coordinates, 17);
-    } else {
-        map.setView([32.2191598586631, -7.89091311143900], 18);
-    }
+    map.setView([32.2191598586631, -7.89091311143900], 17);
     filtrerParCampus('AITTC');
 }
 
 function recentrerASARI() {
-    let asariProject = projets.find(p => p.campus === 'ASARI Laayoune' && p.coordinates);
-    if(asariProject && asariProject.coordinates) {
-        map.setView(asariProject.coordinates, 18);  // ← Ici niveau de zoom 13
-    } else {
-        map.setView([27.178419194697753, -13.383511877580803], 18);
-    }
+    map.setView([27.178419194697753, -13.383511877580803], 18);
     filtrerParCampus('ASARI Laayoune');
 }
-// ==================== NOUVEAUX CAMPUS ACTIONS ====================
+
 function recentrerLycee() {
-    let lyceeProject = projets.find(p => p.campus === 'LYCÉE D\'EXCELLENCE' && p.coordinates);
-    if(lyceeProject && lyceeProject.coordinates) {
-        map.setView(lyceeProject.coordinates, 17);
-    } else {
-        map.setView([32.206609350487135, -7.938522820743328], 17);
-    }
+    map.setView([32.206609350487135, -7.938522820743328], 17);
     filtrerParCampus('LYCÉE D\'EXCELLENCE');
 }
 
 function recentrerDataCenter() {
-    let dataCenterProject = projets.find(p => p.campus === 'DATA CENTER' && p.coordinates);
-    if(dataCenterProject && dataCenterProject.coordinates) {
-        map.setView(dataCenterProject.coordinates, 17);
-    } else {
-        map.setView([32.22288070306334, -7.929580400582258], 17);
-    }
+    map.setView([32.222442811283386, -7.929971736835424], 18);
     filtrerParCampus('DATA CENTER');
 }
 
 function recentrerClubTir() {
-    let clubTirProject = projets.find(p => p.campus === 'CLUB DE TIR' && p.coordinates);
-    if(clubTirProject && clubTirProject.coordinates) {
-        map.setView(clubTirProject.coordinates, 17);
-    } else {
-        map.setView([32.21493971337093, -7.896320153472852], 17);
-    }
+    map.setView([32.21441145338921, -7.896276898813682], 18);
     filtrerParCampus('CLUB DE TIR');
 }
 
 function recentrerVillasChercheurs() {
-    let villasChercheursProject = projets.find(p => p.campus === 'VILLAS DES CHERCHERUS' && p.coordinates);
-    if(villasChercheursProject && villasChercheursProject.coordinates) {
-        map.setView(villasChercheursProject.coordinates, 17);
-    } else {
-        map.setView([32.21288950247401, -7.937175152870229], 17);
-    }
+    map.setView([32.21416197175289, -7.935632290149962], 17);
     filtrerParCampus('VILLAS DES CHERCHERUS');
 }
 
 function recentrerVillasMargueritte() {
-    console.log("=== CLIC SUR VILLAS MARGUERITTE ===");
-    // Compter les projets de ce campus pour vérifier
-    let count = projets.filter(p => p.campus === 'VILLAS MARGUERITTE').length;
-    console.log("Nombre de projets pour VILLAS MARGUERITTE:", count);
-    
-    let villasMargueritteProject = projets.find(p => p.campus === 'VILLAS MARGUERITTE' && p.coordinates);
-    if(villasMargueritteProject && villasMargueritteProject.coordinates) {
-        console.log("Coordonnées trouvées:", villasMargueritteProject.coordinates);
-        map.setView(villasMargueritteProject.coordinates, 18);
-    } else {
-        console.log("Coordonnées par défaut");
-        map.setView([32.2088247294528, -7.928449453959793], 18);
-    }
+    map.setView([32.207957189483906, -7.9297955845621635], 18);
     filtrerParCampus('VILLAS MARGUERITTE');
 }
 
 function recentrerSmartPark() {
-    console.log("=== CLIC SUR SMART BUILDING PARK ===");
-    
-    // Trouver TOUS les projets de ce campus
-    let allSmartPark = projets.filter(p => p && p.campus === 'SMART BUILDING PARK');
-    console.log("Nombre de projets pour SMART BUILDING PARK:", allSmartPark.length);
-    
-    // Prendre le premier projet avec des coordonnées valides
-    let smartParkProject = allSmartPark.find(p => p && p.coordinates && p.coordinates.length === 2);
-    console.log("Projet trouvé avec coordonnées:", smartParkProject);
-    
-    if(smartParkProject && smartParkProject.coordinates) {
-        console.log("Coordonnées utilisées:", smartParkProject.coordinates);
-        map.setView(smartParkProject.coordinates, 18);
-    } else {
-        console.log("AUCUN PROJET TROUVÉ - Utilisation coordonnées par défaut");
-        map.setView([32.2183320720733, -7.931593127042979], 18);
-    }
-    
-    // FORCER l'application du filtre
-    currentCampus = 'SMART BUILDING PARK';
-    console.log("Filtrage par campus:", currentCampus);
-    
-    // Afficher les marqueurs de ce campus
-    markersList.forEach(item => {
-        if (item && item.projet && item.projet.campus === 'SMART BUILDING PARK') {
-            console.log("Ajout du marqueur pour:", item.projet.campus, item.projet.nom);
-            if (!map.hasLayer(item.marker)) {
-                item.marker.addTo(map);
-            }
-        } else if (item && item.projet) {
-            if (map.hasLayer(item.marker)) {
-                map.removeLayer(item.marker);
-            }
-        }
-    });
-    
-    // Mettre à jour le filtre type
-    if (currentTypeFilter !== 'all') {
-        currentTypeFilter = 'all';
-        document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('.type-filter-btn[data-type="all"]')?.classList.add('active');
-    }
-    
-    afficherFiltresTypes();
-    afficherTrajetsSection();
-    afficherListeSousTypes();
-    effacerTousLesTrajets();
-    mettreAJourStats();
+    map.setView([32.219282401083916, -7.931681038871657], 18);
+    filtrerParCampus('SMART BUILDING PARK');
 }
 
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
     let btn = document.getElementById('toggleSidebar');
     sidebar.classList.toggle('collapsed');
-    btn.innerHTML = sidebar.classList.contains('collapsed') ? '▶' : '◀';
+    btn.innerHTML = sidebar.classList.contains('collapsed') ? '⇥' : '⇤';
 }
 
-// ==================== INITIALIZATION ====================
+// INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM loaded - Google Hybrid Map with Glow Effects");
+    console.log("DOM loaded - Google Hybrid");
     
     if(typeof projets !== 'undefined') {
         initMap();
