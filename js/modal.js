@@ -20,7 +20,7 @@ function showIconModal(iconUrl, projectName) {
     // Générer le contenu (sans styles inline)
     let imageHtml = '';
     if (iconUrl) {
-        imageHtml = `<img src="${iconUrl}" alt="${projectName}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2991/2991231.png'">`;
+        imageHtml = `<img src="${iconUrl}" alt="${projectName}" onerror="this.src='img/DD.jpg'">`;
     } else {
         imageHtml = `<div class="icon-modal-placeholder">📌</div>`;
     }

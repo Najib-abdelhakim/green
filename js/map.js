@@ -5,7 +5,7 @@ function initMap() {
         return;
     }
     
-    console.log("=== INIT MAP - GOOGLE HYBRID WITH GLOW EFFECTS ===");
+    console.log("INIT MAP - GOOGLE HYBRID WITH GLOW EFFECTS");
     console.log("Total projects:", projets.length);
     
     map = L.map('map').setView([31.862835361667987, -6.849775828544829], 5);

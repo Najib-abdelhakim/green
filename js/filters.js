@@ -138,8 +138,8 @@ function afficherListeSousTypes() {
         emptyMsg.innerHTML = `
             <div class="sous-type-noimg"></div>
             <div class="sous-type-info">
-                <div class="sous-type-nom">Aucun projet trouvé</div>
-                <div class="sous-type-count">Essayez un autre filtre</div>
+                <div class="sous-type-nom">No projects found</div>
+                <div class="sous-type-count">Try another filter</div>
             </div>
         `;
         container.appendChild(emptyMsg);
@@ -157,7 +157,7 @@ function afficherListeSousTypes() {
         const iconUrl = data.icone || data.exempleIcone;
         
         if (iconUrl && iconUrl !== "") {
-            imageHtml = `<img src="${iconUrl}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2991/2991231.png'">`;
+            imageHtml = `<img src="${iconUrl}" onerror="this.src='img/DD.jpg'">`;
         } else {
             const firstLetter = nom.charAt(0).toUpperCase();
             imageHtml = `<div class="sous-type-noimg">${firstLetter}</div>`;
@@ -206,7 +206,7 @@ function afficherListeSousTypes() {
         item.addEventListener('dblclick', (function(sousType, icon) {
             return function(e) {
                 e.stopPropagation();
-                const iconToShow = icon || 'https://cdn-icons-png.flaticon.com/512/2991/2991231.png';
+                const iconToShow = icon || 'img/DD.jpg';
                 showIconModal(iconToShow, sousType);
             };
         })(nom, iconUrl));
