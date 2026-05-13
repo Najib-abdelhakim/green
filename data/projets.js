@@ -307,7 +307,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-028",
+        id: "BG-029",
         nom: "Botanic Garden",
         coordinates: [32.214880, -7.940977],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -404,7 +404,7 @@ var projets = [
         type: "Biodiversity",
         sousType: "Biological Pest Control",
         image: "img/Biological pest control/5.jpg",
-        icone: "img/Biological pest control/BC.jpg",
+        icone: "img/Biological pest control/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -415,7 +415,7 @@ var projets = [
         type: "Biodiversity",
         sousType: "Biological Pest Control",
         image: "img/Biological pest control/1.jpg",
-        icone: "img/Biological pest control/BC.jpg",
+        icone: "img/Biological pest control/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -426,18 +426,18 @@ var projets = [
         type: "Biodiversity",
         sousType: "Biological Pest Control",
         image: "img/Biological pest control/4.jpg",
-        icone: "img/Biological pest control/BC.jpg",
+        icone: "img/Biological pest control/icon.jpg",
         campus: "Ben Guerir"
     },
     {
-        id: "BG-039",
+        id: "BG-0039",
         nom: "Biological Pest Control",
         coordinates: [32.21680381071754, -7.938781562588925],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
         type: "Biodiversity",
         sousType: "Biological Pest Control",
         image: "img/Biological pest control/7.jpg",
-        icone: "img/Biological pest control/BC.jpg",
+        icone: "img/Biological pest control/icon.jpg",
         campus: "Ben Guerir"
     },
 
@@ -791,7 +791,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station1.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
+        icone: "img/vehicles charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -802,7 +802,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station2.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
+        icone: "img/vehicles charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -813,7 +813,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station3.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
+        icone: "img/vehicles charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -824,7 +824,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station4.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
+        icone: "img/vehicles charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -835,7 +835,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Golf Cart Charging Station",
         image: "img/Golfette charge station/1.jpeg",
-        icone: "img/Golfette charge station/GCS.jpg",
+        icone: "img/Golfette charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -846,7 +846,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Golf Cart Charging Station",
         image: "img/Golfette charge station/2.jpeg",
-        icone: "img/Golfette charge station/GCS.jpg",
+        icone: "img/Golfette charge station/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -858,7 +858,7 @@ var projets = [
         Informations_complémentaires: "• 9% photovoltaic coverage in 2025<br>• 1,782 kWp installed capacity<br>• 567.53 MWh produced in 2025<br>• ~2,570 MWh/year production potential",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -870,7 +870,7 @@ var projets = [
         Informations_complémentaires: "• 10% photovoltaic coverage in 2025<br>• 729.3 kWp photovoltaic installed capacity<br>• 377.95 MWh produced in 2025 (photovoltaic)<br>• ~1,380 MWh/year production potential (photovoltaic)<br>• 250 solar thermal panels installed<br>• ~600 MWh/year solar thermal energy production<br>• 420 kW solar thermal power<br>• 585 m² solar collector surface area<br>• ~45 m³/day hot water production<br>• 250 kW backup system power (heat pump)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/2.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -882,7 +882,7 @@ var projets = [
         Informations_complémentaires: "• 10% photovoltaic coverage in 2025<br>• 729.3 kWp photovoltaic installed capacity<br>• 377.95 MWh produced in 2025 (photovoltaic)<br>• ~1,380 MWh/year production potential (photovoltaic)<br>• 250 solar thermal panels installed<br>• ~600 MWh/year solar thermal energy production<br>• 420 kW solar thermal power<br>• 585 m² solar collector surface area<br>• ~45 m³/day hot water production<br>• 250 kW backup system power (heat pump)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/2.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -894,7 +894,7 @@ var projets = [
         Informations_complémentaires: "• 10% photovoltaic coverage in 2025<br>• 729.3 kWp photovoltaic installed capacity<br>• 377.95 MWh produced in 2025 (photovoltaic)<br>• ~1,380 MWh/year production potential (photovoltaic)<br>• 250 solar thermal panels installed<br>• ~600 MWh/year solar thermal energy production<br>• 420 kW solar thermal power<br>• 585 m² solar collector surface area<br>• ~45 m³/day hot water production<br>• 250 kW backup system power (heat pump)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/2.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -906,7 +906,7 @@ var projets = [
         Informations_complémentaires: "• 10% photovoltaic coverage in 2025<br>• 729.3 kWp photovoltaic installed capacity<br>• 377.95 MWh produced in 2025 (photovoltaic)<br>• ~1,380 MWh/year production potential (photovoltaic)<br>• 250 solar thermal panels installed<br>• ~600 MWh/year solar thermal energy production<br>• 420 kW solar thermal power<br>• 585 m² solar collector surface area<br>• ~45 m³/day hot water production<br>• 250 kW backup system power (heat pump)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/2.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -918,7 +918,7 @@ var projets = [
         Informations_complémentaires: "• 10% photovoltaic coverage in 2025<br>• 729.3 kWp photovoltaic installed capacity<br>• 377.95 MWh produced in 2025 (photovoltaic)<br>• ~1,380 MWh/year production potential (photovoltaic)<br>• 250 solar thermal panels installed<br>• ~600 MWh/year solar thermal energy production<br>• 420 kW solar thermal power<br>• 585 m² solar collector surface area<br>• ~45 m³/day hot water production<br>• 250 kW backup system power (heat pump)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/2.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -930,7 +930,7 @@ var projets = [
         Informations_complémentaires: "• 13% photovoltaic coverage in 2025<br>• 326.40 kWp photovoltaic installed capacity<br>• 293.73 MWh produced in 2025 (photovoltaic)<br>• ~436 MWh/year production potential (photovoltaic)<br>• 6 solar thermal collectors installed<br>• ~19,700 kWh/year solar thermal energy production",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/3.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -942,7 +942,7 @@ var projets = [
         Informations_complémentaires: "• 5% photovoltaic coverage in 2025<br>• 64.6 kWp photovoltaic installed capacity<br>• 54.77 MWh produced in 2025<br>• ~102 MWh/year production potential (photovoltaic)",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/4.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -954,7 +954,7 @@ var projets = [
         Informations_complémentaires: "• 16% photovoltaic coverage in 2025<br>• 87.6 kWp photovoltaic installed capacity<br>• 75.44 MWh produced in 2025 (photovoltaic)<br>• ~126 MWh/year production potential (photovoltaic)<br>• 2 solar thermal collectors installed<br>• ~4,000 kWh/year solar thermal energy production",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/5.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -966,7 +966,7 @@ var projets = [
         Informations_complémentaires: "• 5% photovoltaic coverage in 2025<br>• 71.06 kWp photovoltaic installed capacity<br>• 24.12 MWh produced in 2025 (photovoltaic)<br>• ~105 MWh/year production potential (photovoltaic)<br>• 35 solar thermal panels installed<br>• 210 m² solar collector surface area<br>• 70 kW backup system power (heat pump) (COP 2.57)<br>• ~88 MWh/year solar thermal energy production",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/6.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -978,7 +978,7 @@ var projets = [
         Informations_complémentaires: "• 12% photovoltaic coverage in 2025<br>• 428 kWp photovoltaic installed capacity<br>• 141.32 MWh produced in 2025 (photovoltaic)<br>• ~736.8 MWh/year production potential (photovoltaic)<br>• 57 solar thermal collectors installed<br>• ~9.25 MWh/year solar thermal energy production",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/7.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -990,7 +990,7 @@ var projets = [
         sousType: "Photovoltaic / Solar Thermal",
         Informations_complémentaires: "• 16% photovoltaic coverage in 2025<br>• 63 kWp photovoltaic installed capacity<br>• 77.5 MWh produced in 2025 (photovoltaic)<br>• Solar thermal collectors installed",
         image: "img/Photovoltaique/8.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1002,7 +1002,7 @@ var projets = [
         Informations_complémentaires: "• 15 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/9.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1014,7 +1014,7 @@ var projets = [
         Informations_complémentaires: "• 30 solar thermal collectors installed<br>• ~60 MWh/year solar thermal energy production",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/10.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1026,7 +1026,7 @@ var projets = [
         Informations_complémentaires: "• 70 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/11.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1038,7 +1038,7 @@ var projets = [
         Informations_complémentaires: "• 70 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/11.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1050,7 +1050,7 @@ var projets = [
         Informations_complémentaires: "• 240 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/12.jpeg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1062,7 +1062,7 @@ var projets = [
         Informations_complémentaires: "• 240 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/12.jpeg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1074,11 +1074,11 @@ var projets = [
         Informations_complémentaires: "• 240 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/12.jpeg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
-        id: "BG-093",
+        id: "BG-0093",
         nom: "RESIDENCE BUILDING R11",
         coordinates: [32.21466426575089, -7.937349209252868],
         description: "Solar thermal system installed on residential buildings H5, H7, H9, and H11 producing hot water from solar energy. The installation includes 240 solar thermal collectors.",
@@ -1086,7 +1086,7 @@ var projets = [
         Informations_complémentaires: "• 240 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/12.jpeg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1098,7 +1098,7 @@ var projets = [
         Informations_complémentaires: "• 80 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/13.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1110,7 +1110,7 @@ var projets = [
         Informations_complémentaires: "• 10 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/14.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1122,7 +1122,7 @@ var projets = [
         Informations_complémentaires: "• 60 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/15.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1133,7 +1133,7 @@ var projets = [
         type: "Energy",
         Informations_complémentaires: "• 80 solar thermal collectors installed",
         sousType: "Photovoltaic / Solar Thermal",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         image: "img/Photovoltaique/16.jpg",
         campus: "Ben Guerir"
     },
@@ -1287,7 +1287,7 @@ var projets = [
         type: "Waste",
         sousType: "Waste Sorting Center",
         image: "img/Waste sorting center/2.jpg",
-        icone: "img/Waste sorting center/WS.jpg",
+        icone: "img/Waste sorting center/icon.jpg",
         campus: "Ben Guerir"
     },
 // Ecomobility
@@ -1299,7 +1299,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Bicycle / Electric Scooter Parking",
         image: "img/parking velos/1.jpeg",
-        icone: "img/parking velos/TE.jpg",
+        icone: "img/parking velos/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1310,7 +1310,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Bicycle / Electric Scooter Parking",
         image: "img/parking velos/2.jpeg",
-        icone: "img/parking velos/TE.jpg",
+        icone: "img/parking velos/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1321,7 +1321,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Bicycle / Electric Scooter Parking",
         image: "img/parking velos/4.jpeg",
-        icone: "img/parking velos/TE.jpg",
+        icone: "img/parking velos/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1389,7 +1389,7 @@ var projets = [
         type: "Water",
         sousType: "Key Water Infrastructure",
         image: "img/Water infrastructure/1.png",
-        icone: "img/Water infrastructure/water.jpg",
+        icone: "img/Water infrastructure/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1400,7 +1400,7 @@ var projets = [
         type: "Water",
         sousType: "Key Water Infrastructure",
         image: "img/Water infrastructure/2.jpg",
-        icone: "img/Water infrastructure/water.jpg",
+        icone: "img/Water infrastructure/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1411,7 +1411,7 @@ var projets = [
         type: "Water",
         sousType: "Key Water Infrastructure",
         image: "img/Water infrastructure/3.jpg",
-        icone: "img/Water infrastructure/water.jpg",
+        icone: "img/Water infrastructure/icon.jpg",
         campus: "Ben Guerir"
     },
     {
@@ -1422,7 +1422,7 @@ var projets = [
         type: "Water",
         sousType: "Key Water Infrastructure",
         image: "img/Water infrastructure/4.png",
-        icone: "img/Water infrastructure/water.jpg",
+        icone: "img/Water infrastructure/icon.jpg",
         campus: "Ben Guerir"
     },
         {
@@ -1574,7 +1574,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1585,7 +1585,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1596,7 +1596,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1607,7 +1607,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1618,7 +1618,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1629,7 +1629,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1640,7 +1640,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1651,7 +1651,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1662,7 +1662,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1673,7 +1673,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
     {
@@ -1684,7 +1684,7 @@ var projets = [
         type: "Energy",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/1.jpg",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "Rabat"
     },
 
@@ -2094,7 +2094,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "GEP"
     },{
         id: "GEP-002",
@@ -2105,7 +2105,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "GEP"
     },{
         id: "GEP-003",
@@ -2116,7 +2116,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "GEP"
     },{
         id: "GEP-004",
@@ -2127,7 +2127,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "GEP"
     },{
         id: "GEP-005",
@@ -2221,7 +2221,7 @@ var projets = [
         type: "Ecomobility",
         sousType: "Electric Vehicle Charging Station",
         image: "img/vehicles charge station/charge_station1.jpg",
-        icone: "img/vehicles charge station/VCS.jpg",
+        icone: "img/vehicles charge station/icon.jpg",
         campus: "GEP"
     }, 
     // AITTC
@@ -2255,7 +2255,7 @@ var projets = [
         type: "Biodiversity",
         sousType: "PÉPINIÈRE",
         image: "img/PÉPINIÈRE/1.jpg",
-        icone: "img/PÉPINIÈRE/CB.jpg",
+        icone: "img/PÉPINIÈRE/icon.jpg",
         campus: "AITTC"
     },
             {
@@ -2276,7 +2276,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "AITTC" 
     },{
         id: "AI-006",
@@ -2287,7 +2287,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "AITTC"    
     },{
         id: "AI-007",
@@ -2298,10 +2298,10 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "AITTC"    
     },{
-        id: "AI-007",
+        id: "AI-0007",
         nom: "PLANT IT FORWARD",
         coordinates: [32.21928258160126, -7.894693882740697],
         description: "",
@@ -2377,7 +2377,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     },{
         id: "LE-002",
@@ -2388,7 +2388,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-003",
@@ -2399,7 +2399,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-004",
@@ -2410,7 +2410,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-005",
@@ -2421,7 +2421,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-006",
@@ -2432,7 +2432,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-007",
@@ -2443,7 +2443,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
         id: "LE-008",
@@ -2454,7 +2454,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, 
     {
@@ -2509,7 +2509,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "DATA CENTER"
     },{
         id: "DC-002",
@@ -2520,7 +2520,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "DATA CENTER"
     },{
         id: "DC-003",
@@ -2531,7 +2531,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "DATA CENTER"
     },{
         id: "DC-004",
@@ -2584,7 +2584,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "CLUB DE TIR"    
     },{
         id: "CT-002",
@@ -2595,10 +2595,10 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "CLUB DE TIR"    
     }, {
-        id: "CT-002",
+        id: "CT-0002",
         nom: "",
         coordinates: [32.2137267877187, -7.896301165170451],
         description: "",
@@ -2606,7 +2606,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "CLUB DE TIR"    
     },   {
         id: "CT-003",
@@ -2629,7 +2629,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },
     {
@@ -2641,7 +2641,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-003",
@@ -2652,7 +2652,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },
     {
@@ -2664,7 +2664,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-005",
@@ -2675,7 +2675,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-006",
@@ -2686,7 +2686,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-007",
@@ -2697,7 +2697,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-008",
@@ -2708,7 +2708,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-009",
@@ -2719,7 +2719,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
         id: "VC-010",
@@ -2742,7 +2742,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-002",
@@ -2753,7 +2753,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-003",
@@ -2764,7 +2764,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-004",
@@ -2775,7 +2775,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-005",
@@ -2786,11 +2786,11 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },
     ,{
-        id: "VM-005",
+        id: "VM-0005",
         nom: "",
         coordinates: [32.20776544006508, -7.93083708888329],
         description: "",
@@ -2798,7 +2798,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-006",
@@ -2809,7 +2809,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-007",
@@ -2820,7 +2820,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
         id: "VM-008",
@@ -2853,7 +2853,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-003",
@@ -2864,7 +2864,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-004",
@@ -2875,7 +2875,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-005",
@@ -2886,7 +2886,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-006",
@@ -2897,7 +2897,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-007",
@@ -2908,7 +2908,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },{
         id: "BP-008",
@@ -2919,7 +2919,7 @@ var projets = [
         Informations_complémentaires: "",
         sousType: "Photovoltaic / Solar Thermal",
         image: "img/Photovoltaique/",
-        icone: "img/Photovoltaique/IPT.jpg",
+        icone: "img/Photovoltaique/icon.jpg",
         campus: "SMART BUILDING PARK"
     },
 ];

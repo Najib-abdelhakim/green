@@ -719,11 +719,11 @@ body {
 }
 
 /* ==================== COULEURS DES BOUTONS PAR THÈME ==================== */
-.type-filter-btn[data-type="all"].active { background: #01568b !important; color: white !important; }
+.type-filter-btn[data-type="all"].active { background: #3e6f8d !important; color: white !important; }
 .type-filter-btn[data-type="Biodiversity"].active { background: #34a56f !important; color: white !important; }
 .type-filter-btn[data-type="Buildings"].active { background: #b700ff !important; color: white !important; }
 .type-filter-btn[data-type="Ecomobility"].active { background: #00bcd4 !important; color: white !important; }
-.type-filter-btn[data-type="Energy"].active { background: #ffcc00 !important; color: #333 !important; }
+.type-filter-btn[data-type="Energy"].active { background: #ffcc00 !important; color: white !important; }
 .type-filter-btn[data-type="Engagement In Action"].active { background: #e67e22 !important; color: white !important; }
 .type-filter-btn[data-type="Waste"].active { background: #cd0e0e !important; color: white !important; }
 .type-filter-btn[data-type="Water"].active { background: #0099ff !important; color: white !important; }
