@@ -30,13 +30,13 @@ body {
 
 /* ==================== SIDEBAR ==================== */
 .sidebar {
-    width: 320px;
+    width: 310px;
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
     border-left: 1px solid rgba(1, 86, 139, 0.25);
     overflow-y: auto;
-    padding: 10px 10px;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0);
+    padding: 20px 16px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
     z-index: 1000;
     transition: all 0.3s;
 }
@@ -140,92 +140,225 @@ body {
     background: #cde0e8;
 }
 
-/* ==================== CARTES ==================== */
-.type-card {
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 18px;
+/* ==================== GRILLE PROJETS (SOUS-TYPES) ==================== */
+.sous-types-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.sous-type-item {
+    background: white;
+    border-radius: 20px;
+    padding: 16px 10px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    border: 1px solid #e8edf2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #d4e2ea;
+}
+
+.sous-type-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #01568b08, #01568b15);
+    opacity: 0;
+    transition: opacity 0.35s;
+    z-index: 0;
+}
+
+.sous-type-item:hover::before {
+    opacity: 1;
+}
+
+.sous-type-item:hover {
+    transform: translateY(-6px);
+    border-color: #01568b;
+    box-shadow: 0 12px 25px rgba(1, 86, 139, 0.12);
+}
+
+.sous-type-item img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eef3f8;
+    background: white;
+    padding: 5px;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.sous-type-item:hover img {
+    transform: scale(1.05);
+    border-color: #01568b;
+    box-shadow: 0 5px 15px rgba(1, 86, 139, 0.2);
+}
+
+.sous-type-noimg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #eef3f8, #e0e8ef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #01568b;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sous-type-info {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.sous-type-nom {
+    font-weight: 700;
+    color: #013a5c;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+}
+
+.sous-type-count {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #01568b;
+    background: #eef3f8;
+    padding: 4px 10px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.sous-type-item:hover .sous-type-count {
+    background: #01568b;
+    color: white;
+}
+
+.sous-type-arrow {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s;
+    color: #01568b;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.sous-type-item:hover .sous-type-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sous-type-item.active {
+    background: linear-gradient(135deg, #006fb4, #0091e5);
+    border-color: #01568b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(1, 86, 139, 0.25);
+}
+
+.sous-type-item.active .sous-type-nom,
+.sous-type-item.active .sous-type-count {
+    color: white;
+}
+
+.sous-type-item.active .sous-type-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sous-type-item.active .sous-type-noimg,
+.sous-type-item.active img {
+    background: white;
+    border-color: white;
+}
+
+.sous-type-item.active .sous-type-arrow {
+    color: white;
+    opacity: 1;
+}
+
+/* ==================== CARTES TRAJETS ==================== */
+.type-card {
+    background: white;
+    border-radius: 24px;
     margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .type-header {
-    background: linear-gradient(105deg, #01568b 0%, #01568b 100%);
-    color: white;
+    background: #01568b;
     padding: 12px 16px;
-    cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.type-header .toggle-icon {
+.type-header:hover {
+    background: #023b5e;
+}
+
+.type-nom {
+    color: white;
     font-size: 14px;
-    transition: transform 0.25s;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.toggle-icon {
+    color: white;
+    font-size: 18px;
+    transition: transform 0.3s ease;
 }
 
 .type-header.collapsed .toggle-icon {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
 }
 
 .type-content {
-    padding: 12px;
-    max-height: 480px;
+    max-height: 500px;
     overflow-y: auto;
-    background: #fefefe;
 }
 
 .type-content.collapsed {
     display: none;
 }
 
-/* ==================== SOUS-TYPES ==================== */
-.sous-type-item {
+/* Icône trajet */
+.trajet-icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background: var(--trajet-color, #01568b);
     display: flex;
     align-items: center;
-    padding: 10px 12px;
-    margin: 6px 0;
-    background: white;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-left: 4px solid transparent;
-}
-
-.sous-type-item:hover {
-    background: #e8f0f5;
-    border-left-color: #01568b;
-}
-
-.sous-type-item img {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    margin-right: 12px;
-    object-fit: cover;
-    border: 2px solid #c8dce5;
-    background: white;
-    padding: 4px;
-}
-
-.sous-type-info {
-    flex: 1;
-}
-
-.sous-type-nom {
-    font-weight: 700;
-    color: #013a5c;
-    font-size: 0.85rem;
-}
-
-.sous-type-count {
-    font-size: 0.7rem;
-    color: #5a7e92;
-    margin-top: 3px;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
 }
 
 /* ==================== RESET ==================== */
@@ -321,12 +454,12 @@ body {
 
 .popup-badge {
     display: inline-block;
-    background: #e8f0f5;
-    color: #01568b;
-    font-size: 0.7rem;
+    background: #01568b;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 30px;
     margin-bottom: 10px;
 }
 
@@ -341,178 +474,271 @@ body {
 }
 
 .popup-footer {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #dce8ef;
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #eef3f8;
 }
 
 .info-complementaire {
+    font-size: 12px;
+    color: #7f8c8d;
     background: #eff4f8;
     border-left: 3px solid #0179b8;
     padding: 8px 10px;
-    font-size: 0.75rem;
     border-radius: 10px;
-    color: #2d4a5e;
-    font-weight: 500;
 }
 
 .info-complementaire strong {
     color: #01568b;
-    font-weight: 700;
 }
 
 /* ==================== MARQUEURS ==================== */
+.custom-marker {
+    background: transparent !important;
+    border: none !important;
+}
+
 .marker-container {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
     width: 80px;
     height: 80px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .marker-glow {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
     top: 50%;
     left: 50%;
+    width: 68px;
+    height: 68px;
     transform: translate(-50%, -50%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.marker-pulse {
-    position: absolute;
-    width: 60px;
-    height: 0px;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.5;
+    opacity: 1;
+    transition: opacity 0.3s ease;
     pointer-events: none;
     z-index: 1;
 }
 
 .marker-image {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    border-radius: 50% !important;
+    border: 3px solid white;
+    background: white;
+    padding: 3px;
+    object-fit: cover !important;
     position: relative;
     z-index: 2;
-    transition: transform 0.2s ease;
-    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .marker-container:hover .marker-image {
-    transform: scale(1.15);
+    transform: scale(1.05);
 }
 
 .marker-container:hover .marker-glow {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.15);
 }
 
-/* ==================== CONTROLES CAMPUS ==================== */
-.campus-controls {
+/* ==================== MENU RADIAL CAMPUS ==================== */
+.campus-radial {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 30px;
+    right: 30px;
     z-index: 900;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    padding: 10px 16px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.campus-radial-btn {
+    width: 50px;
+    height: 50px;
+    background: #01568b;
+    border-radius: 50%;
     display: flex;
-    gap: 8px;
-    max-width: 90%;
-    overflow-x: auto;
-    white-space: nowrap;
-    border: 1px solid rgba(1, 86, 139, 0.2);
-    scrollbar-width: thin;
-}
-
-.campus-controls::-webkit-scrollbar {
-    height: 4px;
-}
-
-.campus-controls::-webkit-scrollbar-track {
-    background: #e0e0e0;
-    border-radius: 10px;
-}
-
-.campus-controls::-webkit-scrollbar-thumb {
-    background: #01568b;
-    border-radius: 10px;
-}
-
-.campus-btn {
-    background: #01568b;
-    border: none;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 0.7rem;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    color: white;
 }
 
-.campus-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+.campus-radial-btn:hover {
+    transform: scale(1.05);
+    background: #013a5c;
 }
+
+.campus-radial-menu {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.campus-radial-menu.open {
+    display: flex;
+}
+
+.campus-radial-item {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.campus-radial-item:hover {
+    transform: scale(1.1);
+}
+
+.campus-radial-item::after {
+    content: attr(data-name);
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.campus-radial-item:hover::after {
+    opacity: 1;
+}
+
+/* Couleurs des boutons campus */
+.campus-radial-item[data-campus="Ben Guerir"] { background: linear-gradient(135deg, #bc4d29, #d74a2b); }
+.campus-radial-item[data-campus="Rabat"] { background: linear-gradient(135deg, #808080, #696969); }
+.campus-radial-item[data-campus="GEP"] { background: linear-gradient(135deg, #a4c840, #61873d); }
+.campus-radial-item[data-campus="AITTC"] { background: linear-gradient(135deg, #17a2b8, #00bcd4); }
+.campus-radial-item[data-campus="ASARI Laayoune"] { background: linear-gradient(135deg, #bc9d75, #e6cfaf); }
+.campus-radial-item[data-campus="LYCÉE D'EXCELLENCE"] { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.campus-radial-item[data-campus="DATA CENTER"] { background: linear-gradient(135deg, #3498db, #2980b9); }
+.campus-radial-item[data-campus="CLUB DE TIR"] { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.campus-radial-item[data-campus="VILLAS DES CHERCHERUS"] { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.campus-radial-item[data-campus="VILLAS MARGUERITTE"] { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.campus-radial-item[data-campus="SMART BUILDING PARK"] { background: linear-gradient(135deg, #1abc9c, #16a085); }
+
+/* ==================== MODAL ==================== */
+.icon-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.icon-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10000;
+}
+
+.icon-modal-close:hover {
+    transform: scale(1.1);
+    color: #ff6b6b;
+}
+
+.icon-modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease;
+}
+
+.icon-modal-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon-modal-placeholder {
+    width: 200px;
+    height: 200px;
+    background: #eef3f8;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: #01568b;
+    margin: 0 auto;
+}
+
+.icon-modal-title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* ==================== COULEURS DES BOUTONS PAR THÈME ==================== */
+.type-filter-btn[data-type="all"].active { background: #01568b !important; color: white !important; }
+.type-filter-btn[data-type="Biodiversity"].active { background: #34a56f !important; color: white !important; }
+.type-filter-btn[data-type="Buildings"].active { background: #b700ff !important; color: white !important; }
+.type-filter-btn[data-type="Ecomobility"].active { background: #00bcd4 !important; color: white !important; }
+.type-filter-btn[data-type="Energy"].active { background: #ffcc00 !important; color: #333 !important; }
+.type-filter-btn[data-type="Engagement In Action"].active { background: #e67e22 !important; color: white !important; }
+.type-filter-btn[data-type="Waste"].active { background: #cd0e0e !important; color: white !important; }
+.type-filter-btn[data-type="Water"].active { background: #0099ff !important; color: white !important; }
+.type-filter-btn.active { background: #01568b !important; color: white !important; }
 
 /* ==================== ANIMATIONS ==================== */
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0.2;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(2);
-        opacity: 0;
-    }
-}
-
-@keyframes glowPulse {
-    0% {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.15);
-    }
-    100% {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(1);
-    }
+@keyframes modalFadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes radioactive-glow {
-    0% {
-        filter: drop-shadow(0 0 2px currentColor);
-        opacity: 0.9;
-    }
-    50% {
-        filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 15px currentColor);
-        opacity: 1;
-    }
-    100% {
-        filter: drop-shadow(0 0 2px currentColor);
-        opacity: 0.9;
-    }
+    0% { filter: drop-shadow(0 0 2px currentColor); opacity: 0.9; }
+    50% { filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 15px currentColor); opacity: 1; }
+    100% { filter: drop-shadow(0 0 2px currentColor); opacity: 0.9; }
 }
 
 /* ==================== TRAJETS NEON ==================== */
@@ -525,49 +751,22 @@ body {
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 280px;
-    }
+    .sidebar { width: 280px; }
+    .leaflet-popup-content { width: 300px !important; }
+    .popup-image-top { max-height: 150px; }
+    .popup-image-top img { max-height: 150px; }
+    .campus-radial-item::after { right: 40px; padding: 4px 10px; font-size: 0.6rem; }
+}
 
-    .leaflet-popup-content {
-        width: 300px !important;
-    }
-
-    .popup-image-top {
-        max-height: 150px;
-    }
-
-    .popup-image-top img {
-        max-height: 150px;
-    }
-
-    .campus-controls {
-        bottom: 15px;
-        left: 10px;
-        padding: 5px 12px;
-        gap: 8px;
-    }
-
-    .campus-btn {
-        padding: 6px 12px;
-        font-size: 0.7rem;
-    }
+@media (max-width: 500px) {
+    .sous-types-list { grid-template-columns: 1fr; gap: 10px; }
+    .sous-type-item { flex-direction: row; text-align: left; padding: 12px 15px; gap: 15px; }
+    .sous-type-item img { width: 45px; height: 45px; }
+    .sous-type-info { text-align: left; }
+    .sous-type-arrow { position: static; opacity: 0.5; transform: none; margin-left: auto; }
+    .sous-type-item:hover .sous-type-arrow { opacity: 1; }
 }
 
 @media (max-width: 800px) {
-    .marker-glow,
-    .marker-pulse {
-        width: 60px;
-        height: 60px;
-    }
-
-    .marker-image {
-        width: 32px !important;
-        height: 32px !important;
-    }
-
-    .marker-container {
-        width: 55px;
-        height: 55px;
-    }
+    .marker-container { width: 55px; height: 55px; }
 }

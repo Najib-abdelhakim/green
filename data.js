@@ -24,7 +24,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-002",
+        id: "BG-003",
         nom: "Insect Shelter",
         coordinates: [32.2168180, -7.9367068],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -34,7 +34,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Ben Guerir"
     },    {
-        id: "BG-002",
+        id: "BG-004",
         nom: "Insect Shelter",
         coordinates: [32.2147238, -7.9390282],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -44,7 +44,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Ben Guerir"
     },    {
-        id: "BG-002",
+        id: "BG-005",
         nom: "Insect Shelter",
         coordinates: [32.2135338, -7.9391053],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -54,7 +54,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Ben Guerir"
     },    {
-        id: "BG-002",
+        id: "BG-006",
         nom: "Insect Shelter",
         coordinates: [32.2134413, -7.9419491],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -65,7 +65,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-002",
+        id: "BG-007",
         nom: "Insect Shelter",
         coordinates: [32.2147689, -7.9420923],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -76,7 +76,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-003",
+        id: "BG-008",
         nom: "Avifaune",
         coordinates: [32.217691, -7.936624],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -87,7 +87,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-004",
+        id: "BG-009",
         nom: "Avifaune",
         coordinates: [32.217552, -7.936842],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -98,7 +98,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-005",
+        id: "BG-010",
         nom: "Avifaune",
         coordinates: [32.218370, -7.938379],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -109,7 +109,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-006",
+        id: "BG-011",
         nom: "Avifaune",
         coordinates: [32.218126, -7.938776],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -120,7 +120,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-007",
+        id: "BG-012",
         nom: "Avifaune",
         coordinates: [32.217683, -7.939281],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -131,7 +131,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-008",
+        id: "BG-013",
         nom: "Avifaune",
         coordinates: [32.218645, -7.937441],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -142,7 +142,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-009",
+        id: "BG-014",
         nom: "Avifaune",
         coordinates: [32.220265, -7.939769],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -153,7 +153,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-010",
+        id: "BG-015",
         nom: "Avifaune",
         coordinates: [32.219632, -7.939860],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -164,7 +164,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-086",
+        id: "BG-016",
         nom: "Avifaune",
         coordinates: [32.218142, -7.937695],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -175,7 +175,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-087",
+        id: "BG-017",
         nom: "Avifaune",
         coordinates: [32.218457, -7.937153],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -186,7 +186,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-088",
+        id: "BG-018",
         nom: "Avifaune",
         coordinates: [32.216122, -7.936044],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -197,7 +197,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-011",
+        id: "BG-019",
         nom: "Botanic Garden",
         coordinates: [32.217534, -7.936520],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -208,7 +208,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-012",
+        id: "BG-020",
         nom: "Botanic Garden",
         coordinates: [32.218388, -7.936885],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -219,7 +219,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-013",
+        id: "BG-021",
         nom: "Botanic Garden",
         coordinates: [32.216590, -7.936799],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -230,7 +230,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-014",
+        id: "BG-022",
         nom: "Botanic Garden",
         coordinates: [32.216391, -7.937035],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -241,7 +241,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-015",
+        id: "BG-023",
         nom: "Botanic Garden",
         coordinates: [32.216100, -7.937529],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -252,7 +252,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-016",
+        id: "BG-024",
         nom: "Botanic Garden",
         coordinates: [32.216009, -7.937754],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -263,7 +263,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-017",
+        id: "BG-025",
         nom: "Botanic Garden",
         coordinates: [32.216013, -7.936796],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -274,7 +274,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-018",
+        id: "BG-026",
         nom: "Botanic Garden",
         coordinates: [32.217449, -7.939258],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -285,7 +285,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-019",
+        id: "BG-027",
         nom: "Botanic Garden",
         coordinates: [32.217708, -7.938735],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -296,7 +296,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-020",
+        id: "BG-028",
         nom: "Botanic Garden",
         coordinates: [32.213470, -7.939281],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -307,7 +307,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-077",
+        id: "BG-028",
         nom: "Botanic Garden",
         coordinates: [32.214880, -7.940977],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -318,7 +318,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-078",
+        id: "BG-030",
         nom: "Botanic Garden",
         coordinates: [32.214524, -7.940601],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -329,7 +329,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-079",
+        id: "BG-031",
         nom: "Botanic Garden",
         coordinates: [32.217563, -7.938670],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -340,7 +340,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-080",
+        id: "BG-032",
         nom: "Botanic Garden",
         coordinates: [32.215330, -7.938469],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -352,7 +352,7 @@ var projets = [
     },
 
     {
-        id: "BG-083",
+        id: "BG-033",
         nom: "Botanic Garden",
         coordinates: [32.219492, -7.940063],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -363,7 +363,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-084",
+        id: "BG-034",
         nom: "Botanic Garden",
         coordinates: [32.219740, -7.939566],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -375,7 +375,7 @@ var projets = [
     },
 
     {
-        id: "BG-075",
+        id: "BG-035",
         nom: "Coxibio",
         coordinates: [32.219383, -7.938441],
         description: "A biological control program that replaces chemical pesticides with biological control solutions in UM6P's green spaces.",
@@ -386,7 +386,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-076",
+        id: "BG-036",
         nom: "Coxibio",
         coordinates: [32.218331, -7.936263],
         description: "A biological control program that replaces chemical pesticides with biological control solutions in UM6P's green spaces.",
@@ -397,7 +397,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-114",
+        id: "BG-037",
         nom: "Biological Pest Control",
         coordinates: [32.2178190004662, -7.937399486233677],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
@@ -408,7 +408,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-124",
+        id: "BG-038",
         nom: "Biological Pest Control",
         coordinates: [32.217329535415416, -7.936906652776126],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
@@ -419,7 +419,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-134",
+        id: "BG-039",
         nom: "Biological Pest Control",
         coordinates: [32.21631434017023, -7.938288729152208],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
@@ -430,7 +430,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-144",
+        id: "BG-039",
         nom: "Biological Pest Control",
         coordinates: [32.21680381071754, -7.938781562588925],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
@@ -443,7 +443,7 @@ var projets = [
 
 // Buildings
     {
-        id: "BG-021",
+        id: "BG-040",
         nom: "SCIENCE AND TECHNOLOGY HUB",
         coordinates: [32.21682000631564, -7.938524657501539],
         description: "Scientific and technological research hub, inaugurated in 2023, LEED BD+C v4 – Certified (2026), composed of 9 buildings with a total area of 55,000 m², including multidisciplinary laboratories, research spaces and offices, organized around open spaces that foster scientific interaction, with outdoor amenities and an underground parking facility.",
@@ -455,7 +455,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-024",
+        id: "BG-041",
         nom: "Digital Learning Lab (DLL)",
         coordinates: [32.217374, -7.940087],
         description: "Building dedicated to teaching and digital activities, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 3,383 m², including computer labs, training spaces, studios, and collaborative work areas.",
@@ -467,7 +467,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-023",
+        id: "BG-042",
         nom: "RIAD CENTER (SHBM)",
         coordinates: [32.213105, -7.939945],
         description: "Mixed-use building combining administrative functions and a hospitality school, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 25,774 m², including offices, meeting rooms, collaborative spaces, amphitheaters, dining areas and a cafeteria, with underground and outdoor parking equipped with electric vehicle charging stations.",
@@ -479,7 +479,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-024",
+        id: "BG-043",
         nom: "RESIDENCE BUILDING H6",
         coordinates: [32.21897625957459, -7.938984439900163],
         description: "Student residences, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 42,810 m², comprising 5 residential buildings with individual units and shared spaces.",
@@ -491,7 +491,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-025",
+        id: "BG-044",
         nom: "RESIDENCE BUILDING H8",
         coordinates: [32.21856136796075, -7.9395421552587475],
         description: "Student residences, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 42,810 m², comprising 5 residential buildings with individual units and shared spaces.",
@@ -503,7 +503,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-026",
+        id: "BG-045",
         nom: "RESIDENCE BUILDING H10",
         coordinates: [32.21820342073337, -7.9400373680340435],
         description: "Student residences, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 42,810 m², comprising 5 residential buildings with individual units and shared spaces.",
@@ -515,7 +515,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-027",
+        id: "BG-046",
         nom: "RESIDENCE BUILDING H12",
         coordinates: [32.217780390368006, -7.940585467597047],
         description: "Student residences, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 42,810 m², comprising 5 residential buildings with individual units and shared spaces.",
@@ -527,7 +527,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-028",
+        id: "BG-047",
         nom: "RESIDENCE BUILDING H14",
         coordinates: [32.217398034312204, -7.941143182955631],
         description: "Student residences, inaugurated in 2023, currently pursuing LEED BD+C v4: New Construction certification, with a total area of 42,810 m², comprising 5 residential buildings with individual units and shared spaces.",
@@ -539,7 +539,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-034",
+        id: "BG-048",
         nom: "EMINE TEACHING BUILDING",
         coordinates: [32.218296, -7.935535],
         description: "Teaching building, inaugurated in 2017, LEED 2009 BD+C: New Construction – Silver certified (2015), with a total area of 7,400 m², including classrooms, computer labs, administrative offices, and collaborative learning spaces, providing an environment suited to academic activities and campus life.",
@@ -550,7 +550,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-035",
+        id: "BG-049",
         nom: "SPORTS HUB",
         coordinates: [32.217096, -7.935203],
         description: "Sports center dedicated to physical and aquatic activities, inaugurated in 2017, LEED 2009 BD+C: New Construction – Silver certified (2017), with a total area of 2,350 m², including fitness areas, weight training spaces, a swimming pool, locker rooms, and circulation and service areas, providing an environment suited to sports activities and user well-being.",
@@ -561,7 +561,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-021",
+        id: "BG-050",
         nom: "Student Center",
         coordinates: [32.215789, -7.942027],
         description: "Student life building, inaugurated in 2023, LEED BD+C v4: New Construction – Silver certified (2026), with a total area of 6,187 m², including dining areas, relaxation spaces, student association areas, and gathering spaces that support campus social and community life.",
@@ -573,7 +573,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-021",
+        id: "BG-051",
         nom: "CONVENTION CENTER",
         coordinates: [32.214063, -7.941566],
         description: "Event facility, inaugurated in 2023, LEED BD+C v4: New Construction – Silver certified (2026), with a total area of 19,530 m², including an auditorium, conference rooms, meeting spaces, a cafeteria, VIP areas, and an underground parking equipped with electric vehicle charging stations.",
@@ -585,7 +585,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-036",
+        id: "BG-052",
         nom: "Gymnase",
         coordinates: [32.216305, -7.936260],
         description: "Sports facility, inaugurated in 2023, LEED BD+C v4: New Construction – Silver certified (2026), with a total area of 5,680 m², including fitness areas, multipurpose rooms, sports courts, and locker rooms.",
@@ -597,7 +597,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-042",
+        id: "BG-053",
         nom: "RESEARCH CENTER",
         coordinates: [32.217674, -7.935822],
         description: "Research building, inaugurated in 2017, LEED O+M v4.1: Existing Buildings – Certified (2024), with a total area of 5,690 m², including laboratories, offices, and collaborative spaces dedicated to scientific activities and innovation.",
@@ -609,7 +609,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-045",
+        id: "BG-054",
         nom: "CONFERENCE CENTER",
         coordinates: [32.219116, -7.936408],
         description: "Building dedicated to events and conferences, inaugurated in 2024, LEED O+M v4: Existing Buildings – Gold certified (2024), with a total area of 3,450 m², including an auditorium, conference rooms, and multipurpose spaces suited for academic and institutional events.",
@@ -621,7 +621,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-045",
+        id: "BG-055",
         nom: "Green Center",
         coordinates: [32.218761, -7.936920],
         description: "Building dedicated to administrative activities, inaugurated in 2024, LEED O+M v4: Existing Buildings – Gold certified (2024), with a total area of 3,600 m², including offices, meeting rooms, conference rooms, and collaborative workspaces.",
@@ -633,7 +633,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-045",
+        id: "BG-056",
         nom: "NewRest",
         coordinates: [32.218089, -7.937116],
         description: "Building dedicated to collective dining services, inaugurated in 2024, LEED O+M v4: Existing Buildings – Gold certified (2025), with a total area of 5,500 m², including kitchens, dining areas, and food preparation and service zones.",
@@ -645,7 +645,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-045",
+        id: "BG-057",
         nom: "RESIDENCE BUILDING H2",
         coordinates: [32.2197326884967, -7.93795642436687],
         description: "Student housing building, inaugurated in 2024, LEED O+M v4: Existing Buildings – Gold certified (2024), with a total area of 8,000 m², including student accommodations and shared spaces dedicated to residential life.",
@@ -657,7 +657,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-042",
+        id: "BG-058",
         nom: "EMINE TEACHING BUILDING",
         coordinates: [32.218273, -7.935542],
         description: "Teaching building, inaugurated in 2017, LEED O+M v4.1: Existing Buildings – Silver certified (2024), with a total area of 7,400 m², including classrooms, computer labs, administrative offices, and collaborative learning spaces, with performance monitoring in operation and optimized building management.",
@@ -669,7 +669,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-046",
+        id: "BG-059",
         nom: "SPORTS HUB",
         coordinates: [32.217082, -7.935224],
         description: "Sports center dedicated to physical and aquatic activities, inaugurated in 2017, LEED O+M v4.1: Existing Buildings – Silver certified (2025), with a total area of 2,350 m², including fitness areas, weight training spaces, a swimming pool, locker rooms, and related service areas, with operational performance monitoring and optimized management of sports-related uses.",
@@ -683,7 +683,7 @@ var projets = [
 
 // Catering
     {
-        id: "BG-100",
+        id: "BG-060",
         nom: "Frigo Solidaire",
         coordinates: [32.218100, -7.937055],
         description: "An initiative to install a self-service fridge on campus, accessible to all, allowing anyone to freely deposit or take food at any time while raising awareness within the UM6P community about food waste.",
@@ -694,7 +694,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-101",
+        id: "BG-061",
         nom: "Frigo Solidaire",
         coordinates: [32.218825, -7.941018],
         description: "An initiative to install a self-service fridge on campus, accessible to all, allowing anyone to freely deposit or take food at any time while raising awareness within the UM6P community about food waste.",
@@ -705,7 +705,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-096",
+        id: "BG-062",
         nom: "Gachipain",
         coordinates: [32.218100, -7.937055],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -716,7 +716,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-097",
+        id: "BG-063",
         nom: "Gachipain",
         coordinates: [32.218825, -7.941018],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -727,7 +727,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-098",
+        id: "BG-064",
         nom: "Gachipain",
         coordinates: [32.21295863581021, -7.939902075944716],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -738,7 +738,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-099",
+        id: "BG-065",
         nom: "Gachipain",
         coordinates: [32.21563445144424, -7.933360256439344],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -749,7 +749,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "RG-110",
+        id: "RG-066",
         nom: "Gachipain",
         coordinates: [32.214349, -7.938645],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -760,7 +760,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "RG-110",
+        id: "RG-067",
         nom: "Gachipain",
         coordinates: [32.20902808348575, -7.933516221043072],
         description: "The Gachipain is an innovative tool designed to raise awareness about food waste, allowing diners to deposit uneaten bread, which is then collected and sent to the farm to feed chickens.",
@@ -771,7 +771,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-145",
+        id: "BG-068",
         nom: "GO Plant Shop",
         coordinates: [32.2164095, -7.9385290],
         description: "A sustainable initiative offering plants from the experimental farm through an on-campus kiosk, where plants are grown in reused cups collected from campus cafés, promoting circular practices and resource efficiency.",
@@ -784,7 +784,7 @@ var projets = [
 
 // Energy
     {
-        id: "BG-182",
+        id: "BG-069",
         nom: "Electric Vehicle Charging Station",
         coordinates: [32.2144798, -7.9404018],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
@@ -795,7 +795,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-183",
+        id: "BG-070",
         nom: "Electric Vehicle Charging Station",
         coordinates: [32.2130167, -7.9400099],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
@@ -806,7 +806,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-184",
+        id: "BG-071",
         nom: "Electric Vehicle Charging Station",
         coordinates: [32.2122703, -7.9407703],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
@@ -817,7 +817,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-185",
+        id: "BG-072",
         nom: "Electric Vehicle Charging Station",
         coordinates: [32.2133514, -7.9419595],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
@@ -828,7 +828,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-186",
+        id: "BG-073",
         nom: "Golf Cart Charging Station",
         coordinates: [32.2175643, -7.9372737],
         description: "UM6P campus provides dedicated charging stations for golf carts, helping the university community move around more easily while supporting low-emission transportation initiatives.",
@@ -839,7 +839,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-186",
+        id: "BG-074",
         nom: "Golf Cart Charging Station",
         coordinates: [32.2164254, -7.9382990],
         description: "UM6P campus provides dedicated charging stations for golf carts, helping the university community move around more easily while supporting low-emission transportation initiatives.",
@@ -850,7 +850,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-048",
+        id: "BG-075",
         nom: "SCIENCE & TECHNOLOGY HUB",
         coordinates: [32.21679255101053, -7.938519356060215],
         description: "Photovoltaic installation producing electricity from solar energy for the Science & Technology Hub. The system has an installed capacity of 1,782 kWp and generated 567.53 MWh in 2025.",
@@ -862,7 +862,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-049",
+        id: "BG-076",
         nom: "RESIDENCE BUILDING H6",
         coordinates: [32.218976660324195, -7.938994074509848],
         description: "Solar systems installed on the residential buildings producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 729.3 kWp and generated 377.95 MWh in 2025. The solar thermal systems, composed of 250 panels, are supported by heat pump backup systems.",
@@ -874,7 +874,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-049",
+        id: "BG-077",
         nom: "RESIDENCE BUILDING H8",
         coordinates: [32.21854941829586, -7.9395456932927715],
         description: "Solar systems installed on the residential buildings producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 729.3 kWp and generated 377.95 MWh in 2025. The solar thermal systems, composed of 250 panels, are supported by heat pump backup systems.",
@@ -886,7 +886,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-049",
+        id: "BG-078",
         nom: "RESIDENCE BUILDING H10",
         coordinates: [32.21819447723812, -7.940027388565693],
         description: "Solar systems installed on the residential buildings producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 729.3 kWp and generated 377.95 MWh in 2025. The solar thermal systems, composed of 250 panels, are supported by heat pump backup systems.",
@@ -898,7 +898,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-049",
+        id: "BG-079",
         nom: "RESIDENCE BUILDING H12",
         coordinates: [32.217780377591566, -7.940598430548696],
         description: "Solar systems installed on the residential buildings producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 729.3 kWp and generated 377.95 MWh in 2025. The solar thermal systems, composed of 250 panels, are supported by heat pump backup systems.",
@@ -910,7 +910,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-049",
+        id: "BG-080",
         nom: "RESIDENCE BUILDING H14",
         coordinates: [32.217409000907544, -7.94114228005632],
         description: "Solar systems installed on the residential buildings producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 729.3 kWp and generated 377.95 MWh in 2025. The solar thermal systems, composed of 250 panels, are supported by heat pump backup systems.",
@@ -922,7 +922,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-050",
+        id: "BG-081",
         nom: "Riad Center",
         coordinates: [32.2131357065481, -7.939990827494603],
         description: "Solar systems installed at the Riad Center producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 326.40 kWp and generated 293.73 MWh in 2025. The solar thermal systems, composed of 6 collectors with electric backup, produce approximately 19,700 kWh of solar thermal energy per year.",
@@ -934,7 +934,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-051",
+        id: "BG-082",
         nom: "Student Center",
         coordinates: [32.21601671377967, -7.941738420166123],
         description: "Photovoltaic installation at the Student Center producing electricity from solar energy. The system has an installed capacity of 64.6 kWp and generated 54.77 MWh in 2025.",
@@ -946,7 +946,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-052",
+        id: "BG-083",
         nom: "Digital Learning Lab (DLL)",
         coordinates: [32.217374, -7.940087],
         description: "Solar systems installed at the Digital Learning Lab producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 87.6 kWp and generated 75.44 MWh in 2025. The solar thermal systems, composed of 2 collectors with electric backup, produce approximately 4,000 kWh of solar thermal energy per year.",
@@ -958,7 +958,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-053",
+        id: "BG-084",
         nom: "GYMNASIUM",
         coordinates: [32.21631291484867, -7.936271895508488],
         description: "Solar systems installed at the gymnasium producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 71.06 kWp and generated 24.12 MWh in 2025. The solar thermal systems, composed of 35 collectors with heat pump backup, produce approximately 88 MWh of solar thermal energy per year.",
@@ -970,7 +970,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-054",
+        id: "BG-085",
         nom: "CONVENTION CENTER",
         coordinates: [32.21403386843369, -7.941598620922285],
         description: "Solar systems installed at the Convention Center producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 428 kWp and generated 141.32 MWh in 2025. The solar thermal systems, composed of 57 collectors with electric backup.",
@@ -982,7 +982,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-055",
+        id: "BG-086",
         nom: "RESTAURANT",
         coordinates: [32.21815425017257, -7.937192031551734],
         description: "Solar systems installed at the Restaurant producing electricity and hot water from solar energy. The photovoltaic installations have a total installed capacity of 63 kWp and generated 77.5 MWh in 2025. The solar thermal systems, composed of 102 collectors, contribute to hot water production for the building.",
@@ -994,7 +994,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-056",
+        id: "BG-087",
         nom: "EMINE TEACHING BUILDING",
         coordinates: [32.21827036691214, -7.935547540518207],
         description: "Solar thermal system installed at the teaching building (EMINE) producing hot water from solar energy. The installation includes 15 solar thermal collectors.",
@@ -1006,7 +1006,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-057",
+        id: "BG-088",
         nom: "SPORTS HUB",
         coordinates: [32.21708075935668, -7.935231931652369],
         description: "Solar thermal system installed at the Sports Hub producing hot water from solar energy, particularly for the swimming pool. The installation includes 30 solar thermal collectors and produces approximately 60 MWh of solar thermal energy per year.",
@@ -1018,7 +1018,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-058",
+        id: "BG-089",
         nom: "RESIDENCE BUILDING R1",
         coordinates: [32.21659995893451, -7.934747466623366],
         description: "Solar thermal system installed on residential buildings H1 and H3 producing hot water from solar energy. The installation includes 70 solar thermal collectors.",
@@ -1030,7 +1030,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-059",
+        id: "BG-090",
         nom: "RESIDENCE BUILDING R3",
         coordinates: [32.21622553146793, -7.935254404074958],
         description: "Solar thermal system installed on residential buildings H1 and H3 producing hot water from solar energy. The installation includes 70 solar thermal collectors.",
@@ -1042,7 +1042,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-058",
+        id: "BG-091",
         nom: "RESIDENCE BUILDING R5",
         coordinates: [32.21582160191254, -7.935772070442187],
         description: "Solar thermal system installed on residential buildings H5, H7, H9, and H11 producing hot water from solar energy. The installation includes 240 solar thermal collectors.",
@@ -1054,7 +1054,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-058",
+        id: "BG-092",
         nom: "RESIDENCE BUILDING R7",
         coordinates: [32.2154358248327, -7.936303147772427],
         description: "Solar thermal system installed on residential buildings H5, H7, H9, and H11 producing hot water from solar energy. The installation includes 240 solar thermal collectors.",
@@ -1066,7 +1066,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-058",
+        id: "BG-093",
         nom: "RESIDENCE BUILDING R9",
         coordinates: [32.21504550752122, -7.936828860757583],
         description: "Solar thermal system installed on residential buildings H5, H7, H9, and H11 producing hot water from solar energy. The installation includes 240 solar thermal collectors.",
@@ -1078,7 +1078,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-058",
+        id: "BG-093",
         nom: "RESIDENCE BUILDING R11",
         coordinates: [32.21466426575089, -7.937349209252868],
         description: "Solar thermal system installed on residential buildings H5, H7, H9, and H11 producing hot water from solar energy. The installation includes 240 solar thermal collectors.",
@@ -1090,7 +1090,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-060",
+        id: "BG-094",
         nom: "HOTEL",
         coordinates: [32.21438445990726, -7.938686211420589],
         description: "Solar thermal system installed at the hotel producing hot water from solar energy. The installation includes 80 solar thermal collectors.",
@@ -1102,7 +1102,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-061",
+        id: "BG-095",
         nom: "TEACHING CENTER",
         coordinates: [32.215704552109884, -7.9401446587538835],
         description: "Solar thermal system installed at the Teaching Center producing hot water from solar energy. The installation includes 10 solar thermal collectors.",
@@ -1114,7 +1114,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-062",
+        id: "BG-096",
         nom: "RESIDENCE BUILDING H16",
         coordinates: [32.216821087930946, -7.941377989900257],
         description: "Solar thermal system installed on residential building H16 producing hot water from solar energy. The installation includes 60 solar thermal collectors.",
@@ -1126,7 +1126,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-060",
+        id: "BG-097",
         nom: "APART HOTEL",
         coordinates: [32.214139, -7.938024],
         description: "Solar thermal system installed at the apart-hotel producing hot water from solar energy. The installation includes 80 solar thermal collectors.",
@@ -1138,7 +1138,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-102",
+        id: "BG-98",
         nom: "SOLAR TREE",
         coordinates: [32.215414834965586, -7.940867619202576],
         description: "The UM6P Solar Tree is a renewable energy solution that combines design, comfort, and environmental responsibility. Inspired by the shape of a tree, this structure is solar-powered and offers a pleasant shaded area, while also providing charging points for devices via USB ports and 220V outlets. It also incorporates modern public lighting and offers an inclusive space accessible to people with reduced mobility.",
@@ -1152,7 +1152,7 @@ var projets = [
 
 // Waste
     {
-        id: "BG-092",
+        id: "BG-099",
         coordinates: [32.2190787, -7.9407703],
         description: "Clothing collection bins are installed across the campus to give worn garments a second life, while encouraging the reduction of textile waste and supporting those in need.",
         type: "Waste",
@@ -1162,7 +1162,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-093",
+        id: "BG-100",
         coordinates: [32.2136836, -7.9399201],
         description: "Clothing collection bins are installed across the campus to give worn garments a second life, while encouraging the reduction of textile waste and supporting those in need.",
         type: "Waste",
@@ -1172,7 +1172,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-094",
+        id: "BG-101",
         coordinates: [32.2183478, -7.9361096],
         description: "Clothing collection bins are installed across the campus to give worn garments a second life, while encouraging the reduction of textile waste and supporting those in need.",
         type: "Waste",
@@ -1182,7 +1182,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-094",
+        id: "BG-102",
         coordinates: [32.21395286619448, -7.938235201614648],
         description: "Clothing collection bins are installed across the campus to give worn garments a second life, while encouraging the reduction of textile waste and supporting those in need.",
         type: "Waste",
@@ -1192,7 +1192,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-187",
+        id: "BG-103",
         nom: "LP R9",
         coordinates: [32.214863, -7.936957],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1203,7 +1203,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-188",
+        id: "BG-104",
         nom: "LP R3",
         coordinates: [32.21594856443914, -7.934926379056035],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1214,7 +1214,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-190",
+        id: "BG-105",
         nom: "LP RESIDENCES",
         coordinates: [32.218615, -7.940190],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1225,7 +1225,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-191",
+        id: "BG-106",
         nom: "LP STUDENT CENTER",
         coordinates: [32.215916, -7.942151],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1236,7 +1236,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-192",
+        id: "BG-107",
         nom: "LP RIAD CENTER",
         coordinates: [32.213228, -7.940233],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1247,7 +1247,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-193",
+        id: "BG-108",
         nom: "LP RESIDENCE CCI",
         coordinates: [32.219276, -7.941308],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1258,7 +1258,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-194",
+        id: "BG-109",
         nom: "LP KITCHEN CCI",
         coordinates: [32.218557, -7.940869],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1269,7 +1269,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-195",
+        id: "BG-110",
         nom: "LP KITCHEN CCI",
         coordinates: [32.219297, -7.939861],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1280,7 +1280,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-091",
+        id: "BG-111",
         nom: "Waste Sorting Center",
         coordinates: [32.2183375, -7.9376412],
         description: "Waste management at UM6P relies on 8 collection and sorting points across the campus.<br>A dedicated collection and disposal circuit ensures efficient waste management while preventing any spillage.",
@@ -1292,7 +1292,7 @@ var projets = [
     },
 // Ecomobility
     {
-        id: "BG-073",
+        id: "BG-112",
         nom: "Parking",
         coordinates: [32.219500, -7.939705],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. For safety and traffic management, motorcycles, bicycles, and scooters are not allowed to circulate on campus roads, pathways, or pedestrian areas. They must be parked only in designated areas indicated in the campus parking plan. The Ben Guerir campus provides 2 parking spaces for bikes and electric scooters, and 1 underground parking space for motorcycles.",
@@ -1303,7 +1303,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-196",
+        id: "BG-113",
         nom: "Parking",
         coordinates: [32.212381, -7.941460],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. For safety and traffic management, motorcycles, bicycles, and scooters are not allowed to circulate on campus roads, pathways, or pedestrian areas. They must be parked only in designated areas indicated in the campus parking plan. The Ben Guerir campus provides 2 parking spaces for bikes and electric scooters, and 1 underground parking space for motorcycles.",
@@ -1314,7 +1314,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-197",
+        id: "BG-114",
         nom: "UNDERGROUND PARKING",
         coordinates: [32.212939, -7.942323],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. For safety and traffic management, motorcycles, bicycles, and scooters are not allowed to circulate on campus roads, pathways, or pedestrian areas. They must be parked only in designated areas indicated in the campus parking plan. The Ben Guerir campus provides 2 parking spaces for bikes and electric scooters, and 1 underground parking space for motorcycles.",
@@ -1325,7 +1325,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-171",
+        id: "BG-115",
         nom: "GOLF CART",
         coordinates: [32.21443882962685, -7.942051381187169],
         description: "UM6P offers over 20 free electric golf cart shuttles to help the community move efficiently across campus. This service promotes convenient, low-emission mobility while reducing the need for individual vehicle use. ",
@@ -1336,7 +1336,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-172",
+        id: "BG-116",
         nom: "GOLF CART",
         coordinates: [32.21385535511873, -7.93972411423389],
         description: "UM6P offers over 20 free electric golf cart shuttles to help the community move efficiently across campus. This service promotes convenient, low-emission mobility while reducing the need for individual vehicle use. ",
@@ -1347,7 +1347,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-173",
+        id: "BG-117",
         nom: "GOLF CART",
         coordinates: [32.2176042416705, -7.937081987938262],
         description: "UM6P offers over 20 free electric golf cart shuttles to help the community move efficiently across campus. This service promotes convenient, low-emission mobility while reducing the need for individual vehicle use. ",
@@ -1358,7 +1358,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-174",
+        id: "BG-118",
         nom: "GOLF CART",
         coordinates: [32.21892663454874, -7.940800505860498],
         description: "UM6P offers over 20 free electric golf cart shuttles to help the community move efficiently across campus. This service promotes convenient, low-emission mobility while reducing the need for individual vehicle use. ",
@@ -1369,7 +1369,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-175",
+        id: "BG-119",
         nom: "GOLF CART",
         coordinates: [32.21613835268543, -7.939087508187301],
         description: "UM6P offers over 20 free electric golf cart shuttles to help the community move efficiently across campus. This service promotes convenient, low-emission mobility while reducing the need for individual vehicle use. ",
@@ -1382,7 +1382,7 @@ var projets = [
 
 // Water
     {
-        id: "BG-196",
+        id: "BG-120",
         nom: "WASTEWATER TREATMENT PLANT (WWTP)",
         coordinates: [32.217417, -7.934140],
         description: "System that treats and recycles campus wastewater, particularly from residences 1 and 3, for reuse in irrigating green spaces. On average, 15 to 20 m³ of water are treated each day.",
@@ -1393,7 +1393,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-197",
+        id: "BG-121",
         nom: "MENARA BASIN",
         coordinates: [32.215171, -7.942842],
         description: "Open basin with a capacity of 5,000 m³, used to store treated water from the wastewater treatment plant before it is used to irrigate the campus green spaces.",
@@ -1404,7 +1404,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-198",
+        id: "BG-122",
         nom: "RAINWATER COLLECTION RESERVOIR",
         coordinates: [32.215828, -7.943146],
         description: "Reservoir with a capacity of 1,000 m³ that collects rainwater from the roofs and hard surfaces of the campus (roads, paved areas), to store and reuse it, particularly for watering green spaces.",
@@ -1415,7 +1415,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-199",
+        id: "BG-123",
         nom: "RAINWATER INFILTRATION BASIN",
         coordinates: [32.212487, -7.941799],
         description: "Basin that absorbs excess rainwater into the soil when the storage reservoir is full, helping to limit runoff and recharge groundwater.",
@@ -1426,7 +1426,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-199",
+        id: "BG-124",
         nom: "",
         coordinates: [32.21615233677324, -7.939482743577705],
         description: "",
@@ -1437,7 +1437,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-199",
+        id: "BG-125",
         nom: "",
         coordinates: [32.21837540311963, -7.936456250349423],
         description: "",
@@ -1448,7 +1448,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-198",
+        id: "BG-126",
         nom: "Electric bus stop",
         coordinates: [32.214168991357546, -7.9395266907148],
         description: "Electric buses operate Monday to Friday during working hours as part of a structured initiative aimed at organizing and optimizing internal mobility across the campus. Designated stops have been carefully defined and are clearly marked with dedicated signage on both campuses, ensuring easy orientation and accessible transportation for all users.",
@@ -1459,7 +1459,7 @@ var projets = [
         campus: "Ben Guerir"
     },
         {
-        id: "BG-198",
+        id: "BG-127",
         nom: "Electric bus stop",
         coordinates: [32.21697148133485, -7.935824438703281],
         description: "Electric buses operate Monday to Friday during working hours as part of a structured initiative aimed at organizing and optimizing internal mobility across the campus. Designated stops have been carefully defined and are clearly marked with dedicated signage on both campuses, ensuring easy orientation and accessible transportation for all users.",
@@ -1469,7 +1469,7 @@ var projets = [
         icone: "img/bus/bus.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-198",
+        id: "BG-128",
         nom: "Electric bus stop",
         coordinates: [32.21927652532951, -7.937945757695873],
         description: "Electric buses operate Monday to Friday during working hours as part of a structured initiative aimed at organizing and optimizing internal mobility across the campus. Designated stops have been carefully defined and are clearly marked with dedicated signage on both campuses, ensuring easy orientation and accessible transportation for all users.",
@@ -1479,7 +1479,7 @@ var projets = [
         icone: "img/bus/bus.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-198",
+        id: "BG-129",
         nom: "Electric bus stop",
         coordinates: [32.21745905732915, -7.941665473996419],
         description: "Electric buses operate Monday to Friday during working hours as part of a structured initiative aimed at organizing and optimizing internal mobility across the campus. Designated stops have been carefully defined and are clearly marked with dedicated signage on both campuses, ensuring easy orientation and accessible transportation for all users.",
@@ -1490,7 +1490,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-199",
+        id: "BG-130",
         nom: "Station Navettes",
         coordinates: [32.220013, -7.939128],
         description: "UM6P provides 4 daily shuttle services between campus and the experimental farm to encourage carpooling to reduce traffic congestion, lower carbon emissions, and promote sustainable mobility.",
@@ -1501,7 +1501,7 @@ var projets = [
         campus: "Ben Guerir"
     },
     {
-        id: "BG-199",
+        id: "BG-131",
         nom: "DRESS FOR SUCCESS",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "A solidarity-based initiative led by the Sustainable Development Office (SDO) in collaboration with the Career Center. It aims to support students by providing access to professional clothing for interviews and career opportunities.",
@@ -1511,7 +1511,7 @@ var projets = [
         icone: "img/DRESS FOR SUCCESS/icon.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-199",
+        id: "BG-132",
         nom: "Ecovision",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "An initiative to raise awareness on sustainability through curated documentary screenings, highlighting environmental and social challenges while inspiring reflection and action toward a more sustainable future.",
@@ -1521,7 +1521,7 @@ var projets = [
         icone: "img/Ecovision/icon.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-199",
+        id: "BG-133",
         nom: "Gourde et mug",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "This initiative provides reusable mugs to the UM6P community, offering an eco-friendly alternative to plastic bottles while encouraging waste reduction and promoting a sustainable lifestyle on campus.",
@@ -1531,7 +1531,7 @@ var projets = [
         icone: "img/Gourde et mug/icon.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-199",
+        id: "BG-134",
         nom: "Step To Go Green",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "A pioneering initiative that refurbishes faulty laptops from the university’s IT department and provides them to students in need, offering them a second life and supporting educational access.",
@@ -1541,7 +1541,7 @@ var projets = [
         icone: "img/Step To Go Green/icon.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-199",
+        id: "BG-135",
         nom: "SDM",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "Sustainable Development Makers program is a flagship initiative of the Sustainable Development Office designed to empower students to become active contributors to sustainability on campus and beyond. By bringing together students from diverse academic backgrounds, the program fosters collaboration, leadership, and hands-on engagement around key environmental and social challenges. Through capacity-building, peer-led actions, and community-oriented projects, SDMs translate sustainability principles into concrete initiatives, strengthening a culture of responsibility and collective impact within the UM6P ecosystem.",
@@ -1552,7 +1552,7 @@ var projets = [
         icone: "img/SDM/icon.jpg",
         campus: "Ben Guerir"
     },{
-        id: "BG-199",
+        id: "BG-136",
         nom: "Green school",
         coordinates: [32.217780809217516, -7.936651597531083],
         description: "",
@@ -1927,7 +1927,7 @@ var projets = [
         campus: "Rabat"
     },
         {
-        id: "BG-003",
+        id: "RB-033",
         nom: "Avifaune",
         coordinates: [33.981372907554054, -6.726623739663303],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -1938,7 +1938,7 @@ var projets = [
         campus: "Rabat"
     },
             {
-        id: "BG-003",
+        id: "RB-034",
         nom: "Avifaune",
         coordinates: [33.98246562849809, -6.7288151028283245],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -1948,7 +1948,7 @@ var projets = [
         icone: "img/avifaune/AF_g.jpg",
         campus: "Rabat"
     },        {
-        id: "BG-003",
+        id: "RB-035",
         nom: "Avifaune",
         coordinates: [33.978377061209535, -6.729659073783842],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -1958,7 +1958,7 @@ var projets = [
         icone: "img/avifaune/AF_r.jpg",
         campus: "Rabat"
     },        {
-        id: "BG-003",
+        id: "RB-036",
         nom: "Avifaune",
         coordinates: [33.979236536117, -6.731258176633994],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -1969,7 +1969,7 @@ var projets = [
         campus: "Rabat"
     },
             {
-        id: "BG-011",
+        id: "RB-037",
         nom: "Botanic Garden",
         coordinates: [33.97894185997044, -6.731465467748556],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -1979,7 +1979,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "Rabat"
     },             {
-        id: "BG-011",
+        id: "RB-038",
         nom: "Botanic Garden",
         coordinates: [33.97818060856774, -6.7297775258511745],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -1989,7 +1989,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "Rabat"
     },             {
-        id: "BG-011",
+        id: "RB-039",
         nom: "Botanic Garden",
         coordinates: [33.98187629760503, -6.730058849489549],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -1999,7 +1999,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "Rabat"
     },             {
-        id: "BG-011",
+        id: "RB-040",
         nom: "Botanic Garden",
         coordinates: [33.980317006561414, -6.727304839025399],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2009,7 +2009,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "Rabat"
     },             {
-        id: "BG-011",
+        id: "RB-041",
         nom: "Botanic Garden",
         coordinates: [33.9828339582409, -6.72831168156068],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2019,7 +2019,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "Rabat"
     },     {
-        id: "BG-001",
+        id: "RB-042",
         nom: "Insect Shelter",
         coordinates: [33.983226841534396, -6.729881171395088],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -2030,7 +2030,7 @@ var projets = [
         campus: "Rabat"
     },
     {
-        id: "BG-001",
+        id: "RB-043",
         nom: "Insect Shelter",
         coordinates: [33.97999777807432, -6.732146567112703],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -2040,7 +2040,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Rabat"
     },{
-        id: "BG-001",
+        id: "RB-044",
         nom: "Insect Shelter",
         coordinates: [33.980452064375605, -6.725779768727838],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -2050,7 +2050,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Rabat"
     },{
-        id: "BG-001",
+        id: "RB-045",
         nom: "Insect Shelter",
         coordinates: [33.978389339493724, -6.727482517133093],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -2060,7 +2060,7 @@ var projets = [
         icone: "img/insect shelter/AI.jpg",
         campus: "Rabat"
     },{
-        id: "BG-001",
+        id: "RB-046",
         nom: "Insect Shelter",
         coordinates: [33.98090634824916, -6.728859522365168],
         description: "Insect shelters, designed as wooden structures to host beneficial insects, are installed across the campus to promote natural pest regulation, reduce the use of pesticides, and contribute to maintaining the biodiversity of UM6P's green spaces.",
@@ -2071,7 +2071,7 @@ var projets = [
         campus: "Rabat"
     },
             {
-        id: "BG-102",
+        id: "RB-047",
         nom: "SOLAR TREE",
         coordinates: [33.98066881584723, -6.731238293469762],
         description: "The UM6P Solar Tree is a renewable energy solution that combines design, comfort, and environmental responsibility. Inspired by the shape of a tree, this structure is solar-powered and offers a pleasant shaded area, while also providing charging points for devices via USB ports and 220V outlets. It also incorporates modern public lighting and offers an inclusive space accessible to people with reduced mobility.",
@@ -2086,7 +2086,7 @@ var projets = [
 
     // GEP
         {
-        id: "BG-048",
+        id: "GEP-001",
         nom: "",
         coordinates: [32.22162027912787, -7.928605040077566],
         description: "",
@@ -2097,7 +2097,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "GEP"
     },{
-        id: "BG-048",
+        id: "GEP-002",
         nom: "",
         coordinates: [32.22209634988251, -7.92674872398529],
         description: "",
@@ -2108,7 +2108,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "GEP"
     },{
-        id: "BG-048",
+        id: "GEP-003",
         nom: "",
         coordinates: [32.220632785955964, -7.927686914560544],
         description: "",
@@ -2119,7 +2119,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "GEP"
     },{
-        id: "BG-048",
+        id: "GEP-004",
         nom: "",
         coordinates: [32.222489402979456, -7.927839215376719],
         description: "",
@@ -2130,7 +2130,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "GEP"
     },{
-        id: "BG-199",
+        id: "GEP-005",
         nom: "Station Navettes",
         coordinates: [32.22113590064786, -7.9289996536701715],
         description: "",
@@ -2140,7 +2140,7 @@ var projets = [
         icone: "img/station navettes/SN.jpg",
         campus: "GEP"
     },    {
-        id: "BG-003",
+        id: "GEP-006",
         nom: "Avifaune",
         coordinates: [32.221203270001645, -7.927093288584864],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -2151,7 +2151,7 @@ var projets = [
         campus: "GEP"
     },
         {
-        id: "BG-003",
+        id: "GEP-007",
         nom: "Avifaune",
         coordinates: [32.22061428715103, -7.928201522680288],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -2162,7 +2162,7 @@ var projets = [
         campus: "GEP"
     },
         {
-        id: "BG-003",
+        id: "GEP-008",
         nom: "Avifaune",
         coordinates: [32.22083064864159, -7.929203195804999],
         description: "Birdhouses are installed across the campus to enhance biodiversity and maintain a balanced ecosystem, providing shelter for birds that naturally help regulate harmful insect populations.",
@@ -2173,7 +2173,7 @@ var projets = [
         campus: "GEP"
     },
         {
-        id: "BG-011",
+        id: "GEP-009",
         nom: "Botanic Garden",
         coordinates: [32.222268661340436, -7.925979481595437],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2183,7 +2183,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "GEP"
     },    {
-        id: "BG-011",
+        id: "GEP-010",
         nom: "Botanic Garden",
         coordinates: [32.220302411777666, -7.926657713638096],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2193,7 +2193,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "GEP"
     },    {
-        id: "BG-011",
+        id: "GEP-011",
         nom: "Botanic Garden",
         coordinates: [32.22296838401835, -7.9280638044551015],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2203,7 +2203,7 @@ var projets = [
         icone: "img/botanic garden/BG1.jpg",
         campus: "GEP"
     },    {
-        id: "BG-011",
+        id: "GEP-012",
         nom: "Botanic Garden",
         coordinates: [32.221936084816186, -7.927591754624167],
         description: "Informational panels on campus plants are installed to promote engagement with local biodiversity and provide an educational outdoor experience, enabling the community to better understand and appreciate the richness of the ecosystem.",
@@ -2214,7 +2214,7 @@ var projets = [
         campus: "GEP"
     },
         {
-        id: "BG-182",
+        id: "GEP-013",
         nom: "Electric Vehicle Charging Station",
         coordinates: [32.22112198787083, -7.928601973324162],
         description: "UM6P campus provides dedicated parking with electric vehicle charging stations to support low-emission transportation. XX charging points are provided. ",
@@ -2226,7 +2226,7 @@ var projets = [
     }, 
     // AITTC
         {
-        id: "BG-075",
+        id: "AI-001",
         nom: "Coxibio",
         coordinates: [32.219809784271696, -7.891963180802585],
         description: "A biological control program that replaces chemical pesticides with biological control solutions in UM6P's green spaces.",
@@ -2237,7 +2237,7 @@ var projets = [
         campus: "AITTC"
     },
         {
-        id: "BG-199",
+        id: "AI-002",
         nom: "PLANT IT FORWARD",
         coordinates: [32.22026391003761, -7.892632338892701],
         description: "",
@@ -2248,7 +2248,7 @@ var projets = [
         campus: "AITTC"
     },
             {
-        id: "BG-075",
+        id: "AI-003",
         nom: "PÉPINIÈRE",
         coordinates: [32.21893499569597, -7.888711596620421],
         description: "",
@@ -2259,7 +2259,7 @@ var projets = [
         campus: "AITTC"
     },
             {
-        id: "BG-075",
+        id: "AI-004",
         nom: "poulailler",
         coordinates: [32.21898073182723, -7.892450784694281],
         description: "",
@@ -2268,7 +2268,7 @@ var projets = [
         image: "img/poulailler/1.png",
         icone: "img/poulailler/icon.jpg",
         campus: "AITTC"
-    },{id: "BG-048",
+    },{id: "AI-005",
         nom: "",
         coordinates: [32.217953494166245, -7.886632063477837],
         description: "",
@@ -2279,7 +2279,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "AITTC" 
     },{
-        id: "BG-048",
+        id: "AI-006",
         nom: "",
         coordinates: [32.21843836855119, -7.887940564257176],
         description: "",
@@ -2290,7 +2290,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "AITTC"    
     },{
-        id: "BG-048",
+        id: "AI-007",
         nom: "",
         coordinates: [32.21985172707582, -7.891794056089648],
         description: "",
@@ -2301,7 +2301,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "AITTC"    
     },{
-        id: "BG-001",
+        id: "AI-007",
         nom: "PLANT IT FORWARD",
         coordinates: [32.21928258160126, -7.894693882740697],
         description: "",
@@ -2311,7 +2311,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     }, {
-        id: "BG-001",
+        id: "AI-008",
         nom: "PLANT IT FORWARD",
         coordinates: [32.21838584963906, -7.891307709940032],
         description: "",
@@ -2321,7 +2321,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "AITTC"
     }, {
-        id: "BG-001",
+        id: "AI-009",
         nom: "PLANT IT FORWARD",
         coordinates: [32.219169525483615, -7.889606849415454],
         description: "",
@@ -2332,7 +2332,7 @@ var projets = [
         campus: "AITTC"
     }, 
     {
-        id: "BG-199",
+        id: "AI-110",
         nom: "Station Navettes",
         coordinates: [32.22002167073897, -7.892920012314001],
         description: "",
@@ -2345,7 +2345,7 @@ var projets = [
 
     // ASARI
     {
-        id: "BG-075",
+        id: "AS-001",
         nom: "green grounds",
         coordinates: [27.178225857264007, -13.38374817077779],
         description: "",
@@ -2356,7 +2356,7 @@ var projets = [
         campus: "ASARI Laayoune"
     },
         {
-        id: "BG-075",
+        id: "AS-002",
         nom: "Composteur",
         coordinates: [27.177981975071752, -13.383479889640302],
         description: "",
@@ -2369,7 +2369,7 @@ var projets = [
 
     //LYCÉE D’EXCELLENCE
     {
-        id: "BG-048",
+        id: "LE-001",
         nom: "",
         coordinates: [32.205308797448396, -7.936769896938083],
         description: "",
@@ -2380,7 +2380,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     },{
-        id: "BG-048",
+        id: "LE-002",
         nom: "",
         coordinates: [32.20592254390433, -7.936795802215979],
         description: "",
@@ -2391,7 +2391,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-003",
         nom: "",
         coordinates: [32.204775419194675, -7.937288002496672],
         description: "",
@@ -2402,7 +2402,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-004",
         nom: "",
         coordinates: [32.206331705895316, -7.93708939536594],
         description: "",
@@ -2413,7 +2413,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-005",
         nom: "",
         coordinates: [32.20684315579582, -7.937365718330607],
         description: "",
@@ -2424,7 +2424,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-006",
         nom: "",
         coordinates: [32.20780029004998, -7.938021985370389],
         description: "",
@@ -2435,7 +2435,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-007",
         nom: "",
         coordinates: [32.20882317046001, -7.938764603337934],
         description: "",
@@ -2446,7 +2446,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     }, {
-        id: "BG-048",
+        id: "LE-008",
         nom: "",
         coordinates: [32.20750803637008, -7.940353460383966],
         description: "",
@@ -2458,7 +2458,7 @@ var projets = [
         campus: "LYCÉE D'EXCELLENCE"   
     }, 
     {
-        id: "BG-199",
+        id: "LE-009",
         nom: "Station Navettes",
         coordinates: [32.20600291513461, -7.941044267794287],
         description: "",
@@ -2469,7 +2469,7 @@ var projets = [
         campus: "LYCÉE D'EXCELLENCE"   
     },
         {
-        id: "BG-001",
+        id: "LE-010",
         nom: "PLANT IT FORWARD",
         coordinates: [32.218068, -7.936605],
         description: "",
@@ -2479,7 +2479,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     },        {
-        id: "BG-001",
+        id: "LE-011",
         nom: "PLANT IT FORWARD",
         coordinates: [32.206609350487135, -7.938522820743328],
         description: "",
@@ -2489,7 +2489,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "LYCÉE D'EXCELLENCE"   
     },{
-        id: "BG-001",
+        id: "LE-012",
         nom: "PLANT IT FORWARD",
         coordinates: [32.20780759635854, -7.939196357969706],
         description: "",
@@ -2501,7 +2501,7 @@ var projets = [
     },
     // data center
     {
-        id: "BG-048",
+        id: "DC-001",
         nom: "",
         coordinates: [32.223589531008514, -7.9301197864039],
         description: "",
@@ -2512,7 +2512,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-048",
+        id: "DC-002",
         nom: "",
         coordinates: [32.22288070306334, -7.929580400582258],
         description: "",
@@ -2523,7 +2523,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-048",
+        id: "DC-003",
         nom: "",
         coordinates: [32.22257058909928, -7.9303606771591975],
         description: "",
@@ -2534,7 +2534,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-001",
+        id: "DC-004",
         nom: "PLANT IT FORWARD",
         coordinates: [32.22156935678318, -7.929679898937966],
         description: "",
@@ -2544,7 +2544,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-001",
+        id: "DC-005",
         nom: "PLANT IT FORWARD",
         coordinates: [32.22282754074464, -7.931177611024986],
         description: "",
@@ -2554,7 +2554,7 @@ var projets = [
         icone: "img/PLANT IT FORWARD/icon.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-199",
+        id: "DC-006",
         nom: "Station Navettes",
         coordinates: [32.22230378693641, -7.93155420449142],
         description: "",
@@ -2564,7 +2564,7 @@ var projets = [
         icone: "img/station navettes/SN.jpg",
         campus: "DATA CENTER"
     },{
-        id: "BG-199",
+        id: "DC-007",
         nom: "Station Navettes",
         coordinates: [32.22297328511719, -7.928787286840452],
         description: "",
@@ -2576,7 +2576,7 @@ var projets = [
     },
     //CLUB DE TIR
     {
-        id: "BG-048",
+        id: "CT-001",
         nom: "",
         coordinates: [32.21493971337093, -7.896320153472852],
         description: "",
@@ -2587,7 +2587,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "CLUB DE TIR"    
     },{
-        id: "BG-048",
+        id: "CT-002",
         nom: "",
         coordinates: [32.214522018946234, -7.8965005423456684],
         description: "",
@@ -2598,7 +2598,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "CLUB DE TIR"    
     }, {
-        id: "BG-048",
+        id: "CT-002",
         nom: "",
         coordinates: [32.2137267877187, -7.896301165170451],
         description: "",
@@ -2609,7 +2609,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "CLUB DE TIR"    
     },   {
-        id: "BG-199",
+        id: "CT-003",
         nom: "Station Navettes",
         coordinates: [32.21504065271413, -7.897406946854701],
         description: "",
@@ -2621,7 +2621,7 @@ var projets = [
     },
     //VILLAS DES CHERCHERUS
     {
-        id: "BG-048",
+        id: "VC-001",
         nom: "",
         coordinates: [32.21310284515262, -7.936748204001818],
         description: "",
@@ -2633,7 +2633,7 @@ var projets = [
         campus: "VILLAS DES CHERCHERUS"
     },
     {
-        id: "BG-048",
+        id: "VC-002",
         nom: "",
         coordinates: [32.212549596360574, -7.93615526237821],
         description: "",
@@ -2644,7 +2644,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-003",
         nom: "",
         coordinates: [32.21287390337663, -7.936172613754253],
         description: "",
@@ -2656,7 +2656,7 @@ var projets = [
         campus: "VILLAS DES CHERCHERUS"
     },
     {
-        id: "BG-048",
+        id: "VC-004",
         nom: "",
         coordinates: [32.21528755347498, -7.9348174571620245],
         description: "",
@@ -2667,7 +2667,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-005",
         nom: "",
         coordinates: [32.214493885863774, -7.935175959373485],
         description: "",
@@ -2678,7 +2678,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-006",
         nom: "",
         coordinates: [32.214594990401245, -7.9355404366059705],
         description: "",
@@ -2689,7 +2689,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-007",
         nom: "",
         coordinates: [32.21389736680454, -7.936084164936403],
         description: "",
@@ -2700,7 +2700,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-008",
         nom: "",
         coordinates: [32.21376592987558, -7.935558361715766],
         description: "",
@@ -2711,7 +2711,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-048",
+        id: "VC-009",
         nom: "",
         coordinates: [32.21334128619131, -7.936167815448776],
         description: "",
@@ -2722,7 +2722,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS DES CHERCHERUS"
     },{
-        id: "BG-199",
+        id: "VC-010",
         nom: "Station Navettes",
         coordinates: [32.21288950247401, -7.937175152870229],
         description: "",
@@ -2734,7 +2734,7 @@ var projets = [
     },
     //VILLAS MARGUERITTE
     {
-        id: "BG-048",
+        id: "VM-001",
         nom: "",
         coordinates: [32.2088247294528, -7.928449453959793],
         description: "",
@@ -2745,7 +2745,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-002",
         nom: "",
         coordinates: [32.208068095434705, -7.928529936035864],
         description: "",
@@ -2756,7 +2756,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-003",
         nom: "",
         coordinates: [32.20749304937134, -7.928986001133612],
         description: "",
@@ -2767,7 +2767,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-004",
         nom: "",
         coordinates: [32.20702393015331, -7.929799764347239],
         description: "",
@@ -2778,7 +2778,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-005",
         nom: "",
         coordinates: [32.207213091419426, -7.930622470013761],
         description: "",
@@ -2790,7 +2790,7 @@ var projets = [
         campus: "VILLAS MARGUERITTE"
     },
     ,{
-        id: "BG-048",
+        id: "VM-005",
         nom: "",
         coordinates: [32.20776544006508, -7.93083708888329],
         description: "",
@@ -2801,7 +2801,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-006",
         nom: "",
         coordinates: [32.208506943931866, -7.930121692651531],
         description: "",
@@ -2812,7 +2812,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-048",
+        id: "VM-007",
         nom: "",
         coordinates: [32.20908198358512, -7.9294599511371535],
         description: "",
@@ -2823,7 +2823,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "VILLAS MARGUERITTE"
     },{
-        id: "BG-199",
+        id: "VM-008",
         nom: "Station Navettes",
         coordinates: [32.209157011136654, -7.9288623708617525],
         description: "",
@@ -2835,7 +2835,7 @@ var projets = [
     },
     //GREEN & SMART BUILDING PARK
     {
-        id: "BG-199",
+        id: "BP-001",
         nom: "Station Navettes",
         coordinates: [32.2183320720733, -7.931593127042979],
         description: "",
@@ -2845,7 +2845,7 @@ var projets = [
         icone: "img/station navettes/SN.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-002",
         nom: "",
         coordinates: [32.22047731012961, -7.930560735369827],
         description: "",
@@ -2856,7 +2856,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-003",
         nom: "",
         coordinates: [32.220119678184425, -7.931263848583266],
         description: "",
@@ -2867,7 +2867,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-004",
         nom: "",
         coordinates: [32.219360617955914, -7.931156009130783],
         description: "",
@@ -2878,7 +2878,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-005",
         nom: "",
         coordinates: [32.21922194280819, -7.931768537206294],
         description: "",
@@ -2889,7 +2889,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-006",
         nom: "",
         coordinates: [32.21932777386111, -7.932337929501842],
         description: "",
@@ -2900,7 +2900,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-007",
         nom: "",
         coordinates: [32.218878903368235, -7.932247344362461],
         description: "",
@@ -2911,7 +2911,7 @@ var projets = [
         icone: "img/Photovoltaique/IPT.jpg",
         campus: "SMART BUILDING PARK"
     },{
-        id: "BG-048",
+        id: "BP-008",
         nom: "",
         coordinates: [32.21975109684083, -7.931656384178384],
         description: "",
@@ -2928,7 +2928,8 @@ var projets = [
 var arretsGolfette = [
     { id: "GOLF-01", coords: [32.217594, -7.937086] },
     { id: "GOLF-02", coords: [32.219548, -7.939168] },
-    { id: "GOLF-04", coords: [32.219909, -7.938983] },
+    { id: "GOLF-03", coords: [32.219909, -7.938983] },
+    { id: "GOLF-03", coords: [32.219909, -7.938983] },
     { id: "GOLF-05", coords: [32.219979, -7.939342] },
     { id: "GOLF-06", coords: [32.218952, -7.940753] },
     { id: "GOLF-07", coords: [32.216153, -7.939091] },
@@ -2939,6 +2940,7 @@ var arretsGolfette = [
     { id: "GOLF-12", coords: [32.214252, -7.939670] },
     { id: "GOLF-13", coords: [32.214051, -7.939464] },
     { id: "GOLF-14", coords: [32.213833, -7.939793] },
+
     { id: "GOL-1", coords: [33.980053, -6.733953] },
     { id: "GOL-2", coords: [33.980425, -6.731994] },
     { id: "GOL-4", coords: [33.978717, -6.728802] },
@@ -2987,6 +2989,7 @@ var arretsBus = [
     { id: "BUS-19", coords: [32.211550, -7.936980] },
     { id: "BUS-20", coords: [32.212234, -7.937051] },
     { id: "BUS-21", coords: [32.213536, -7.937873] },
+    
     { id: "BUS-RB-01", coords: [33.984798, -6.730144] },
     { id: "BUS-RB-02", coords: [33.981129, -6.726009] },
     { id: "BUS-RB-03", coords: [33.982339, -6.7244645] }
@@ -2995,7 +2998,7 @@ var arretsBus = [
 // ========== TRAJETS GOLFETTES ==========
 var trajetsGolfette = [
     // Ben Guerir
-    { id: "TRAJET-01", nom: "CCI", campus: "Ben Guerir", couleur: "#39FF14", arrets: ["GOLF-01", "GOLF-02", "GOLF-04", "GOLF-05", "GOLF-06"] },
+    { id: "TRAJET-01", nom: "CCI", campus: "Ben Guerir", couleur: "#39FF14", arrets: ["GOLF-01", "GOLF-02", "GOLF-03", "GOLF-05", "GOLF-06"] },
     { id: "TRAJET-02", nom: "Conference Center", campus: "Ben Guerir", couleur: "#00FFFF", arrets: ["GOLF-01", "GOLF-07", "GOLF-08", "GOLF-09"] },
     { id: "TRAJET-03", nom: "SHBM", campus: "Ben Guerir", couleur: "#FF00FF", arrets: ["GOLF-01", "GOLF-07", "GOLF-08", "GOLF-10", "GOLF-11", "GOLF-12", "GOLF-13", "GOLF-14"] },
     
@@ -3013,3 +3016,6 @@ var trajetsBus = [
     // Rabat
     { id: "BUS-T2", nom: "RABAT 1", campus: "Rabat", couleur: "#0800ff", arrets: ["BUS-RB-01", "BUS-RB-02", "BUS-RB-03"] },
 ];
+
+
+
