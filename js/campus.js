@@ -5,12 +5,12 @@ function recentrerBenGuerir() {
 }
 
 function recentrerRabat() {
-    map.setView([33.98077935537, -6.72924130237], 16);
+    map.setView([33.98077935537, -6.72924130237], 17);
     filtrerParCampus('Rabat');
 }
 
 function recentrerGEP() {
-    map.setView([32.221600083, -7.92746093660], 17);
+    map.setView([32.221600083, -7.92746093660], 18);
     filtrerParCampus('GEP');
 }
 
@@ -30,12 +30,12 @@ function recentrerLycee() {
 }
 
 function recentrerDataCenter() {
-    map.setView([32.222442811283386, -7.929971736835424], 17);
+    map.setView([32.222442811283386, -7.929971736835424], 18);
     filtrerParCampus('DATA CENTER');
 }
 
 function recentrerClubTir() {
-    map.setView([32.21441145338921, -7.896276898813682], 17);
+    map.setView([32.21441145338921, -7.896276898813682], 18);
     filtrerParCampus('CLUB DE TIR');
 }
 
@@ -45,11 +45,11 @@ function recentrerVillasChercheurs() {
 }
 
 function recentrerVillasMargueritte() {
-    map.setView([32.207957189483906, -7.9297955845621635], 17);
+    map.setView([32.207957189483906, -7.9297955845621635], 18);
     filtrerParCampus('VILLAS MARGUERITTE');
 }
 
 function recentrerSmartPark() {
-    map.setView([32.219282401083916, -7.931681038871657], 17);
+    map.setView([32.219282401083916, -7.931681038871657], 18);
     filtrerParCampus('SMART BUILDING PARK');
 }
