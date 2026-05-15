@@ -399,7 +399,7 @@ var projets = [
     {
         id: "BG-037",
         nom: "Biological Pest Control",
-        coordinates: [32.2178190004662, -7.937399486233677],
+        coordinates: [32.21658762243412, -7.940493537120027],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
         type: "Biodiversity",
         sousType: "Biological Pest Control",
@@ -410,7 +410,7 @@ var projets = [
     {
         id: "BG-038",
         nom: "Biological Pest Control",
-        coordinates: [32.217329535415416, -7.936906652776126],
+        coordinates: [32.21491476331722, -7.938753543078983],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
         type: "Biodiversity",
         sousType: "Biological Pest Control",
@@ -421,7 +421,7 @@ var projets = [
     {
         id: "BG-039",
         nom: "Biological Pest Control",
-        coordinates: [32.21631434017023, -7.938288729152208],
+        coordinates: [32.217134083076694, -7.935748098826274],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
         type: "Biodiversity",
         sousType: "Biological Pest Control",
@@ -432,7 +432,7 @@ var projets = [
     {
         id: "BG-0039",
         nom: "Biological Pest Control",
-        coordinates: [32.21680381071754, -7.938781562588925],
+        coordinates: [32.21878459732144, -7.937448547548202],
         description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
         type: "Biodiversity",
         sousType: "Biological Pest Control",
@@ -1560,6 +1560,27 @@ var projets = [
         sousType: "Green school",
         image: "img/Green school/1.jpg",
         icone: "img/Green school/icon.jpg",
+        campus: "Ben Guerir"
+    },
+        {
+        id: "BG-137",
+        nom: "Biological Pest Control",
+        coordinates: [32.21578066726886, -7.932810639838857],
+        description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
+        type: "Biodiversity",
+        sousType: "Biological Pest Control",
+        image: "img/Biological pest control/3.jpg",
+        icone: "img/Biological pest control/icon.jpg",
+        campus: "Ben Guerir"
+    },    {
+        id: "BG-138",
+        nom: "Biological Pest Control",
+        coordinates: [32.21926567621203, -7.940830548715205],
+        description: "UM6P is committed to a healthy campus by partnering with a specialized public hygiene company. The program includes deratization, disinfection, and disinsectization, using bait traps to humanely capture rodents while protecting other species and the environment.",
+        type: "Biodiversity",
+        sousType: "Biological Pest Control",
+        image: "img/Biological pest control/2.jpg",
+        icone: "img/Biological pest control/icon.jpg",
         campus: "Ben Guerir"
     },
 
