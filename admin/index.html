@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - UM6P Green Map</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: #e8f0f5; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #01568b; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        button {
+            background: #01568b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover { background: #013a5c; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .btn-edit { background: #ffcc00; color: #333; margin-right: 5px; }
+        .btn-delete { background: #cd0e0e; }
+        .btn-small { padding: 5px 10px; font-size: 12px; }
+        .message { padding: 10px; border-radius: 8px; margin-bottom: 15px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .login-box { max-width: 400px; margin: 100px auto; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div style="text-align: center; padding: 50px;">Chargement...</div>
+    </div>
+
+    <script>
+        let projets = [];
+        let types = [];
+        let token = sessionStorage.getItem('adminToken');
+        
+        // Configuration
+        const ADMIN_PASSWORD = 'um6p2024';  // Change ce mot de passe
+        
+        async function login() {
+            const password = prompt('Entrez le mot de passe admin:');
+            if (password === ADMIN_PASSWORD) {
+                sessionStorage.setItem('adminToken', password);
+                token = password;
+                loadApp();
+            } else {
+                alert('Mot de passe incorrect');
+            }
+        }
+        
+        async function loadApp() {
+            if (!token) {
+                document.getElementById('app').innerHTML = `
+                    <div class="login-box card">
+                        <h2>🔐 Admin Green Map</h2>
+                        <button onclick="login()">Se connecter</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            await chargerDonnees();
+            afficherInterface();
+        }
+        
+        async function chargerDonnees() {
+            try {
+                // Charger les projets
+                const resProjets = await fetch('/.netlify/functions/projets');
+                projets = await resProjets.json();
+                
+                // Charger les types/couleurs
+                const resTypes = await fetch('/.netlify/functions/types');
+                types = await resTypes.json();
+            } catch (e) {
+                console.error('Erreur chargement:', e);
+            }
+        }
+        
+        async function ajouterOuModifierProjet(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const projet = {
+                id: form.id.value,
+                nom: form.nom.value,
+                description: form.description.value,
+                latitude: parseFloat(form.latitude.value),
+                longitude: parseFloat(form.longitude.value),
+                type: form.type.value,
+                sous_type: form.sous_type.value,
+                campus: form.campus.value,
+                image: form.image.value,
+                icone: form.icone.value,
+                informations_complementaires: form.infos.value
+            };
+            
+            const response = await fetch('/.netlify/functions/save-projet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(projet)
+            });
+            
+            if (response.ok) {
+                alert('✅ Projet enregistré !');
+                form.reset();
+                chargerDonnees();
+                afficherInterface();
+            } else {
+                alert('❌ Erreur lors de l\'enregistrement');
+            }
+        }
+        
+        async function supprimerProjet(id) {
+            if (!confirm('Supprimer ce projet ?')) return;
+            
+            const response = await fetch(`/.netlify/functions/delete-projet?id=${id}`, {
+                method: 'DELETE',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            
+            if (response.ok) {
+                alert('✅ Projet supprimé');
+                chargerDonnees();
+                afficherInterface();
+            }
+        }
+        
+        function editerProjet(projet) {
+            const form = document.getElementById('projetForm');
+            if (form) {
+                form.id.value = projet.id;
+                form.nom.value = projet.nom || '';
+                form.description.value = projet.description || '';
+                form.latitude.value = projet.latitude;
+                form.longitude.value = projet.longitude;
+                form.type.value = projet.type;
+                form.sous_type.value = projet.sous_type || '';
+                form.campus.value = projet.campus;
+                form.image.value = projet.image || '';
+                form.icone.value = projet.icone || '';
+                form.infos.value = projet.informations_complementaires || '';
+                
+                document.querySelector('#projetForm button').textContent = '✏️ Modifier';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        
+        function afficherInterface() {
+            document.getElementById('app').innerHTML = `
+                <h1>🌱 Administration Green Map</h1>
+                
+                <div class="card">
+                    <h2>📝 Formulaire projet</h2>
+                    <form id="projetForm" onsubmit="ajouterOuModifierProjet(event)">
+                        <div class="form-group">
+                            <label>ID *</label>
+                            <input type="text" id="id" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" id="nom">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Latitude *</label>
+                            <input type="number" step="any" id="latitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Longitude *</label>
+                            <input type="number" step="any" id="longitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select id="type">
+                                ${types.map(t => `<option value="${t.nom}">${t.nom} (${t.couleur})</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sous-type</label>
+                            <input type="text" id="sous_type">
+                        </div>
+                        <div class="form-group">
+                            <label>Campus</label>
+                            <select id="campus">
+                                <option>Ben Guerir</option><option>Rabat</option><option>GEP</option>
+                                <option>AITTC</option><option>ASARI Laayoune</option>
+                                <option>LYCÉE D'EXCELLENCE</option><option>DATA CENTER</option>
+                                <option>CLUB DE TIR</option><option>VILLAS DES CHERCHERUS</option>
+                                <option>VILLAS MARGUERITTE</option><option>SMART BUILDING PARK</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>URL Image</label>
+                            <input type="text" id="image" placeholder="img/...">
+                        </div>
+                        <div class="form-group">
+                            <label>URL Icône</label>
+                            <input type="text" id="icone" placeholder="img/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Infos complémentaires</label>
+                            <textarea id="infos" rows="2"></textarea>
+                        </div>
+                        <button type="submit">💾 Enregistrer</button>
+                        <button type="button" onclick="document.getElementById('projetForm').reset(); this.textContent='💾 Enregistrer'" style="background:#999">🔄 Nouveau</button>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <h2>📋 Liste des projets (${projets.length})</h2>
+                    <table style="width:100%">
+                        <thead>
+                            <tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            ${projets.map(p => `
+                                <tr>
+                                    <td>${p.id}</td>
+                                    <td>${p.nom || '-'}</td>
+                                    <td>${p.campus}</td>
+                                    <td style="color:${p.type_couleur || '#01568b'}">${p.type || '-'}</td>
+                                    <td>
+                                        <button class="btn-small btn-edit" onclick="editerProjet(${JSON.stringify(p).replace(/"/g, '&quot;')})">✏️</button>
+                                        <button class="btn-small btn-delete" onclick="supprimerProjet('${p.id}')">🗑️</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card">
+                    <h2>🎨 Gestion des couleurs par thème</h2>
+                    <div id="couleurs-list">
+                        ${types.map(t => `
+                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+                                <span style="width:150px">${t.nom}</span>
+                                <input type="color" value="${t.couleur}" id="color_${t.nom}" data-type="${t.nom}">
+                                <span style="background:${t.couleur}; width:30px; height:30px; border-radius:8px;"></span>
+                            </div>
+                        `).join('')}
+                        <button onclick="sauvegarderCouleurs()" style="margin-top:15px">💾 Sauvegarder les couleurs</button>
+                    </div>
+                </div>
+                
+                <button onclick="deconnexion()" style="background:#999; margin-bottom:20px">🚪 Déconnexion</button>
+            `;
+        }
+        
+        async function sauvegarderCouleurs() {
+            const couleurs = {};
+            types.forEach(t => {
+                const input = document.getElementById(`color_${t.nom}`);
+                if (input) couleurs[t.nom] = input.value;
+            });
+            
+            // Sauvegarder dans la BDD (à implémenter)
+            console.log('Couleurs à sauvegarder:', couleurs);
+            alert('⚠️ Fonctionnalité de sauvegarde des couleurs à implémenter dans l\'API');
+        }
+        
+        function deconnexion() {
+            sessionStorage.removeItem('adminToken');
+            token = null;
+            loadApp();
+        }
+        
+        loadApp();
+    </script>
+</body>
+</html>
