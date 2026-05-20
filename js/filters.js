@@ -69,7 +69,7 @@ function afficherFiltresTypes() {
     
     const typesArray = Array.from(typesUniques).sort();
     
-    // Générer le HTML des boutons (sans styles inline)
+    // Générer le HTML des boutons
     let html = '';
     const isAllActive = (currentTypeFilter === 'all');
     html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">All</button>`;
@@ -82,22 +82,15 @@ function afficherFiltresTypes() {
     container.innerHTML = html;
     
     // Attacher les événements
-    container.addEventListener('click', (e) => {
-        const btn = e.target.closest('.type-filter-btn');
-        if (!btn) return;
-        
-        const selectedType = btn.getAttribute('data-type');
-        
-        // Mettre à jour les classes actives
-        document.querySelectorAll('.type-filter-btn').forEach(b => {
-            if (b.getAttribute('data-type') === selectedType) {
-                b.classList.add('active');
-            } else {
-                b.classList.remove('active');
-            }
+    container.querySelectorAll('.type-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedType = btn.getAttribute('data-type');
+            
+            document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            filtrerParType(selectedType);
         });
-        
-        filtrerParType(selectedType);
     });
 }
 
@@ -106,9 +99,29 @@ function afficherFiltresTypes() {
  */
 function afficherListeSousTypes() {
     const container = document.getElementById('sousTypesList');
-    if (!container) return;
+    if (!container) {
+        console.log("sousTypesList container not found");
+        return;
+    }
     
     container.innerHTML = '';
+    
+    // Vérifier que projets existe et n'est pas vide
+    if (typeof projets === 'undefined' || projets.length === 0) {
+        console.log("No projects loaded yet");
+        const emptyMsg = document.createElement('div');
+        emptyMsg.className = 'sous-type-item';
+        emptyMsg.innerHTML = `<div class="sous-type-noimg"></div>
+            <div class="sous-type-info">
+                <div class="sous-type-nom">Chargement...</div>
+                <div class="sous-type-count">Patientez</div>
+            </div>`;
+        container.appendChild(emptyMsg);
+        return;
+    }
+    
+    console.log("Afficher liste des sous-types - Projets:", projets.length);
+    
     const sousTypesMap = new Map();
     
     // Regrouper les projets par sous-type
@@ -116,45 +129,44 @@ function afficherListeSousTypes() {
         if ((currentCampus !== 'all' && projet.campus !== currentCampus)) return;
         if ((currentTypeFilter !== 'all' && projet.type !== currentTypeFilter)) return;
         
-        if (projet.sousType && projet.sousType.trim() !== "") {
-            if (!sousTypesMap.has(projet.sousType)) {
-                sousTypesMap.set(projet.sousType, {
-                    nom: projet.sousType,
-                    icone: projet.icone,
-                    count: 0,
-                    exempleIcone: projet.icone
+        const sousType = projet.sousType || projet.sous_type || 'Autre';
+        
+        if (sousType && sousType.trim() !== "") {
+            if (!sousTypesMap.has(sousType)) {
+                sousTypesMap.set(sousType, {
+                    nom: sousType,
+                    icone: projet.icone || '',
+                    count: 0
                 });
             }
-            sousTypesMap.get(projet.sousType).count++;
+            sousTypesMap.get(sousType).count++;
         }
     });
     
     const sorted = Array.from(sousTypesMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
     
-    // Afficher message si aucun résultat
     if (sorted.length === 0) {
         const emptyMsg = document.createElement('div');
         emptyMsg.className = 'sous-type-item';
-        emptyMsg.innerHTML = `
-            <div class="sous-type-noimg"></div>
+        emptyMsg.innerHTML = `<div class="sous-type-noimg"></div>
             <div class="sous-type-info">
-                <div class="sous-type-nom">No projects found</div>
-                <div class="sous-type-count">Try another filter</div>
-            </div>
-        `;
+                <div class="sous-type-nom">Aucun projet trouvé</div>
+                <div class="sous-type-count">Essayez un autre filtre</div>
+            </div>`;
         container.appendChild(emptyMsg);
+        console.log("No sous-types found for current filters");
         return;
     }
     
-    // Créer les éléments de la liste
+    console.log("Sous-types trouvés:", sorted.length);
+    
+    // Créer les éléments
     for (let [nom, data] of sorted) {
         const item = document.createElement('div');
         item.className = 'sous-type-item';
-        const projectText = data.count > 1 ? 'projets' : 'projet';
         
-        // Image ou placeholder
         let imageHtml = '';
-        const iconUrl = data.icone || data.exempleIcone;
+        const iconUrl = data.icone;
         
         if (iconUrl && iconUrl !== "") {
             imageHtml = `<img src="${iconUrl}" onerror="this.src='img/DD.jpg'">`;
@@ -167,24 +179,22 @@ function afficherListeSousTypes() {
             ${imageHtml}
             <div class="sous-type-info">
                 <div class="sous-type-nom">${nom}</div>
-                <div class="sous-type-count">${data.count} ${projectText}</div>
+                <div class="sous-type-count">${data.count} projet(s)</div>
             </div>
             <div class="sous-type-arrow">→</div>
         `;
         
-        // Click: filtrer les marqueurs par sous-type
         item.addEventListener('click', (function(sousType, element) {
             return function(e) {
                 e.stopPropagation();
                 
-                // Cacher tous les marqueurs
                 markersList.forEach(m => {
                     if (map.hasLayer(m.marker)) map.removeLayer(m.marker);
                 });
                 
-                // Afficher seulement ceux du sous-type sélectionné
                 markersList.forEach(m => {
-                    if (m.projet.sousType === sousType &&
+                    const projetSousType = m.projet.sousType || m.projet.sous_type;
+                    if (projetSousType === sousType &&
                         (currentCampus === 'all' || m.projet.campus === currentCampus) &&
                         (currentTypeFilter === 'all' || m.projet.type === currentTypeFilter)) {
                         m.marker.addTo(map);
@@ -193,16 +203,12 @@ function afficherListeSousTypes() {
                 
                 effacerTousLesTrajets();
                 
-                // Mettre à jour l'état actif
-                document.querySelectorAll('.sous-type-item').forEach(i => {
-                    i.classList.remove('active');
-                });
+                document.querySelectorAll('.sous-type-item').forEach(i => i.classList.remove('active'));
                 element.classList.add('active');
                 element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             };
         })(nom, item));
         
-        // Double-click: afficher l'icône en modal
         item.addEventListener('dblclick', (function(sousType, icon) {
             return function(e) {
                 e.stopPropagation();

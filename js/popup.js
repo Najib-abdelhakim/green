@@ -15,8 +15,8 @@ function creerContenuPopup(projet) {
     if (projet.description && projet.description.trim() !== "") descriptionHtml = `<div class="popup-description">${projet.description}</div>`;
     
     let complementHtml = '';
-    if (projet.Informations_complémentaires && projet.Informations_complémentaires.trim() !== "") {
-        complementHtml = `<div class="popup-footer"><div class="info-complementaire"><strong>Additional details :</strong><br>${projet.Informations_complémentaires}</div></div>`;
+    if (projet.informations_complementaires && projet.informations_complementaires.trim() !== "") {
+        complementHtml = `<div class="popup-footer"><div class="info-complementaire"><strong>Additional details :</strong><br>${projet.informations_complementaires}</div></div>`;
     }
     
     return `${titleHtml}${badgeHtml}${descriptionHtml}${complementHtml}`;

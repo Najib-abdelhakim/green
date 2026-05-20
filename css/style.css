@@ -636,7 +636,7 @@ body {
 .campus-radial-item[data-campus="CLUB DE TIR"] { background: linear-gradient(135deg, #e74c3c, #c0392b); }
 .campus-radial-item[data-campus="VILLAS DES CHERCHERUS"] { background: linear-gradient(135deg, #f39c12, #e67e22); }
 .campus-radial-item[data-campus="VILLAS MARGUERITTE"] { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-.campus-radial-item[data-campus="SMART BUILDING PARK"] { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.campus-radial-item[data-campus="GSBP"] { background: linear-gradient(135deg, #1abc9c, #16a085); }
 
 /* ==================== MODAL ==================== */
 .icon-modal {

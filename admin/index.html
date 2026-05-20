@@ -6,96 +6,180 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: system-ui, sans-serif; background: #e8f0f5; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; }
         .card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         h1, h2 { color: #01568b; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: 600; }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        button {
-            background: #01568b;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; }
+        button { background: #01568b; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; margin-right: 10px; margin-top: 10px; }
         button:hover { background: #013a5c; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
-        .btn-edit { background: #ffcc00; color: #333; margin-right: 5px; }
-        .btn-delete { background: #cd0e0e; }
-        .btn-small { padding: 5px 10px; font-size: 12px; }
-        .message { padding: 10px; border-radius: 8px; margin-bottom: 15px; }
-        .success { background: #d4edda; color: #155724; }
-        .error { background: #f8d7da; color: #721c24; }
+        .btn-edit { background: #ffcc00; color: #333; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px; }
+        .btn-delete { background: #cd0e0e; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
         .login-box { max-width: 400px; margin: 100px auto; text-align: center; }
+        .info-bar { background: #e8f0f5; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; }
+        .image-preview { margin-top: 10px; max-width: 150px; }
+        .image-preview img { max-width: 100%; border-radius: 8px; border: 1px solid #ddd; }
+        .upload-progress { font-size: 12px; color: #01568b; margin-top: 5px; }
+        .help-text { font-size: 11px; color: #888; margin-top: 5px; }
+        .row-2cols { display: flex; gap: 20px; }
+        .col { flex: 1; }
+        @media (max-width: 768px) { .row-2cols { flex-direction: column; } }
     </style>
 </head>
 <body>
     <div class="container" id="app">
-        <div style="text-align: center; padding: 50px;">Chargement...</div>
+        <div style="text-align: center; padding: 50px;">⏳ Chargement...</div>
     </div>
 
     <script>
+        // ============================================================
+        // CONFIGURATION SUPABASE
+        // ============================================================
+        const SUPABASE_URL = 'https://vskyxicpihysyjmbknur.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZza3l4aWNwaWh5c3lqbWJrbnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODA0MjIsImV4cCI6MjA5NDc1NjQyMn0.qlZD2K0nfJ6ccrcQba8Dj5ZGhgAWPSWHNjscEDhhXsw';
+        const SUPABASE_SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZza3l4aWNwaWh5c3lqbWJrbnVyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTE4MDQyMiwiZXhwIjoyMDk0NzU2NDIyfQ.tJ523KHq8l-35W3TZ4QYUP5oGcrQyQr5_Qh67etqmhY';
+        
+        // ============================================================
         let projets = [];
         let types = [];
         let token = sessionStorage.getItem('adminToken');
-        
-        // Configuration
-        const ADMIN_PASSWORD = 'um6p2024';  // Change ce mot de passe
-        
-        async function login() {
-            const password = prompt('Entrez le mot de passe admin:');
-            if (password === ADMIN_PASSWORD) {
-                sessionStorage.setItem('adminToken', password);
-                token = password;
-                loadApp();
-            } else {
-                alert('Mot de passe incorrect');
-            }
+        const ADMIN_PASSWORD = 'um6p2024';
+
+        // ============================================================
+        // FONCTIONS SUPABASE
+        // ============================================================
+        async function supabaseFetch(endpoint, options = {}) {
+            const url = `${SUPABASE_URL}/rest/v1/${endpoint}`;
+            const response = await fetch(url, {
+                ...options,
+                headers: {
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    'Content-Type': 'application/json',
+                    ...options.headers
+                }
+            });
+            return response;
         }
         
-        async function loadApp() {
-            if (!token) {
-                document.getElementById('app').innerHTML = `
-                    <div class="login-box card">
-                        <h2>🔐 Admin Green Map</h2>
-                        <button onclick="login()">Se connecter</button>
-                    </div>
-                `;
-                return;
+        async function supabaseWrite(endpoint, options = {}) {
+            const url = `${SUPABASE_URL}/rest/v1/${endpoint}`;
+            const response = await fetch(url, {
+                ...options,
+                headers: {
+                    'apikey': SUPABASE_SERVICE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
+                    'Content-Type': 'application/json',
+                    ...options.headers
+                }
+            });
+            return response;
+        }
+
+        // ============================================================
+        // UPLOAD IMAGE VERS SUPABASE STORAGE
+        // ============================================================
+        async function uploadToSupabase(file, bucket) {
+            const fileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
+            const url = `${SUPABASE_URL}/storage/v1/object/${bucket}/${fileName}`;
+            
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`
+                },
+                body: file
+            });
+            
+            if (!response.ok) {
+                const error = await response.text();
+                throw new Error(`Upload failed: ${error}`);
             }
             
-            await chargerDonnees();
-            afficherInterface();
+            const data = await response.json();
+            const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${bucket}/${fileName}`;
+            return publicUrl;
         }
-        
+
+        // ============================================================
+        // GESTION DES UPLOADS
+        // ============================================================
+        async function handleImageUpload(inputId, previewId, bucket, urlFieldId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            const urlField = document.getElementById(urlFieldId);
+            const file = input.files[0];
+            
+            if (!file) return;
+            
+            preview.innerHTML = '<div class="upload-progress">📤 Upload en cours...</div>';
+            
+            try {
+                const publicUrl = await uploadToSupabase(file, bucket);
+                preview.innerHTML = `<img src="${publicUrl}" alt="Preview">`;
+                urlField.value = publicUrl;
+                
+                // Déclencher l'événement pour l'aperçu
+                if (urlFieldId === 'image') updateImagePreview();
+                if (urlFieldId === 'icone') updateIconPreview();
+                
+            } catch (error) {
+                preview.innerHTML = `<div class="upload-progress" style="color:red;">❌ Erreur: ${error.message}</div>`;
+                console.error(error);
+            }
+        }
+
+        // ============================================================
+        // CHARGEMENT DES DONNÉES
+        // ============================================================
         async function chargerDonnees() {
             try {
-                // Charger les projets
-                const resProjets = await fetch('/.netlify/functions/projets');
-                projets = await resProjets.json();
+                const resTypes = await supabaseFetch('types?select=*');
+                if (resTypes.ok) types = await resTypes.json();
                 
-                // Charger les types/couleurs
-                const resTypes = await fetch('/.netlify/functions/types');
-                types = await resTypes.json();
+                const resProjets = await supabaseFetch('projets?select=*');
+                if (resProjets.ok) projets = await resProjets.json();
+                
+                console.log(`Types: ${types.length}, Projets: ${projets.length}`);
+                return true;
             } catch (e) {
-                console.error('Erreur chargement:', e);
+                console.error(e);
+                return false;
             }
         }
-        
+
+        // ============================================================
+        // APERÇUS
+        // ============================================================
+        function previewImage(url, previewElementId) {
+            const preview = document.getElementById(previewElementId);
+            if (url && url.trim()) {
+                preview.innerHTML = `<img src="${url}" alt="Preview" onerror="this.parentElement.innerHTML='<span style=\'color:red\'>❌ Image non trouvée</span>'">`;
+            } else {
+                preview.innerHTML = '<span style="color:#999">Aucune image</span>';
+            }
+        }
+
+        function updateImagePreview() {
+            const imageUrl = document.getElementById('image').value;
+            previewImage(imageUrl, 'imagePreview');
+        }
+
+        function updateIconPreview() {
+            const iconUrl = document.getElementById('icone').value;
+            previewImage(iconUrl, 'iconePreview');
+        }
+
+        // ============================================================
+        // CRUD PROJETS
+        // ============================================================
         async function ajouterOuModifierProjet(event) {
             event.preventDefault();
-            
             const form = event.target;
+            
             const projet = {
                 id: form.id.value,
                 nom: form.nom.value,
@@ -105,49 +189,62 @@
                 type: form.type.value,
                 sous_type: form.sous_type.value,
                 campus: form.campus.value,
-                image: form.image.value,
-                icone: form.icone.value,
-                informations_complementaires: form.infos.value
+                image: form.image.value || '',
+                icone: form.icone.value || '',
+                informations_complementaires: form.infos.value || ''
             };
+
+            const existing = projets.find(p => p.id === projet.id);
             
-            const response = await fetch('/.netlify/functions/save-projet', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(projet)
-            });
-            
+            let response;
+            if (existing) {
+                response = await supabaseWrite(`projets?id=eq.${projet.id}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify(projet)
+                });
+            } else {
+                response = await supabaseWrite('projets', {
+                    method: 'POST',
+                    body: JSON.stringify(projet)
+                });
+            }
+
             if (response.ok) {
                 alert('✅ Projet enregistré !');
                 form.reset();
-                chargerDonnees();
+                document.getElementById('saveBtn').textContent = '💾 Enregistrer';
+                document.getElementById('id').readOnly = false;
+                document.getElementById('imagePreview').innerHTML = '';
+                document.getElementById('iconePreview').innerHTML = '';
+                await chargerDonnees();
                 afficherInterface();
             } else {
-                alert('❌ Erreur lors de l\'enregistrement');
+                const error = await response.text();
+                alert('❌ Erreur: ' + error);
             }
         }
-        
+
         async function supprimerProjet(id) {
             if (!confirm('Supprimer ce projet ?')) return;
             
-            const response = await fetch(`/.netlify/functions/delete-projet?id=${id}`, {
-                method: 'DELETE',
-                headers: { 'Authorization': `Bearer ${token}` }
+            const response = await supabaseWrite(`projets?id=eq.${id}`, {
+                method: 'DELETE'
             });
             
             if (response.ok) {
                 alert('✅ Projet supprimé');
-                chargerDonnees();
+                await chargerDonnees();
                 afficherInterface();
+            } else {
+                alert('❌ Erreur lors de la suppression');
             }
         }
-        
+
         function editerProjet(projet) {
             const form = document.getElementById('projetForm');
             if (form) {
                 form.id.value = projet.id;
+                form.id.readOnly = true;
                 form.nom.value = projet.nom || '';
                 form.description.value = projet.description || '';
                 form.latitude.value = projet.latitude;
@@ -159,134 +256,228 @@
                 form.icone.value = projet.icone || '';
                 form.infos.value = projet.informations_complementaires || '';
                 
-                document.querySelector('#projetForm button').textContent = '✏️ Modifier';
+                previewImage(projet.image, 'imagePreview');
+                previewImage(projet.icone, 'iconePreview');
+                
+                document.getElementById('saveBtn').textContent = '✏️ Modifier';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
-        
+
+        function resetForm() {
+            const form = document.getElementById('projetForm');
+            if (form) {
+                form.reset();
+                form.id.readOnly = false;
+                document.getElementById('saveBtn').textContent = '💾 Enregistrer';
+                document.getElementById('imagePreview').innerHTML = '';
+                document.getElementById('iconePreview').innerHTML = '';
+                document.getElementById('imageFile').value = '';
+                document.getElementById('iconeFile').value = '';
+            }
+        }
+
+        // ============================================================
+        // SAUVEGARDER COULEURS
+        // ============================================================
+        async function sauvegarderCouleurs() {
+            for (const type of types) {
+                const input = document.getElementById(`color_${type.nom}`);
+                if (input && input.value !== type.couleur) {
+                    const response = await supabaseWrite(`types?id=eq.${type.id}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({ couleur: input.value })
+                    });
+                    if (!response.ok) {
+                        alert(`Erreur lors de la sauvegarde de ${type.nom}`);
+                        return;
+                    }
+                }
+            }
+            alert('✅ Couleurs sauvegardées !');
+            await chargerDonnees();
+            afficherInterface();
+        }
+
+        // ============================================================
+        // AFFICHAGE INTERFACE
+        // ============================================================
         function afficherInterface() {
+            const typesOptions = types.length > 0 
+                ? types.map(t => `<option value="${t.nom}">${t.nom}</option>`).join('')
+                : '<option>Biodiversity</option><option>Buildings</option><option>Ecomobility</option><option>Energy</option><option>Engagement In Action</option><option>Waste</option><option>Water</option>';
+
             document.getElementById('app').innerHTML = `
                 <h1>🌱 Administration Green Map</h1>
+                
+                <div class="info-bar">
+                    📡 Connexion: ✅ Supabase<br>
+                    📊 Projets: ${projets.length} | 🎨 Types: ${types.length}
+                </div>
                 
                 <div class="card">
                     <h2>📝 Formulaire projet</h2>
                     <form id="projetForm" onsubmit="ajouterOuModifierProjet(event)">
-                        <div class="form-group">
-                            <label>ID *</label>
-                            <input type="text" id="id" required>
+                        <div class="row-2cols">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>ID * (ex: BG-001)</label>
+                                    <input type="text" id="id" required placeholder="BG-001">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nom</label>
+                                    <input type="text" id="nom" placeholder="Nom du projet">
+                                </div>
+                                <div class="form-group">
+                                    <label>Latitude *</label>
+                                    <input type="number" step="any" id="latitude" required placeholder="32.218068">
+                                </div>
+                                <div class="form-group">
+                                    <label>Longitude *</label>
+                                    <input type="number" step="any" id="longitude" required placeholder="-7.936605">
+                                </div>
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select id="type">${typesOptions}</select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Campus</label>
+                                    <select id="campus">
+                                        <option>Ben Guerir</option><option>Rabat</option><option>GEP</option>
+                                        <option>AITTC</option><option>ASARI Laayoune</option>
+                                        <option>LYCÉE D'EXCELLENCE</option><option>DATA CENTER</option>
+                                        <option>CLUB DE TIR</option><option>VILLAS DES CHERCHERUS</option>
+                                        <option>VILLAS MARGUERITTE</option><option>SMART BUILDING PARK</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>📷 IMAGE (upload ou URL)</label>
+                                    <input type="file" id="imageFile" accept="image/*" onchange="handleImageUpload('imageFile', 'imagePreview', 'images', 'image')">
+                                    <div class="help-text">Sélectionnez une image → upload automatique</div>
+                                    <input type="text" id="image" placeholder="Ou entrez une URL" onchange="updateImagePreview()">
+                                    <div id="imagePreview" class="image-preview"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>🖼️ ICÔNE (upload ou URL)</label>
+                                    <input type="file" id="iconeFile" accept="image/*" onchange="handleImageUpload('iconeFile', 'iconePreview', 'icons', 'icone')">
+                                    <div class="help-text">Sélectionnez une icône → upload automatique</div>
+                                    <input type="text" id="icone" placeholder="Ou entrez une URL" onchange="updateIconPreview()">
+                                    <div id="iconePreview" class="image-preview"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Sous-type</label>
+                                    <input type="text" id="sous_type" placeholder="ex: Insect Shelter">
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" id="nom">
-                        </div>
+                        
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea id="description" rows="3"></textarea>
+                            <textarea id="description" rows="3" placeholder="Description..."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Latitude *</label>
-                            <input type="number" step="any" id="latitude" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Longitude *</label>
-                            <input type="number" step="any" id="longitude" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Type</label>
-                            <select id="type">
-                                ${types.map(t => `<option value="${t.nom}">${t.nom} (${t.couleur})</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Sous-type</label>
-                            <input type="text" id="sous_type">
-                        </div>
-                        <div class="form-group">
-                            <label>Campus</label>
-                            <select id="campus">
-                                <option>Ben Guerir</option><option>Rabat</option><option>GEP</option>
-                                <option>AITTC</option><option>ASARI Laayoune</option>
-                                <option>LYCÉE D'EXCELLENCE</option><option>DATA CENTER</option>
-                                <option>CLUB DE TIR</option><option>VILLAS DES CHERCHERUS</option>
-                                <option>VILLAS MARGUERITTE</option><option>SMART BUILDING PARK</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>URL Image</label>
-                            <input type="text" id="image" placeholder="img/...">
-                        </div>
-                        <div class="form-group">
-                            <label>URL Icône</label>
-                            <input type="text" id="icone" placeholder="img/...">
-                        </div>
+                        
                         <div class="form-group">
                             <label>Infos complémentaires</label>
-                            <textarea id="infos" rows="2"></textarea>
+                            <textarea id="infos" rows="2" placeholder="Infos supplémentaires..."></textarea>
                         </div>
-                        <button type="submit">💾 Enregistrer</button>
-                        <button type="button" onclick="document.getElementById('projetForm').reset(); this.textContent='💾 Enregistrer'" style="background:#999">🔄 Nouveau</button>
+                        
+                        <button type="submit" id="saveBtn">💾 Enregistrer</button>
+                        <button type="button" onclick="resetForm()" style="background:#999">🔄 Nouveau</button>
                     </form>
                 </div>
                 
                 <div class="card">
                     <h2>📋 Liste des projets (${projets.length})</h2>
-                    <table style="width:100%">
-                        <thead>
-                            <tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr>
-                        </thead>
-                        <tbody>
-                            ${projets.map(p => `
-                                <tr>
-                                    <td>${p.id}</td>
-                                    <td>${p.nom || '-'}</td>
-                                    <td>${p.campus}</td>
-                                    <td style="color:${p.type_couleur || '#01568b'}">${p.type || '-'}</td>
-                                    <td>
-                                        <button class="btn-small btn-edit" onclick="editerProjet(${JSON.stringify(p).replace(/"/g, '&quot;')})">✏️</button>
-                                        <button class="btn-small btn-delete" onclick="supprimerProjet('${p.id}')">🗑️</button>
-                                    </td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
+                    ${projets.length === 0 ? '<p>Aucun projet.</p>' : `
+                        <table style="width:100%">
+                            <thead><tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                ${projets.map(p => `
+                                    <tr>
+                                        <td>${p.id}</td>
+                                        <td>${p.nom || '-'}</td>
+                                        <td>${p.campus}</td>
+                                        <td>${p.type || '-'}</td>
+                                        <td>
+                                            <button class="btn-edit" onclick='editerProjet(${JSON.stringify(p).replace(/'/g, "&#39;")})'>✏️</button>
+                                            <button class="btn-delete" onclick="supprimerProjet('${p.id}')">🗑️</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `}
                 </div>
                 
                 <div class="card">
                     <h2>🎨 Gestion des couleurs par thème</h2>
-                    <div id="couleurs-list">
-                        ${types.map(t => `
-                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-                                <span style="width:150px">${t.nom}</span>
-                                <input type="color" value="${t.couleur}" id="color_${t.nom}" data-type="${t.nom}">
-                                <span style="background:${t.couleur}; width:30px; height:30px; border-radius:8px;"></span>
-                            </div>
-                        `).join('')}
+                    ${types.length === 0 ? '<p>⚠️ Aucun type trouvé.</p>' : `
+                        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;">
+                            ${types.map(t => `
+                                <div style="display:flex; align-items:center; gap:10px;">
+                                    <span style="width:120px">${t.nom}</span>
+                                    <input type="color" value="${t.couleur || '#01568b'}" id="color_${t.nom}">
+                                    <span style="background:${t.couleur || '#01568b'}; width:30px; height:30px; border-radius:8px;"></span>
+                                </div>
+                            `).join('')}
+                        </div>
                         <button onclick="sauvegarderCouleurs()" style="margin-top:15px">💾 Sauvegarder les couleurs</button>
-                    </div>
+                    `}
                 </div>
                 
-                <button onclick="deconnexion()" style="background:#999; margin-bottom:20px">🚪 Déconnexion</button>
+                <button onclick="deconnexion()" style="background:#999">🚪 Déconnexion</button>
             `;
         }
-        
-        async function sauvegarderCouleurs() {
-            const couleurs = {};
-            types.forEach(t => {
-                const input = document.getElementById(`color_${t.nom}`);
-                if (input) couleurs[t.nom] = input.value;
-            });
-            
-            // Sauvegarder dans la BDD (à implémenter)
-            console.log('Couleurs à sauvegarder:', couleurs);
-            alert('⚠️ Fonctionnalité de sauvegarde des couleurs à implémenter dans l\'API');
+
+        // ============================================================
+        // CONNEXION
+        // ============================================================
+        async function login() {
+            const password = prompt('Entrez le mot de passe admin:');
+            if (password === ADMIN_PASSWORD) {
+                sessionStorage.setItem('adminToken', password);
+                token = password;
+                loadApp();
+            } else {
+                alert('Mot de passe incorrect');
+            }
         }
-        
+
         function deconnexion() {
             sessionStorage.removeItem('adminToken');
             token = null;
             loadApp();
         }
-        
+
+        async function loadApp() {
+            if (!token) {
+                document.getElementById('app').innerHTML = `
+                    <div class="login-box card">
+                        <h2>🔐 Admin Green Map</h2>
+                        <button onclick="login()">Se connecter</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            const success = await chargerDonnees();
+            if (success) {
+                afficherInterface();
+            } else {
+                document.getElementById('app').innerHTML = `
+                    <div class="card" style="color:red;">
+                        <h2>❌ Erreur de connexion à Supabase</h2>
+                        <button onclick="loadApp()">🔄 Réessayer</button>
+                        <button onclick="deconnexion()">🔐 Se reconnecter</button>
+                    </div>
+                `;
+            }
+        }
+
         loadApp();
     </script>
 </body>

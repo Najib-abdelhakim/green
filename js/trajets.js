@@ -1,202 +1,214 @@
-// ==================== TRAJETS ====================
+// ==================== FONCTIONS DES TRAJETS ====================
+console.log("📁 Chargement fonctions trajets...");
+
+// Variables pour stocker les trajets actifs sur la carte
+var trajetActuel = null;
+var trajetBusActuel = null;
 
 /**
- * Affiche la section des trajets (GOLF CART et BUS)
+ * Affiche la section des trajets dans la sidebar
  */
 function afficherTrajetsSection() {
-    const container = document.getElementById('trajetsSection');
+    console.log("afficherTrajetsSection appelée");
+    
+    var container = document.getElementById('trajetsSection');
     if (!container) return;
+    
     container.innerHTML = '';
     
-    // Filtrer les trajets selon le campus actuel
-    const golfettesFiltrees = (typeof trajetsGolfette !== 'undefined' && trajetsGolfette)
-        ? (currentCampus === 'all' ? [...trajetsGolfette] : trajetsGolfette.filter(t => t.campus === currentCampus))
-        : [];
+    // Filtrer par campus
+    var golfettes = (typeof currentCampus !== 'undefined' && currentCampus !== 'all') 
+        ? trajetsGolfette.filter(t => t.campus === currentCampus)
+        : trajetsGolfette;
     
-    const busFiltrees = (typeof trajetsBus !== 'undefined' && trajetsBus)
-        ? (currentCampus === 'all' ? [...trajetsBus] : trajetsBus.filter(t => t.campus === currentCampus))
-        : [];
+    var bus = (typeof currentCampus !== 'undefined' && currentCampus !== 'all')
+        ? trajetsBus.filter(t => t.campus === currentCampus)
+        : trajetsBus;
     
-    // Afficher les trajets GOLF CART
-    if (golfettesFiltrees.length > 0) {
-        const card = createTrajetCard('GOLF CART Pathway', 'golfetteContent');
-        const content = card.querySelector('.type-content');
+    // Afficher Golfettes
+    if (golfettes.length > 0) {
+        var card = document.createElement('div');
+        card.className = 'type-card';
+        card.innerHTML = `
+            <div class="type-header">
+                <span class="type-nom">GOLF CART Pathway</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="type-content"></div>
+        `;
         
-        golfettesFiltrees.forEach(t => {
-            const item = createTrajetItem('G', t.nom, t.couleur);
-            item.onclick = () => {
-                effacerTousLesTrajets();
-                afficherTrajetGolfette(t.id);
-            };
+        var content = card.querySelector('.type-content');
+        
+        golfettes.forEach(function(t) {
+            var item = document.createElement('div');
+            item.className = 'sous-type-item';
+            item.style.cursor = 'pointer';
+            item.style.margin = '8px 0';
+            item.style.padding = '10px';
+            item.style.background = '#f0f5f9';
+            item.style.borderRadius = '10px';
+            item.style.display = 'flex';
+            item.style.alignItems = 'center';
+            item.style.gap = '12px';
+            item.innerHTML = `
+                <div class="trajet-icon" style="background: ${t.couleur};">G</div>
+                <div class="sous-type-info"><div class="sous-type-nom">${t.nom}</div></div>
+                <div class="sous-type-arrow">→</div>
+            `;
+            item.onclick = (function(trajet) {
+                return function() {
+                    effacerTousLesTrajets();
+                    afficherTrajetGolfette(trajet.id);
+                };
+            })(t);
             content.appendChild(item);
         });
+        
+        var header = card.querySelector('.type-header');
+        header.onclick = function() {
+            var contentDiv = this.nextElementSibling;
+            if (contentDiv.style.display === 'none') {
+                contentDiv.style.display = 'block';
+            } else {
+                contentDiv.style.display = 'none';
+            }
+        };
         
         container.appendChild(card);
     }
     
-    // Afficher les trajets BUS
-    if (busFiltrees.length > 0) {
-        const card = createTrajetCard('BUS Pathway', 'busContent');
-        const content = card.querySelector('.type-content');
+    // Afficher Bus
+    if (bus.length > 0) {
+        var card2 = document.createElement('div');
+        card2.className = 'type-card';
+        card2.innerHTML = `
+            <div class="type-header">
+                <span class="type-nom">BUS Pathway</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="type-content"></div>
+        `;
         
-        busFiltrees.forEach(t => {
-            const item = createTrajetItem('B', t.nom, t.couleur);
-            item.onclick = () => {
-                effacerTousLesTrajets();
-                afficherTrajetBus(t.id);
-            };
-            content.appendChild(item);
+        var content2 = card2.querySelector('.type-content');
+        
+        bus.forEach(function(t) {
+            var item = document.createElement('div');
+            item.className = 'sous-type-item';
+            item.style.cursor = 'pointer';
+            item.style.margin = '8px 0';
+            item.style.padding = '10px';
+            item.style.background = '#f0f5f9';
+            item.style.borderRadius = '10px';
+            item.style.display = 'flex';
+            item.style.alignItems = 'center';
+            item.style.gap = '12px';
+            item.innerHTML = `
+                <div class="trajet-icon" style="background: ${t.couleur};">B</div>
+                <div class="sous-type-info"><div class="sous-type-nom">${t.nom}</div></div>
+                <div class="sous-type-arrow">→</div>
+            `;
+            item.onclick = (function(trajet) {
+                return function() {
+                    effacerTousLesTrajets();
+                    afficherTrajetBus(trajet.id);
+                };
+            })(t);
+            content2.appendChild(item);
         });
         
-        container.appendChild(card);
+        var header2 = card2.querySelector('.type-header');
+        header2.onclick = function() {
+            var contentDiv = this.nextElementSibling;
+            if (contentDiv.style.display === 'none') {
+                contentDiv.style.display = 'block';
+            } else {
+                contentDiv.style.display = 'none';
+            }
+        };
+        
+        container.appendChild(card2);
     }
+    
+    console.log("Trajets affichés:", golfettes.length, "golfettes,", bus.length, "bus");
 }
 
 /**
- * Crée une carte de trajet (conteneur pour une catégorie)
- * @param {string} title - Titre de la carte
- * @param {string} contentId - ID pour le contenu
- * @returns {HTMLElement} - Élément carte
- */
-function createTrajetCard(title, contentId) {
-    const card = document.createElement('div');
-    card.className = 'type-card';
-    card.innerHTML = `
-        <div class="type-header">
-            <span class="type-nom">${title}</span>
-            <span class="toggle-icon">⮛</span>
-        </div>
-        <div class="type-content" id="${contentId}"></div>
-    `;
-    
-    const header = card.querySelector('.type-header');
-    header.onclick = function() {
-        this.classList.toggle('collapsed');
-        this.nextElementSibling.classList.toggle('collapsed');
-    };
-    
-    return card;
-}
-
-/**
- * Crée un élément de trajet (item de la liste)
- * @param {string} letter - Lettre à afficher (G ou B)
- * @param {string} nom - Nom du trajet
- * @param {string} couleur - Couleur du trajet
- * @returns {HTMLElement} - Élément item
- */
-function createTrajetItem(letter, nom, couleur) {
-    const item = document.createElement('div');
-    item.className = 'sous-type-item';
-    item.innerHTML = `
-        <div class="trajet-icon">${letter}</div>
-        <div class="sous-type-info">
-            <div class="sous-type-nom">${nom}</div>
-        </div>
-        <div class="sous-type-arrow">→</div>
-    `;
-    
-    const icon = item.querySelector('.trajet-icon');
-    icon.style.setProperty('--trajet-color', couleur);
-    
-    return item;
-}
-
-/**
- * Affiche un trajet de golfette sur la carte
- * @param {string} trajetId - ID du trajet à afficher
+ * Affiche un trajet golfette sur la carte
  */
 function afficherTrajetGolfette(trajetId) {
-    if (typeof trajetsGolfette === 'undefined' || typeof arretsGolfette === 'undefined') return;
-    
-    // Cacher tous les marqueurs
-    markersList.forEach(item => {
-        if (map.hasLayer(item.marker)) map.removeLayer(item.marker);
-    });
-    
-    // Cacher les trajets existants
-    if (trajetBusActuel) map.removeLayer(trajetBusActuel);
-    if (trajetActuel) map.removeLayer(trajetActuel);
-    
-    const trajet = trajetsGolfette.find(t => t.id === trajetId);
+    var trajet = trajetsGolfette.find(function(t) { return t.id === trajetId; });
     if (!trajet) return;
+    if (typeof map === 'undefined' || !map) return;
     
-    const points = [];
-    trajet.arrets.forEach(id => {
-        const arret = arretsGolfette.find(a => a.id === id);
-        if (arret && arret.coords && arret.coords.length === 2) {
-            points.push(arret.coords);
-        }
+    // Cacher les marqueurs
+    if (typeof markersList !== 'undefined') {
+        markersList.forEach(function(item) {
+            if (map.hasLayer(item.marker)) map.removeLayer(item.marker);
+        });
+    }
+    
+    // Cacher les anciens trajets
+    if (trajetActuel && map.hasLayer(trajetActuel)) map.removeLayer(trajetActuel);
+    if (trajetBusActuel && map.hasLayer(trajetBusActuel)) map.removeLayer(trajetBusActuel);
+    
+    // Récupérer les points
+    var points = [];
+    trajet.arrets.forEach(function(id) {
+        var arret = arretsGolfette.find(function(a) { return a.id === id; });
+        if (arret && arret.coords) points.push(arret.coords);
     });
     
     if (points.length >= 2) {
-        const contourBlanc = L.polyline(points, {
-            color: "#FFFFFF",
-            weight: 6,
-            opacity: 0.95,
-            lineCap: 'round',
-            lineJoin: 'round'
-        }).addTo(map);
-        
-        const traitCouleur = L.polyline(points, {
+        var traitCouleur = L.polyline(points, {
             color: trajet.couleur,
-            weight: 2,
-            opacity: 1,
+            weight: 5,
+            opacity: 0.9,
             lineCap: 'round',
             lineJoin: 'round'
         }).addTo(map);
         
-        trajetActuel = L.layerGroup([contourBlanc, traitCouleur]).addTo(map);
+        trajetActuel = traitCouleur;
         map.fitBounds(L.latLngBounds(points));
     }
 }
 
 /**
- * Affiche un trajet de bus sur la carte
- * @param {string} trajetId - ID du trajet à afficher
+ * Affiche un trajet bus sur la carte
  */
 function afficherTrajetBus(trajetId) {
-    if (typeof trajetsBus === 'undefined' || typeof arretsBus === 'undefined') return;
-    
-    // Cacher tous les marqueurs
-    markersList.forEach(item => {
-        if (map.hasLayer(item.marker)) map.removeLayer(item.marker);
-    });
-    
-    // Cacher les trajets existants
-    if (trajetActuel) map.removeLayer(trajetActuel);
-    if (trajetBusActuel) map.removeLayer(trajetBusActuel);
-    
-    const trajet = trajetsBus.find(t => t.id === trajetId);
+    var trajet = trajetsBus.find(function(t) { return t.id === trajetId; });
     if (!trajet) return;
+    if (typeof map === 'undefined' || !map) return;
     
-    const points = [];
-    trajet.arrets.forEach(id => {
-        const arret = arretsBus.find(a => a.id === id);
-        if (arret && arret.coords && arret.coords.length === 2) {
-            points.push(arret.coords);
-        }
+    // Cacher les marqueurs
+    if (typeof markersList !== 'undefined') {
+        markersList.forEach(function(item) {
+            if (map.hasLayer(item.marker)) map.removeLayer(item.marker);
+        });
+    }
+    
+    // Cacher les anciens trajets
+    if (trajetActuel && map.hasLayer(trajetActuel)) map.removeLayer(trajetActuel);
+    if (trajetBusActuel && map.hasLayer(trajetBusActuel)) map.removeLayer(trajetBusActuel);
+    
+    // Récupérer les points
+    var points = [];
+    trajet.arrets.forEach(function(id) {
+        var arret = arretsBus.find(function(a) { return a.id === id; });
+        if (arret && arret.coords) points.push(arret.coords);
     });
     
     if (points.length >= 2) {
-        const contourBlanc = L.polyline(points, {
-            color: "#FFFFFF",
-            weight: 6,
-            opacity: 0.95,
-            lineCap: 'round',
-            lineJoin: 'round'
-        }).addTo(map);
-        
-        const traitCouleur = L.polyline(points, {
+        var traitCouleur = L.polyline(points, {
             color: trajet.couleur,
-            weight: 2,
-            opacity: 1,
+            weight: 5,
+            opacity: 0.9,
             dashArray: "8,8",
             lineCap: 'round',
             lineJoin: 'round'
         }).addTo(map);
         
-        trajetBusActuel = L.layerGroup([contourBlanc, traitCouleur]).addTo(map);
+        trajetBusActuel = traitCouleur;
         map.fitBounds(L.latLngBounds(points));
     }
 }
@@ -205,12 +217,14 @@ function afficherTrajetBus(trajetId) {
  * Efface tous les trajets de la carte
  */
 function effacerTousLesTrajets() {
-    if (trajetActuel) {
+    if (trajetActuel && map && map.hasLayer(trajetActuel)) {
         map.removeLayer(trajetActuel);
         trajetActuel = null;
     }
-    if (trajetBusActuel) {
+    if (trajetBusActuel && map && map.hasLayer(trajetBusActuel)) {
         map.removeLayer(trajetBusActuel);
         trajetBusActuel = null;
     }
 }
+
+console.log("✅ Fonctions trajets chargées");

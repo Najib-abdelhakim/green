@@ -2,9 +2,8 @@
 let map;
 let markersList = [];
 let currentCampus = 'all';
+let mapInitialized = false; 
 let currentTypeFilter = 'all';
-let trajetActuel = null;
-let trajetBusActuel = null;
 
 // ==================== COULEURS ====================
 const glowColors = {
@@ -17,4 +16,3 @@ const glowColors = {
     'Buildings': 'rgb(132, 0, 255)',
     'Catering': 'rgb(255, 162, 0)'
 };
-
