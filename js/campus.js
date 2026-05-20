@@ -12,7 +12,7 @@ function initialiserControlesCampus() {
                 <div class="campus-radial-item" data-campus="GEP" data-name="GEP" id="btnGEP"></div>
                 <div class="campus-radial-item" data-campus="AITTC" data-name="AITTC" id="btnAITTC"></div>
                 <div class="campus-radial-item" data-campus="ASARI Laayoune" data-name="ASARI Laayoune" id="btnASARI"></div>
-                <div class="campus-radial-item" data-campus="LYCÉE D\'EXCELLENCE" data-name="LYCÉE D\'EXCELLENCE" id="btnLycee"></div>
+                <div class="campus-radial-item" data-campus="LYCÉE EXCELLENCE" data-name="LYCÉE EXCELLENCE" id="btnLycee"></div>
                 <div class="campus-radial-item" data-campus="DATA CENTER" data-name="DATA CENTER" id="btnDataCenter"></div>
                 <div class="campus-radial-item" data-campus="CLUB DE TIR" data-name="CLUB DE TIR" id="btnClubTir"></div>
                 <div class="campus-radial-item" data-campus="VILLAS DES CHERCHERUS" data-name="VILLAS CHERCHEURS" id="btnVillasChercheurs"></div>
@@ -78,7 +78,7 @@ function recentrerASARI() {
 
 function recentrerLycee() {
     map.setView([32.206609350487135, -7.938522820743328], 17);
-    filtrerParCampus('LYCÉE D\'EXCELLENCE');
+    filtrerParCampus('LYCÉE EXCELLENCE');
 }
 
 function recentrerDataCenter() {

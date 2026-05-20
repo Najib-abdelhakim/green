@@ -631,7 +631,7 @@ body {
 .campus-radial-item[data-campus="GEP"] { background: linear-gradient(135deg, #a4c840, #61873d); }
 .campus-radial-item[data-campus="AITTC"] { background: linear-gradient(135deg, #17a2b8, #00bcd4); }
 .campus-radial-item[data-campus="ASARI Laayoune"] { background: linear-gradient(135deg, #bc9d75, #e6cfaf); }
-.campus-radial-item[data-campus="LYCÉE D'EXCELLENCE"] { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.campus-radial-item[data-campus="LYCÉE EXCELLENCE"] { background: linear-gradient(135deg, #2ecc71, #27ae60); }
 .campus-radial-item[data-campus="DATA CENTER"] { background: linear-gradient(135deg, #3498db, #2980b9); }
 .campus-radial-item[data-campus="CLUB DE TIR"] { background: linear-gradient(135deg, #e74c3c, #c0392b); }
 .campus-radial-item[data-campus="VILLAS DES CHERCHERUS"] { background: linear-gradient(135deg, #f39c12, #e67e22); }
