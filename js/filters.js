@@ -1,10 +1,7 @@
 // ==================== FILTRES ====================
 
-/**
- * Applique les filtres actuels (campus et type) aux marqueurs
- */
 function appliquerFiltres() {
-    console.log("appliquerFiltres appelé - Campus:", currentCampus, "Type:", currentTypeFilter);
+    console.log("appliquerFiltres appele - Campus:", currentCampus, "Type:", currentTypeFilter);
     
     markersList.forEach(item => {
         const matchCampus = (currentCampus === 'all' || item.projet.campus === currentCampus);
@@ -24,10 +21,6 @@ function appliquerFiltres() {
     mettreAJourStats();
 }
 
-/**
- * Filtre les marqueurs par campus et recentre la vue
- * @param {string} campus - Nom du campus à filtrer
- */
 function filtrerParCampus(campus) {
     currentCampus = campus;
     appliquerFiltres();
@@ -37,10 +30,6 @@ function filtrerParCampus(campus) {
     effacerTousLesTrajets();
 }
 
-/**
- * Filtre les marqueurs par type thématique
- * @param {string} type - Type thématique à filtrer
- */
 function filtrerParType(type) {
     currentTypeFilter = type;
     appliquerFiltres();
@@ -50,14 +39,15 @@ function filtrerParType(type) {
     effacerTousLesTrajets();
 }
 
-/**
- * Affiche les boutons de filtres thématiques
- */
 function afficherFiltresTypes() {
-    const container = document.getElementById('typesFilters');
-    if (!container) return;
+    console.log("afficherFiltresTypes appelee");
     
-    // Récupérer les types uniques pour le campus actuel
+    const container = document.getElementById('typesFilters');
+    if (!container) {
+        console.log("typesFilters container not found");
+        return;
+    }
+    
     const typesUniques = new Set();
     projets.forEach(projet => {
         if (currentCampus === 'all' || projet.campus === currentCampus) {
@@ -68,35 +58,57 @@ function afficherFiltresTypes() {
     });
     
     const typesArray = Array.from(typesUniques).sort();
+    console.log("Types uniques trouves:", typesArray);
     
-    // Générer le HTML des boutons
     let html = '';
     const isAllActive = (currentTypeFilter === 'all');
     html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">All</button>`;
     
     typesArray.forEach(type => {
         const isActive = (currentTypeFilter === type);
-        html += `<button class="type-filter-btn ${isActive ? 'active' : ''}" data-type="${type}">${type}</button>`;
+        const typeInfo = window.types ? window.types.find(t => t.nom === type) : null;
+        const couleur = (typeInfo && typeInfo.couleur) ? typeInfo.couleur : '#ff6600';
+        
+        html += `<button class="type-filter-btn ${isActive ? 'active' : ''}" 
+                        data-type="${type}" 
+                        style="${isActive ? `background: ${couleur} !important; color: white !important;` : ''}">
+                    ${type}
+                </button>`;
     });
     
     container.innerHTML = html;
+    console.log("Filtres affiches, nombre de boutons:", typesArray.length + 1);
     
-    // Attacher les événements
     container.querySelectorAll('.type-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const selectedType = btn.getAttribute('data-type');
+            console.log("Bouton clique:", selectedType);
             
-            document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.type-filter-btn').forEach(b => {
+                b.classList.remove('active');
+                b.style.background = '';
+                b.style.color = '';
+            });
             btn.classList.add('active');
+            
+            if (selectedType !== 'all') {
+                const typeInfo = window.types ? window.types.find(t => t.nom === selectedType) : null;
+                if (typeInfo && typeInfo.couleur) {
+                    btn.style.background = typeInfo.couleur;
+                } else {
+                    btn.style.background = '#ff6600';
+                }
+                btn.style.color = 'white';
+            } else {
+                btn.style.background = '#3e6f8d';
+                btn.style.color = 'white';
+            }
             
             filtrerParType(selectedType);
         });
     });
 }
 
-/**
- * Affiche la liste des sous-types (projets) basée sur les filtres actuels
- */
 function afficherListeSousTypes() {
     const container = document.getElementById('sousTypesList');
     if (!container) {
@@ -106,7 +118,6 @@ function afficherListeSousTypes() {
     
     container.innerHTML = '';
     
-    // Vérifier que projets existe et n'est pas vide
     if (typeof projets === 'undefined' || projets.length === 0) {
         console.log("No projects loaded yet");
         const emptyMsg = document.createElement('div');
@@ -124,7 +135,6 @@ function afficherListeSousTypes() {
     
     const sousTypesMap = new Map();
     
-    // Regrouper les projets par sous-type
     projets.forEach(projet => {
         if ((currentCampus !== 'all' && projet.campus !== currentCampus)) return;
         if ((currentTypeFilter !== 'all' && projet.type !== currentTypeFilter)) return;
@@ -150,7 +160,7 @@ function afficherListeSousTypes() {
         emptyMsg.className = 'sous-type-item';
         emptyMsg.innerHTML = `<div class="sous-type-noimg"></div>
             <div class="sous-type-info">
-                <div class="sous-type-nom">Aucun projet trouvé</div>
+                <div class="sous-type-nom">Aucun projet trouve</div>
                 <div class="sous-type-count">Essayez un autre filtre</div>
             </div>`;
         container.appendChild(emptyMsg);
@@ -158,9 +168,8 @@ function afficherListeSousTypes() {
         return;
     }
     
-    console.log("Sous-types trouvés:", sorted.length);
+    console.log("Sous-types trouves:", sorted.length);
     
-    // Créer les éléments
     for (let [nom, data] of sorted) {
         const item = document.createElement('div');
         item.className = 'sous-type-item';
