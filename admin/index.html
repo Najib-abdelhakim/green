@@ -19,8 +19,10 @@
         .btn-edit { background: #ffcc00; color: #333; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px; }
         .btn-delete { background: #cd0e0e; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
         .btn-add { background: #34a56f; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+        .btn-download { background: #6c5ce7; color: white; }
+        .btn-download:hover { background: #5b4bc4; }
         .login-box { max-width: 400px; margin: 100px auto; text-align: center; }
-        .info-bar { background: #e8f0f5; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; }
+        .info-bar { background: #e8f0f5; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
         .image-preview { margin-top: 10px; max-width: 150px; }
         .image-preview img { max-width: 100%; border-radius: 8px; border: 1px solid #ddd; }
         .upload-progress { font-size: 12px; color: #01568b; margin-top: 5px; }
@@ -32,6 +34,7 @@
         .tab-btn.active { background: #01568b; color: white; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+        .download-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
         @media (max-width: 768px) { .row-2cols { flex-direction: column; } }
     </style>
 </head>
@@ -166,6 +169,62 @@
         }
 
         // ============================================================
+        // FONCTIONS DE TÉLÉCHARGEMENT
+        // ============================================================
+        function telechargerJSON() {
+            const data = {
+                projets: projets,
+                types: types,
+                campus: campus,
+                trajets: trajets,
+                arrets: arrets,
+                date_export: new Date().toISOString()
+            };
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `um6p_data_${new Date().toISOString().slice(0,19).replace(/:/g, '-')}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('Téléchargement JSON terminé !');
+        }
+
+        function telechargerCSV() {
+            // Créer le CSV des projets
+            const entetes = ['id', 'nom', 'description', 'latitude', 'longitude', 'type', 'sous_type', 'campus', 'image', 'icone', 'informations_complementaires'];
+            const lignes = projets.map(p => [
+                p.id || '',
+                p.nom || '',
+                (p.description || '').replace(/,/g, ';').replace(/\n/g, ' '),
+                p.latitude || '',
+                p.longitude || '',
+                p.type || '',
+                p.sous_type || '',
+                p.campus || '',
+                p.image || '',
+                p.icone || '',
+                (p.informations_complementaires || '').replace(/,/g, ';').replace(/\n/g, ' ')
+            ]);
+            
+            const csvContent = [entetes, ...lignes].map(row => row.join(',')).join('\n');
+            const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `um6p_projets_${new Date().toISOString().slice(0,19).replace(/:/g, '-')}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('Téléchargement CSV terminé !');
+        }
+
+        function telechargerBackupComplet() {
+            // Télécharger tout (JSON)
+            telechargerJSON();
+        }
+
+        // ============================================================
         // GESTION DES TYPES
         // ============================================================
         async function ajouterType(event) {
@@ -175,7 +234,7 @@
             
             const response = await supabaseWrite('types', { method: 'POST', body: JSON.stringify(nouveauType) });
             if (response.ok) {
-                alert('✅ Type ajouté !');
+                alert('Type ajouté !');
                 form.reset();
                 await chargerDonnees();
                 afficherInterface();
@@ -188,7 +247,7 @@
                 body: JSON.stringify({ nom: nouveauNom, couleur: nouvelleCouleur })
             });
             if (response.ok) {
-                alert('✅ Type modifié !');
+                alert('Type modifié !');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -198,7 +257,7 @@
             if (!confirm('Supprimer ce type ?')) return;
             const response = await supabaseWrite(`types?id=eq.${id}`, { method: 'DELETE' });
             if (response.ok) {
-                alert('✅ Type supprimé');
+                alert('Type supprimé');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -218,7 +277,7 @@
             
             const response = await supabaseWrite('campus', { method: 'POST', body: JSON.stringify(nouveauCampus) });
             if (response.ok) {
-                alert('✅ Campus ajouté !');
+                alert('Campus ajouté !');
                 form.reset();
                 await chargerDonnees();
                 afficherInterface();
@@ -231,7 +290,7 @@
                 body: JSON.stringify({ nom: nouveauNom, couleur: nouvelleCouleur })
             });
             if (response.ok) {
-                alert('✅ Campus modifié !');
+                alert('Campus modifié !');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -241,7 +300,7 @@
             if (!confirm('Supprimer ce campus ?')) return;
             const response = await supabaseWrite(`campus?id=eq.${id}`, { method: 'DELETE' });
             if (response.ok) {
-                alert('✅ Campus supprimé');
+                alert('Campus supprimé');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -263,7 +322,7 @@
             
             const response = await supabaseWrite('trajets', { method: 'POST', body: JSON.stringify(nouveauTrajet) });
             if (response.ok) {
-                alert('✅ Trajet ajouté !');
+                alert('Trajet ajouté !');
                 form.reset();
                 await chargerDonnees();
                 afficherInterface();
@@ -276,7 +335,7 @@
                 body: JSON.stringify({ nom: nouveauNom, couleur: nouvelleCouleur, type: nouveauType, campus: nouveauCampus })
             });
             if (response.ok) {
-                alert('✅ Trajet modifié !');
+                alert('Trajet modifié !');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -286,7 +345,7 @@
             if (!confirm('Supprimer ce trajet ?')) return;
             const response = await supabaseWrite(`trajets?id=eq.${id}`, { method: 'DELETE' });
             if (response.ok) {
-                alert('✅ Trajet supprimé');
+                alert('Trajet supprimé');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -322,9 +381,9 @@
             }
 
             if (response.ok) {
-                alert('✅ Projet enregistré !');
+                alert('Projet enregistré !');
                 form.reset();
-                document.getElementById('saveBtn').textContent = '💾 Enregistrer';
+                document.getElementById('saveBtn').textContent = 'Enregistrer';
                 document.getElementById('id').readOnly = false;
                 document.getElementById('imagePreview').innerHTML = '';
                 document.getElementById('iconePreview').innerHTML = '';
@@ -340,7 +399,7 @@
             if (!confirm('Supprimer ce projet ?')) return;
             const response = await supabaseWrite(`projets?id=eq.${id}`, { method: 'DELETE' });
             if (response.ok) {
-                alert('✅ Projet supprimé');
+                alert('Projet supprimé');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -363,7 +422,7 @@
                 form.infos.value = projet.informations_complementaires || '';
                 previewImage(projet.image, 'imagePreview');
                 previewImage(projet.icone, 'iconePreview');
-                document.getElementById('saveBtn').textContent = '✏️ Modifier';
+                document.getElementById('saveBtn').textContent = 'Modifier';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
@@ -373,7 +432,7 @@
             if (form) {
                 form.reset();
                 form.id.readOnly = false;
-                document.getElementById('saveBtn').textContent = '💾 Enregistrer';
+                document.getElementById('saveBtn').textContent = 'Enregistrer';
                 document.getElementById('imagePreview').innerHTML = '';
                 document.getElementById('iconePreview').innerHTML = '';
                 document.getElementById('imageFile').value = '';
@@ -398,7 +457,7 @@
                     }
                 }
             }
-            alert('✅ Couleurs sauvegardées !');
+            alert('Couleurs sauvegardées !');
             await chargerDonnees();
             afficherInterface();
         }
@@ -420,24 +479,28 @@
             const trajetsOptions = trajets.map(t => `<option value="${t.campus}">${t.nom}</option>`).join('');
 
             document.getElementById('app').innerHTML = `
-                <h1>🌱 Administration Green Map</h1>
+                <h1>Administration Green Map</h1>
                 
                 <div class="info-bar">
-                    📡 Connexion: ✅ Supabase<br>
-                    📊 Projets: ${projets.length} | 🎨 Types: ${types.length} | 📍 Campus: ${campus.length} | 🚌 Trajets: ${trajets.length}
+                    <span> Connexion: Supabase<br> Projets: ${projets.length} | Types: ${types.length} | Campus: ${campus.length} | Trajets: ${trajets.length}</span>
+                    <div class="download-buttons">
+                        <button class="btn-download" onclick="telechargerJSON()">Exporter JSON</button>
+                        <button class="btn-download" onclick="telechargerCSV()">Exporter CSV</button>
+                        <button class="btn-download" onclick="telechargerBackupComplet()">Backup complet</button>
+                    </div>
                 </div>
                 
                 <div class="tab-buttons">
-                    <button class="tab-btn ${activeTab === 'projets' ? 'active' : ''}" id="btn-projets" onclick="setTab('projets')">📌 Projets</button>
-                    <button class="tab-btn ${activeTab === 'types' ? 'active' : ''}" id="btn-types" onclick="setTab('types')">🎨 Types & Couleurs</button>
-                    <button class="tab-btn ${activeTab === 'campus' ? 'active' : ''}" id="btn-campus" onclick="setTab('campus')">📍 Campus</button>
-                    <button class="tab-btn ${activeTab === 'trajets' ? 'active' : ''}" id="btn-trajets" onclick="setTab('trajets')">🚌 Trajets</button>
+                    <button class="tab-btn ${activeTab === 'projets' ? 'active' : ''}" id="btn-projets" onclick="setTab('projets')">Projets</button>
+                    <button class="tab-btn ${activeTab === 'types' ? 'active' : ''}" id="btn-types" onclick="setTab('types')">Types & Couleurs</button>
+                    <button class="tab-btn ${activeTab === 'campus' ? 'active' : ''}" id="btn-campus" onclick="setTab('campus')">Campus</button>
+                    <button class="tab-btn ${activeTab === 'trajets' ? 'active' : ''}" id="btn-trajets" onclick="setTab('trajets')">Trajets</button>
                 </div>
                 
                 <!-- ==================== TAB PROJETS ==================== -->
                 <div id="tab-projets" class="tab-content ${activeTab === 'projets' ? 'active' : ''}">
                     <div class="card">
-                        <h2>📝 Formulaire projet</h2>
+                        <h2>Formulaire projet</h2>
                         <form id="projetForm" onsubmit="ajouterOuModifierProjet(event)">
                             <div class="row-2cols">
                                 <div class="col">
@@ -450,13 +513,13 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label>📷 IMAGE</label>
+                                        <label>IMAGE</label>
                                         <input type="file" id="imageFile" accept="image/*" onchange="handleImageUpload('imageFile', 'imagePreview', 'images', 'image')">
                                         <input type="text" id="image" placeholder="URL" onchange="updateImagePreview()">
                                         <div id="imagePreview" class="image-preview"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label>🖼️ ICÔNE</label>
+                                        <label>ICÔNE</label>
                                         <input type="file" id="iconeFile" accept="image/*" onchange="handleImageUpload('iconeFile', 'iconePreview', 'icons', 'icone')">
                                         <input type="text" id="icone" placeholder="URL" onchange="updateIconPreview()">
                                         <div id="iconePreview" class="image-preview"></div>
@@ -466,12 +529,14 @@
                             </div>
                             <div class="form-group"><label>Description</label><textarea id="description" rows="3" placeholder="Description..."></textarea></div>
                             <div class="form-group"><label>Infos complémentaires</label><textarea id="infos" rows="2" placeholder="Infos supplémentaires..."></textarea></div>
-                            <button type="submit" id="saveBtn">💾 Enregistrer</button>
-                            <button type="button" onclick="resetForm()" style="background:#999">🔄 Nouveau</button>
+                            <button type="submit" id="saveBtn">Enregistrer</button>
+                            <button type="button" onclick="resetForm()" style="background:#999">Nouveau</button>
                         </form>
                     </div>
                     <div class="card">
-                        <h2>📋 Liste des projets (${projets.length})</h2>
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 15px;">
+                            <h2 style="margin-bottom: 0;">Liste des projets (${projets.length})</h2>
+                        </div>
                         ${projets.length === 0 ? '<p>Aucun projet.</p>' : `
                             <table><thead><tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr></thead>
                             <tbody>${projets.map(p => `
@@ -496,7 +561,7 @@
                         </form>
                     </div>
                     <div class="card">
-                        <h2>🎨 Liste des types (${types.length})</h2>
+                        <h2>Liste des types (${types.length})</h2>
                         ${types.length === 0 ? '<p>Aucun type.</p>' : types.map(t => `
                             <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; padding:10px; background:#f5f8fa; border-radius:10px;">
                                 <span style="width:150px"><strong>${t.nom}</strong></span>
@@ -529,7 +594,7 @@
                                 <span style="width:150px"><strong>${c.nom}</strong></span>
                                 <input type="color" value="${c.couleur || '#01568b'}" id="campusColor_${c.id}" style="width:60px;">
                                 <span style="background:${c.couleur || '#01568b'}; width:30px; height:30px; border-radius:8px;"></span>
-                                <button class="btn-edit" onclick="modifierCampus(${c.id}, prompt('Nouveau nom:', '${c.nom}'), document.getElementById('campusColor_${c.id}').value)">💾 Modifier</button>
+                                <button class="btn-edit" onclick="modifierCampus(${c.id}, prompt('Nouveau nom:', '${c.nom}'), document.getElementById('campusColor_${c.id}').value)">Modifier</button>
                                 <button class="btn-delete" onclick="supprimerCampus(${c.id})">🗑️ Supprimer</button>
                             </div>
                         `).join('')}
@@ -552,7 +617,7 @@
                         </form>
                     </div>
                     <div class="card">
-                        <h2>🚌 Liste des trajets (${trajets.length})</h2>
+                        <h2>Liste des trajets (${trajets.length})</h2>
                         ${trajets.length === 0 ? '<p>Aucun trajet.</p>' : `
                             <table><thead><tr><th>ID</th><th>Nom</th><th>Type</th><th>Couleur</th><th>Campus</th><th>Actions</th></tr></thead>
                             <tbody>${trajets.map(t => `
@@ -566,7 +631,7 @@
                     </div>
                 </div>
                 
-                <button onclick="deconnexion()" style="background:#999; margin-top:20px">🚪 Déconnexion</button>
+                <button onclick="deconnexion()" style="background:#999; margin-top:20px">Déconnexion</button>
             `;
         }
 
@@ -594,9 +659,15 @@
                 return;
             }
             const success = await chargerDonnees();
-            if (success) { afficherInterface(); }
+            if (success) { 
+                // Exporter les fonctions globalement
+                window.telechargerJSON = telechargerJSON;
+                window.telechargerCSV = telechargerCSV;
+                window.telechargerBackupComplet = telechargerBackupComplet;
+                afficherInterface(); 
+            }
             else {
-                document.getElementById('app').innerHTML = `<div class="card" style="color:red;"><h2>❌ Erreur de connexion à Supabase</h2><button onclick="loadApp()">🔄 Réessayer</button><button onclick="deconnexion()">🔐 Reconnecter</button></div>`;
+                document.getElementById('app').innerHTML = `<div class="card" style="color:red;"><h2>❌ Erreur de connexion à Supabase</h2><button onclick="loadApp()">Réessayer</button><button onclick="deconnexion()">Reconnecter</button></div>`;
             }
         }
 
