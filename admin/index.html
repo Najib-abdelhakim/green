@@ -54,7 +54,6 @@
         // ============================================================
         let projets = [];
         let types = [];
-        let campus = [];
         let token = sessionStorage.getItem('adminToken');
         const ADMIN_PASSWORD = 'um6p2024';
         let activeTab = 'projets';
@@ -90,9 +89,7 @@
             return response;
         }
 
-        // ============================================================
-        // UPLOAD IMAGE
-        // ============================================================
+
         async function uploadToSupabase(file, bucket) {
             const fileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
             const url = `${SUPABASE_URL}/storage/v1/object/${bucket}/${fileName}`;
@@ -150,9 +147,6 @@
                 const resProjets = await supabaseFetch('projets?select=*');
                 if (resProjets.ok) projets = await resProjets.json();
                 
-                const resCampus = await supabaseFetch('campus?select=*');
-                if (resCampus.ok) campus = await resCampus.json();
-                
                 return true;
             } catch (e) {
                 console.error(e);
@@ -167,7 +161,6 @@
             const data = {
                 projets: projets,
                 types: types,
-                campus: campus,
                 date_export: new Date().toISOString()
             };
             const json = JSON.stringify(data, null, 2);
@@ -246,49 +239,6 @@
             const response = await supabaseWrite(`types?id=eq.${id}`, { method: 'DELETE' });
             if (response.ok) {
                 alert('Type supprime');
-                await chargerDonnees();
-                afficherInterface();
-            }
-        }
-
-        // ============================================================
-        // GESTION DES CAMPUS
-        // ============================================================
-        async function ajouterCampus(event) {
-            event.preventDefault();
-            const form = event.target;
-            const nouveauCampus = {
-                nom: form.campusNom.value,
-                slug: form.campusSlug.value || form.campusNom.value.toLowerCase().replace(/ /g, '-'),
-                couleur: form.campusCouleur.value || '#01568b'
-            };
-            
-            const response = await supabaseWrite('campus', { method: 'POST', body: JSON.stringify(nouveauCampus) });
-            if (response.ok) {
-                alert('Campus ajoute !');
-                form.reset();
-                await chargerDonnees();
-                afficherInterface();
-            } else { alert('Erreur'); }
-        }
-
-        async function modifierCampus(id, nouveauNom, nouvelleCouleur) {
-            const response = await supabaseWrite(`campus?id=eq.${id}`, {
-                method: 'PATCH',
-                body: JSON.stringify({ nom: nouveauNom, couleur: nouvelleCouleur })
-            });
-            if (response.ok) {
-                alert('Campus modifie !');
-                await chargerDonnees();
-                afficherInterface();
-            }
-        }
-
-        async function supprimerCampus(id) {
-            if (!confirm('Supprimer ce campus ?')) return;
-            const response = await supabaseWrite(`campus?id=eq.${id}`, { method: 'DELETE' });
-            if (response.ok) {
-                alert('Campus supprime');
                 await chargerDonnees();
                 afficherInterface();
             }
@@ -418,13 +368,13 @@
 
         function afficherInterface() {
             const typesOptions = types.map(t => `<option value="${t.nom}">${t.nom}</option>`).join('');
-            const campusOptions = campus.map(c => `<option value="${c.nom}">${c.nom}</option>`).join('');
+            const campusOptions = '<option value="Benguerir">Benguerir</option><option value="Rabat">Rabat</option>';
 
             document.getElementById('app').innerHTML = `
                 <h1>Administration Green Map</h1>
                 
                 <div class="info-bar">
-                    <span> Connexion: Supabase<br> Projets: ${projets.length} | Types: ${types.length} | Campus: ${campus.length}</span>
+                    <span> Connexion: Supabase<br> Projets: ${projets.length} | Types: ${types.length}</span>
                     <div class="download-buttons">
                         <button class="btn-download" onclick="telechargerJSON()">Exporter JSON</button>
                         <button class="btn-download" onclick="telechargerCSV()">Exporter CSV</button>
@@ -435,7 +385,6 @@
                 <div class="tab-buttons">
                     <button class="tab-btn ${activeTab === 'projets' ? 'active' : ''}" id="btn-projets" onclick="setTab('projets')">Projets</button>
                     <button class="tab-btn ${activeTab === 'types' ? 'active' : ''}" id="btn-types" onclick="setTab('types')">Types & Couleurs</button>
-                    <button class="tab-btn ${activeTab === 'campus' ? 'active' : ''}" id="btn-campus" onclick="setTab('campus')">Campus</button>
                 </div>
                 
                 <!-- ==================== TAB PROJETS ==================== -->
@@ -479,12 +428,21 @@
                             <h2 style="margin-bottom: 0;">Liste des projets (${projets.length})</h2>
                         </div>
                         ${projets.length === 0 ? '<p>Aucun projet.</p>' : `
-                            <table><thead><tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr></thead>
-                            <tbody>${projets.map(p => `
-                                <tr><td>${p.id}</td><td>${p.nom || '-'}</td><td>${p.campus}</td><td>${p.type || '-'}</td>
-                                <td><button class="btn-edit" onclick='editerProjet(${JSON.stringify(p).replace(/'/g, "&#39;")})'>✏️</button>
-                                <button class="btn-delete" onclick="supprimerProjet('${p.id}')">🗑️</button></td>
-                            `).join('')}</tbody></table>
+                            <table>
+                                <thead>
+                                    <tr><th>ID</th><th>Nom</th><th>Campus</th><th>Type</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody>${projets.map(p => `
+                                    <tr>
+                                        <td>${p.id}</td>
+                                        <td>${p.nom || '-'}</td>
+                                        <td>${p.campus}</td>
+                                        <td>${p.type || '-'}</td>
+                                        <td><button class="btn-edit" onclick='editerProjet(${JSON.stringify(p).replace(/'/g, "&#39;")})'>✏️</button>
+                                        <button class="btn-delete" onclick="supprimerProjet('${p.id}')">🗑️</button></td>
+                                    </tr>
+                                `).join('')}</tbody>
+                            </table>
                         `}
                     </div>
                 </div>
@@ -515,40 +473,10 @@
                     </div>
                 </div>
                 
-                <!-- ==================== TAB CAMPUS ==================== -->
-                <div id="tab-campus" class="tab-content ${activeTab === 'campus' ? 'active' : ''}">
-                    <div class="card">
-                        <h2>Ajouter un campus</h2>
-                        <form onsubmit="ajouterCampus(event)">
-                            <div class="row-2cols">
-                                <div class="col"><div class="form-group"><label>Nom du campus</label><input type="text" name="campusNom" required></div></div>
-                                <div class="col"><div class="form-group"><label>Slug</label><input type="text" name="campusSlug" placeholder="nom-du-campus"></div></div>
-                                <div class="col"><div class="form-group"><label>Couleur</label><input type="color" name="campusCouleur" value="#01568b"></div></div>
-                            </div>
-                            <button type="submit">Ajouter</button>
-                        </form>
-                    </div>
-                    <div class="card">
-                        <h2>Liste des campus (${campus.length})</h2>
-                        ${campus.length === 0 ? '<p>Aucun campus.</p>' : campus.map(c => `
-                            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; padding:10px; background:#f5f8fa; border-radius:10px;">
-                                <span style="width:150px"><strong>${c.nom}</strong></span>
-                                <input type="color" value="${c.couleur || '#01568b'}" id="campusColor_${c.id}" style="width:60px;">
-                                <span style="background:${c.couleur || '#01568b'}; width:30px; height:30px; border-radius:8px;"></span>
-                                <button class="btn-edit" onclick="modifierCampus(${c.id}, prompt('Nouveau nom:', '${c.nom}'), document.getElementById('campusColor_${c.id}').value)">Modifier</button>
-                                <button class="btn-delete" onclick="supprimerCampus(${c.id})">Supprimer</button>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                
                 <button onclick="deconnexion()" style="background:#999; margin-top:20px">Deconnexion</button>
             `;
         }
 
-        // ============================================================
-        // CONNEXION
-        // ============================================================
         async function login() {
             const password = prompt('Entrez le mot de passe admin:');
             if (password === ADMIN_PASSWORD) {
