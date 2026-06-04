@@ -31,7 +31,9 @@ function initMap() {
     afficherTrajetsSection();
     mettreAJourStats();
     
-    initialiserControlesCampus();
+    if (typeof chargerCampus === 'function') {
+        chargerCampus(); 
+     }
     
     document.getElementById('resetFilters')?.addEventListener('click', () => {
         currentTypeFilter = 'all';

@@ -1,15 +1,22 @@
 // ==================== FILTRES ====================
 
+// Appliquer les filtres sur la carte
 function appliquerFiltres() {
-    console.log("appliquerFiltres appele - Campus:", currentCampus, "Type:", currentTypeFilter);
+    console.log("appliquerFiltres - Campus:", currentCampus, "Type:", currentTypeFilter);
+    
+    if (!map || !markersList) return;
+    
+    let compteur = 0;
     
     markersList.forEach(item => {
+        // Comparaison directe sans normalisation
         const matchCampus = (currentCampus === 'all' || item.projet.campus === currentCampus);
         const matchType = (currentTypeFilter === 'all' || item.projet.type === currentTypeFilter);
         
         if (matchCampus && matchType) {
             if (!map.hasLayer(item.marker)) {
                 item.marker.addTo(map);
+                compteur++;
             }
         } else {
             if (map.hasLayer(item.marker)) {
@@ -18,19 +25,41 @@ function appliquerFiltres() {
         }
     });
     
+    console.log("Marqueurs affichés:", compteur);
     mettreAJourStats();
 }
 
+// Filtrer par campus
 function filtrerParCampus(campus) {
+    console.log("=== FILTRER PAR CAMPUS ===");
+    console.log("Campus reçu:", campus);
+    console.log("Ancien currentCampus:", currentCampus);
+    
     currentCampus = campus;
+    
+    console.log("Nouveau currentCampus:", currentCampus);
+    console.log("Projets disponibles:", projets.length);
+    
+    // Afficher les campus des projets pour déboguer
+    const campusProjets = [...new Set(projets.map(p => p.campus))];
+    console.log("Campus dans les projets:", campusProjets);
+    
     appliquerFiltres();
     afficherFiltresTypes();
     afficherTrajetsSection();
     afficherListeSousTypes();
     effacerTousLesTrajets();
+    
+    // Mettre à jour l'affichage dans la sidebar
+    const campusNameSpan = document.getElementById('campusName');
+    if (campusNameSpan) {
+        campusNameSpan.textContent = (campus === 'all') ? 'All' : campus;
+    }
 }
 
+// Filtrer par type
 function filtrerParType(type) {
+    console.log("Filtrer par type:", type);
     currentTypeFilter = type;
     appliquerFiltres();
     afficherFiltresTypes();
@@ -39,15 +68,12 @@ function filtrerParType(type) {
     effacerTousLesTrajets();
 }
 
+// Afficher les boutons de filtres par type
 function afficherFiltresTypes() {
-    console.log("afficherFiltresTypes appelee");
-    
     const container = document.getElementById('typesFilters');
-    if (!container) {
-        console.log("typesFilters container not found");
-        return;
-    }
+    if (!container) return;
     
+    // Récupérer les types uniques des projets (filtrés par campus actif)
     const typesUniques = new Set();
     projets.forEach(projet => {
         if (currentCampus === 'all' || projet.campus === currentCampus) {
@@ -58,16 +84,15 @@ function afficherFiltresTypes() {
     });
     
     const typesArray = Array.from(typesUniques).sort();
-    console.log("Types uniques trouves:", typesArray);
     
     let html = '';
     const isAllActive = (currentTypeFilter === 'all');
-    html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">All</button>`;
+    html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">Tous</button>`;
     
     typesArray.forEach(type => {
         const isActive = (currentTypeFilter === type);
         const typeInfo = window.types ? window.types.find(t => t.nom === type) : null;
-        const couleur = (typeInfo && typeInfo.couleur) ? typeInfo.couleur : '#ff6600';
+        const couleur = (typeInfo && typeInfo.couleur) ? typeInfo.couleur : '#01568b';
         
         html += `<button class="type-filter-btn ${isActive ? 'active' : ''}" 
                         data-type="${type}" 
@@ -77,12 +102,11 @@ function afficherFiltresTypes() {
     });
     
     container.innerHTML = html;
-    console.log("Filtres affiches, nombre de boutons:", typesArray.length + 1);
     
+    // Attacher les événements
     container.querySelectorAll('.type-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const selectedType = btn.getAttribute('data-type');
-            console.log("Bouton clique:", selectedType);
             
             document.querySelectorAll('.type-filter-btn').forEach(b => {
                 b.classList.remove('active');
@@ -95,10 +119,8 @@ function afficherFiltresTypes() {
                 const typeInfo = window.types ? window.types.find(t => t.nom === selectedType) : null;
                 if (typeInfo && typeInfo.couleur) {
                     btn.style.background = typeInfo.couleur;
-                } else {
-                    btn.style.background = '#ff6600';
+                    btn.style.color = 'white';
                 }
-                btn.style.color = 'white';
             } else {
                 btn.style.background = '#3e6f8d';
                 btn.style.color = 'white';
@@ -109,37 +131,26 @@ function afficherFiltresTypes() {
     });
 }
 
+// Afficher la liste des sous-types
 function afficherListeSousTypes() {
     const container = document.getElementById('sousTypesList');
-    if (!container) {
-        console.log("sousTypesList container not found");
-        return;
-    }
+    if (!container) return;
     
     container.innerHTML = '';
     
-    if (typeof projets === 'undefined' || projets.length === 0) {
-        console.log("No projects loaded yet");
-        const emptyMsg = document.createElement('div');
-        emptyMsg.className = 'sous-type-item';
-        emptyMsg.innerHTML = `<div class="sous-type-noimg"></div>
-            <div class="sous-type-info">
-                <div class="sous-type-nom">Chargement...</div>
-                <div class="sous-type-count">Patientez</div>
-            </div>`;
-        container.appendChild(emptyMsg);
+    if (!projets || projets.length === 0) {
+        container.innerHTML = '<div class="sous-type-item"><div class="sous-type-info"><div class="sous-type-nom">Chargement...</div></div></div>';
         return;
     }
-    
-    console.log("Afficher liste des sous-types - Projets:", projets.length);
     
     const sousTypesMap = new Map();
     
     projets.forEach(projet => {
-        if ((currentCampus !== 'all' && projet.campus !== currentCampus)) return;
-        if ((currentTypeFilter !== 'all' && projet.type !== currentTypeFilter)) return;
+        // Appliquer le filtre campus
+        if (currentCampus !== 'all' && projet.campus !== currentCampus) return;
+        if (currentTypeFilter !== 'all' && projet.type !== currentTypeFilter) return;
         
-        const sousType = projet.sousType || projet.sous_type || 'Autre';
+        const sousType = projet.sous_type || projet.sousType || 'Autre';
         
         if (sousType && sousType.trim() !== "") {
             if (!sousTypesMap.has(sousType)) {
@@ -156,29 +167,17 @@ function afficherListeSousTypes() {
     const sorted = Array.from(sousTypesMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
     
     if (sorted.length === 0) {
-        const emptyMsg = document.createElement('div');
-        emptyMsg.className = 'sous-type-item';
-        emptyMsg.innerHTML = `<div class="sous-type-noimg"></div>
-            <div class="sous-type-info">
-                <div class="sous-type-nom">Aucun projet trouve</div>
-                <div class="sous-type-count">Essayez un autre filtre</div>
-            </div>`;
-        container.appendChild(emptyMsg);
-        console.log("No sous-types found for current filters");
+        container.innerHTML = '<div class="sous-type-item"><div class="sous-type-info"><div class="sous-type-nom">Aucun projet trouvé</div></div></div>';
         return;
     }
-    
-    console.log("Sous-types trouves:", sorted.length);
     
     for (let [nom, data] of sorted) {
         const item = document.createElement('div');
         item.className = 'sous-type-item';
         
         let imageHtml = '';
-        const iconUrl = data.icone;
-        
-        if (iconUrl && iconUrl !== "") {
-            imageHtml = `<img src="${iconUrl}" onerror="this.src='img/DD.jpg'">`;
+        if (data.icone && data.icone !== "") {
+            imageHtml = `<img src="${data.icone}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22 viewBox=%220 0 24 24%22 fill=%22%2301568b%22%3E%3Cpath d=%22M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z%22/%3E%3C/svg%3E'">`;
         } else {
             const firstLetter = nom.charAt(0).toUpperCase();
             imageHtml = `<div class="sous-type-noimg">${firstLetter}</div>`;
@@ -202,7 +201,7 @@ function afficherListeSousTypes() {
                 });
                 
                 markersList.forEach(m => {
-                    const projetSousType = m.projet.sousType || m.projet.sous_type;
+                    const projetSousType = m.projet.sous_type || m.projet.sousType;
                     if (projetSousType === sousType &&
                         (currentCampus === 'all' || m.projet.campus === currentCampus) &&
                         (currentTypeFilter === 'all' || m.projet.type === currentTypeFilter)) {
@@ -214,18 +213,63 @@ function afficherListeSousTypes() {
                 
                 document.querySelectorAll('.sous-type-item').forEach(i => i.classList.remove('active'));
                 element.classList.add('active');
-                element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             };
         })(nom, item));
         
         item.addEventListener('dblclick', (function(sousType, icon) {
             return function(e) {
                 e.stopPropagation();
-                const iconToShow = icon || 'img/DD.jpg';
-                showIconModal(iconToShow, sousType);
+                showIconModal(icon || '', sousType);
             };
-        })(nom, iconUrl));
+        })(nom, data.icone));
         
         container.appendChild(item);
     }
+}
+
+// Mettre à jour les statistiques
+function mettreAJourStats() {
+    let compteur = 0;
+    markersList.forEach(item => {
+        const matchCampus = (currentCampus === 'all' || item.projet.campus === currentCampus);
+        const matchType = (currentTypeFilter === 'all' || item.projet.type === currentTypeFilter);
+        if (matchCampus && matchType) compteur++;
+    });
+    
+    const countSpan = document.getElementById('projetCount');
+    if (countSpan) countSpan.textContent = compteur;
+}
+
+// Réinitialiser tous les filtres
+function resetFiltres() {
+    currentCampus = 'all';
+    currentTypeFilter = 'all';
+    
+    markersList.forEach(item => {
+        if (!map.hasLayer(item.marker)) {
+            item.marker.addTo(map);
+        }
+    });
+    
+    afficherFiltresTypes();
+    afficherListeSousTypes();
+    effacerTousLesTrajets();
+    mettreAJourStats();
+    
+    const campusNameSpan = document.getElementById('campusName');
+    if (campusNameSpan) campusNameSpan.textContent = 'All';
+    
+    document.querySelectorAll('.type-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = '';
+        btn.style.color = '';
+    });
+    const allBtn = document.querySelector('.type-filter-btn[data-type="all"]');
+    if (allBtn) {
+        allBtn.classList.add('active');
+        allBtn.style.background = '#3e6f8d';
+        allBtn.style.color = 'white';
+    }
+    
+    console.log("Filtres réinitialisés");
 }

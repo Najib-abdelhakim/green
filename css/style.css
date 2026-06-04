@@ -550,25 +550,25 @@ body {
 
 /* ==================== MENU RADIAL CAMPUS ==================== */
 .campus-radial {
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 900;
+    z-index: 1000;
 }
 
 .campus-radial-btn {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: #01568b;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     font-size: 24px;
     color: white;
+    transition: all 0.2s;
 }
 
 .campus-radial-btn:hover {
@@ -578,66 +578,53 @@ body {
 
 .campus-radial-menu {
     position: absolute;
-    bottom: 60px;
+    bottom: 70px;
     right: 0;
     display: none;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     align-items: flex-end;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 8px;
+    background: transparent;
 }
 
 .campus-radial-menu.open {
     display: flex;
 }
 
+/* Style des boutons campus - CERCLES PARFAITS */
 .campus-radial-item {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border-radius: 50% !important;
     cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+    border: 2px solid white;
 }
 
 .campus-radial-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
 }
 
-.campus-radial-item::after {
-    content: attr(data-name);
-    position: absolute;
-    right: 45px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.25s ease;
+/* Scrollbar pour le menu campus */
+.campus-radial-menu::-webkit-scrollbar {
+    width: 4px;
 }
 
-.campus-radial-item:hover::after {
-    opacity: 1;
+.campus-radial-menu::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
-/* Couleurs des boutons campus */
-.campus-radial-item[data-campus="Ben Guerir"] { background: linear-gradient(135deg, #bc4d29, #d74a2b); }
-.campus-radial-item[data-campus="Rabat"] { background: linear-gradient(135deg, #808080, #696969); }
-.campus-radial-item[data-campus="GEP"] { background: linear-gradient(135deg, #a4c840, #61873d); }
-.campus-radial-item[data-campus="AITTC"] { background: linear-gradient(135deg, #17a2b8, #00bcd4); }
-.campus-radial-item[data-campus="ASARI Laayoune"] { background: linear-gradient(135deg, #bc9d75, #e6cfaf); }
-.campus-radial-item[data-campus="LYCÉE EXCELLENCE"] { background: linear-gradient(135deg, #2ecc71, #27ae60); }
-.campus-radial-item[data-campus="DATA CENTER"] { background: linear-gradient(135deg, #3498db, #2980b9); }
-.campus-radial-item[data-campus="CLUB DE TIR"] { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-.campus-radial-item[data-campus="VILLAS DES CHERCHERUS"] { background: linear-gradient(135deg, #f39c12, #e67e22); }
-.campus-radial-item[data-campus="VILLAS MARGUERITTE"] { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-.campus-radial-item[data-campus="GSBP"] { background: linear-gradient(135deg, #1abc9c, #16a085); }
-
+.campus-radial-menu::-webkit-scrollbar-thumb {
+    background: #01568b;
+    border-radius: 10px;
+}
 /* ==================== MODAL ==================== */
 .icon-modal {
     position: fixed;
