@@ -87,7 +87,7 @@ function afficherFiltresTypes() {
     
     let html = '';
     const isAllActive = (currentTypeFilter === 'all');
-    html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">Tous</button>`;
+    html += `<button class="type-filter-btn ${isAllActive ? 'active' : ''}" data-type="all">All</button>`;
     
     typesArray.forEach(type => {
         const isActive = (currentTypeFilter === type);
