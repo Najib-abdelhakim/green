@@ -1,4 +1,4 @@
-// js/projets.js - Version Supabase
+// Version Supabase
 let projets = [];
 
 async function getProjets() {

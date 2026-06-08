@@ -1,5 +1,5 @@
-// ==================== FONCTIONS DES TRAJETS ====================
-console.log("📁 Chargement fonctions trajets...");
+// FONCTIONS DES TRAJETS
+
 
 // Variables pour stocker les trajets actifs sur la carte
 var trajetActuel = null;
@@ -226,5 +226,3 @@ function effacerTousLesTrajets() {
         trajetBusActuel = null;
     }
 }
-
-console.log("✅ Fonctions trajets chargées");

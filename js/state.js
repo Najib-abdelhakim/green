@@ -1,4 +1,4 @@
-// ==================== VARIABLES GLOBALES ====================
+// = VARIABLES GLOBALES
 let map;
 let markersList = [];
 let currentCampus = 'all';
@@ -7,7 +7,7 @@ let currentTypeFilter = 'all';
 let glowColors = {};
 let types = [];
 
-// ==================== CHARGER LES COULEURS DEPUIS SUPABASE ====================
+// CHARGER LES COULEURS DEPUIS SUPABASE 
 async function chargerCouleursDepuisSupabase() {
     try {
         if (typeof SUPABASE_URL === 'undefined' || typeof SUPABASE_ANON_KEY === 'undefined') {

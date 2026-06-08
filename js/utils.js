@@ -1,4 +1,4 @@
-// ==================== UTILITAIRES ====================
+// UTILITAIRES 
 function getGlowColor(type) {
     if (type && glowColors[type]) return glowColors[type];
     return 'rgba(255, 255, 0, 0.5)';

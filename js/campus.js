@@ -1,4 +1,4 @@
-// ==================== GESTION DYNAMIQUE DES CAMPUS ====================
+// GESTION DYNAMIQUE DES CAMPUS 
 
 let campusData = [];
 

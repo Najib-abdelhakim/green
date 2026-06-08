@@ -1,6 +1,5 @@
-// ==================== FILTRES ====================
+// FILTRES 
 
-// Appliquer les filtres sur la carte
 function appliquerFiltres() {
     console.log("appliquerFiltres - Campus:", currentCampus, "Type:", currentTypeFilter);
     

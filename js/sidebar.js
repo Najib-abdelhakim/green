@@ -1,4 +1,4 @@
-// ==================== SIDEBAR ====================
+// SIDEBAR 
 function toggleSidebar() {
     let sidebar = document.getElementById('sidebar');
     let btn = document.getElementById('toggleSidebar');

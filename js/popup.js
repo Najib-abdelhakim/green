@@ -1,4 +1,4 @@
-// ==================== POPUP ====================
+// POPUP 
 function creerContenuPopup(projet) {
     let badgeHtml = '';
     if ((projet.type && projet.type.trim() !== "") || (projet.campus && projet.campus.trim() !== "")) {

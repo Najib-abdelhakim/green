@@ -1,4 +1,4 @@
-// ==================== MARQUEURS ====================
+// MARQUEURS 
 
 /**
  * Crée un marqueur avec effet de lueur et popup pour un projet

@@ -1,16 +1,11 @@
-// ==================== EXPOSITION GLOBALE ====================
-// Ne pas exposer les fonctions ici - elles seront exposées après chargement
+//  EXPOSITION GLOBALE 
 
-// ==================== INITIALIZATION ====================
+//  INITIALIZATION 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM loaded - Google Hybrid Map with Glow Effects");
     
-    // NE PAS appeler initMap ici - projets.js le fera
-    
-    // Solution : attacher l'événement correctement
-    const toggleBtn = document.getElementById('toggleSidebar');
+        const toggleBtn = document.getElementById('toggleSidebar');
     if (toggleBtn) {
-        // Supprimer les anciens événements pour éviter les doublons
         toggleBtn.removeEventListener('click', toggleSidebar);
         toggleBtn.addEventListener('click', toggleSidebar);
         console.log("Événement toggleSidebar attaché");
@@ -19,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Re-attacher l'événement après chaque chargement dynamique (optionnel)
 window.addEventListener('load', () => {
     const toggleBtn = document.getElementById('toggleSidebar');
     if (toggleBtn) {
@@ -27,7 +21,6 @@ window.addEventListener('load', () => {
         toggleBtn.addEventListener('click', toggleSidebar);
     }
     
-    // Exposer les fonctions de recentrage après que campus.js est chargé
     setTimeout(() => {
         if (typeof recentrerBenGuerir === 'function') {
             window.recentrerBenGuerir = recentrerBenGuerir;

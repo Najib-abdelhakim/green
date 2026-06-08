@@ -11,14 +11,12 @@
     </div>
 
     <script>
-        // ============================================================
         // CONFIGURATION SUPABASE
-        // ============================================================
+
         const SUPABASE_URL = 'https://vskyxicpihysyjmbknur.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZza3l4aWNwaWh5c3lqbWJrbnVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODA0MjIsImV4cCI6MjA5NDc1NjQyMn0.qlZD2K0nfJ6ccrcQba8Dj5ZGhgAWPSWHNjscEDhhXsw';
         const SUPABASE_SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZza3l4aWNwaWh5c3lqbWJrbnVyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTE4MDQyMiwiZXhwIjoyMDk0NzU2NDIyfQ.tJ523KHq8l-35W3TZ4QYUP5oGcrQyQr5_Qh67etqmhY';
         
-        // ============================================================
         let projets = [];
         let types = [];
         let campusList = [];
@@ -26,9 +24,7 @@
         const ADMIN_PASSWORD = 'um6p2024';
         let activeTab = 'projets';
 
-        // ============================================================
         // FONCTIONS SUPABASE
-        // ============================================================
         async function supabaseFetch(endpoint, options = {}) {
             const url = `${SUPABASE_URL}/rest/v1/${endpoint}`;
             const response = await fetch(url, {
@@ -103,9 +99,8 @@
         function updateImagePreview() { previewImage(document.getElementById('image').value, 'imagePreview'); }
         function updateIconPreview() { previewImage(document.getElementById('icone').value, 'iconePreview'); }
 
-        // ============================================================
+        // 
         // CHARGEMENT DES DONNEES
-        // ============================================================
         async function chargerDonnees() {
             try {
                 const [resTypes, resProjets, resCampus] = await Promise.all([
@@ -126,9 +121,8 @@
             }
         }
 
-        // ============================================================
+        // 
         // FONCTIONS DE TELECHARGEMENT
-        // ============================================================
         function telechargerJSON() {
             const data = {
                 projets: projets,
@@ -178,9 +172,8 @@
             telechargerJSON();
         }
 
-        // ============================================================
+
         // GESTION DES TYPES
-        // ============================================================
         async function ajouterType(event) {
             event.preventDefault();
             const form = event.target;
@@ -217,9 +210,7 @@
             }
         }
 
-        // ============================================================
         // GESTION DES CAMPUS
-        // ============================================================
         async function ajouterCampus(event) {
             event.preventDefault();
             const nouveauCampus = {
@@ -256,9 +247,7 @@
             }
         }
 
-        // ============================================================
         // CRUD PROJETS
-        // ============================================================
         async function ajouterOuModifierProjet(event) {
             event.preventDefault();
             const form = event.target;
@@ -345,9 +334,7 @@
             }
         }
 
-        // ============================================================
         // SAUVEGARDER COULEURS
-        // ============================================================
         async function sauvegarderCouleurs() {
             for (const type of types) {
                 const input = document.getElementById(`color_${type.nom}`);
@@ -367,9 +354,7 @@
             afficherInterface();
         }
 
-        // ============================================================
         // AFFICHAGE INTERFACE
-        // ============================================================
         function setTab(tabName) {
             activeTab = tabName;
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -402,7 +387,7 @@
                     <button class="tab-btn ${activeTab === 'campus' ? 'active' : ''}" id="btn-campus" onclick="setTab('campus')">Campus</button>
                 </div>
                 
-                <!-- ==================== TAB PROJETS ==================== -->
+                <!-- TAB PROJETS -->
                 <div id="tab-projets" class="tab-content ${activeTab === 'projets' ? 'active' : ''}">
                     <div class="card">
                         <h2>Formulaire projet</h2>
@@ -462,7 +447,7 @@
                     </div>
                 </div>
                 
-                <!-- ==================== TAB TYPES & COULEURS ==================== -->
+                <!-- TAB TYPES & COULEURS -->
                 <div id="tab-types" class="tab-content ${activeTab === 'types' ? 'active' : ''}">
                     <div class="card">
                         <h2>Ajouter un type</h2>
@@ -488,7 +473,7 @@
                     </div>
                 </div>
                 
-                <!-- ==================== TAB CAMPUS ==================== -->
+                <!-- TAB CAMPUS -->
                 <div id="tab-campus" class="tab-content ${activeTab === 'campus' ? 'active' : ''}">
                     <div class="card">
                         <h2>Ajouter un campus</h2>

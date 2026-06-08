@@ -1,4 +1,4 @@
-// ==================== MODAL POUR ICÔNE ====================
+// MODAL POUR ICÔNE 
 
 /**
  * Affiche un modal avec l'icône du projet en grand
