@@ -15,7 +15,7 @@ function initMap() {
     console.log("INIT MAP - Total projects:", projets.length);
     
     // Créer la carte
-    map = L.map('map').setView([31.862835361667987, -6.849775828544829], 5);
+    map = L.map('map').setView([32.21586044359456, -7.939122882189408], 16);
     
     L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
         attribution: '&copy; Google Maps',

@@ -187,7 +187,6 @@ function afficherListeSousTypes() {
             ${imageHtml}
             <div class="sous-type-info">
                 <div class="sous-type-nom">${nom}</div>
-                <div class="sous-type-count">${data.count} projet(s)</div>
             </div>
             <div class="sous-type-arrow">→</div>
         `;
