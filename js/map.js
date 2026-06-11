@@ -1,6 +1,5 @@
 // INITIALISATION 
 function initMap() {
-    // Vérifier si la carte existe déjà DANS LE DOM
     if (map && map._container) {
         console.log("Map already exists, skipping initMap");
         return;

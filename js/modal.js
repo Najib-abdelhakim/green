@@ -6,18 +6,16 @@
  * @param {string} projectName - Nom du projet
  */
 function showIconModal(iconUrl, projectName) {
-    // Supprimer le modal existant s'il y en a un
     const existingModal = document.getElementById('iconModal');
     if (existingModal) {
         existingModal.remove();
     }
     
-    // Créer le modal
     const modal = document.createElement('div');
     modal.id = 'iconModal';
     modal.className = 'icon-modal';
     
-    // Générer le contenu (sans styles inline)
+
     let imageHtml = '';
     if (iconUrl) {
         imageHtml = `<img src="${iconUrl}" alt="${projectName}" onerror="this.src='img/DD.jpg'">`;

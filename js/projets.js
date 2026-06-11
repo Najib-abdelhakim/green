@@ -40,7 +40,6 @@ async function chargerProjets() {
         projets = await getProjets();
         console.log(`${projets.length} projets chargés`);
         
-        // Appeler initMap après chargement des projets
         if (typeof initMap === 'function') {
             initMap();
         }

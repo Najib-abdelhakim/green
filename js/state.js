@@ -45,7 +45,6 @@ async function chargerCouleursDepuisSupabase() {
     }
 }
 
-// Demarrer le chargement des couleurs
 if (typeof SUPABASE_URL !== 'undefined' && typeof SUPABASE_ANON_KEY !== 'undefined') {
     chargerCouleursDepuisSupabase();
 } else {
